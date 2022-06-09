@@ -13,7 +13,7 @@ public class SqlSessionManager {
 	static {
 		
 		try {
-			String resource = "cookking2/mapper/config.xml";
+			String resource = "cookking4/mapper/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		}catch (Exception e){

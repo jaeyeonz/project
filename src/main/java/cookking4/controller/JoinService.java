@@ -26,12 +26,12 @@ public class JoinService extends HttpServlet {
 		String favIndr2 = request.getParameter("favIndr2");
 		String favIndr3 = request.getParameter("favIndr3");
 		
-		System.out.println(userId);
-		System.out.println(pw);
-		System.out.println(name);
-		System.out.println(favIndr1);
-		System.out.println(favIndr2);
-		System.out.println(favIndr3);
+//		System.out.println(userId);
+//		System.out.println(pw);
+//		System.out.println(name);
+//		System.out.println(favIndr1);
+//		System.out.println(favIndr2);
+//		System.out.println(favIndr3);
 		
 		VO mvo = new VO();
 		
@@ -48,7 +48,7 @@ public class JoinService extends HttpServlet {
 		
 		if(cnt > 0) {
 			request.setAttribute("mvo",  mvo);
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}		
 	}

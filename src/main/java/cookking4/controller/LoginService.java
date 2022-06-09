@@ -26,7 +26,7 @@ public class LoginService extends HttpServlet {
 		mvo.setUserId(userId);
 		mvo.setPw(pw);
 		
-		System.out.println("login : " + mvo);		
+//		System.out.println("login : " + mvo);		
 		
 		DAO dao = new DAO();
 		VO result = dao.Login(mvo);
@@ -37,7 +37,7 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("mvo", result);
 		}
-		response.sendRedirect("Home.html");		
+		response.sendRedirect("Home.jsp");		
 	}
 
 }

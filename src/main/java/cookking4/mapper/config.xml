@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<!--  DB정보를 가지고있는 properties파일과 맵핑(연결) -->
-	<properties resource="cookking2/mapper/db.properties"></properties>
+	<properties resource="cookking4/mapper/db.properties"></properties>
 	
 	<typeAliases>		
-		<typeAlias type="cookking2.model.VO" alias="VO"/>
-		<typeAlias type="cookking2.model.DAO" alias = "DAO"/>
+		<typeAlias type="cookking4.model.VO" alias="VO"/>
+		<typeAlias type="cookking4.model.DAO" alias = "DAO"/>
 		
 	</typeAliases>
 	
@@ -25,6 +25,6 @@
 	</environments>
 	<!-- SQL문을 작성한 파일의 위치 -->
 	<mappers>
-		<mapper resource="cookking2/mapper/MemberMapper.xml" />
+		<mapper resource="cookking4/mapper/MemberMapper.xml" />
 	</mappers>
 </configuration>

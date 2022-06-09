@@ -421,10 +421,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			},
 			dataType : 'json',
 			success : function(result) {
+				console.log(result);
 				if (result == 1) {
-					console.alert('index 사용중인 아이디입니다.')
+					alert('index 사용중인 아이디입니다.')
 				} else {
-					console.alert('index 사용 가능한 아이디입니다.')
+					alert('index 사용 가능한 아이디입니다.')
 				}
 			},
 			error : function() {
