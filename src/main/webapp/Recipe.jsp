@@ -1,3 +1,6 @@
+<%@page import="cookking4.model.RecipeVO"%>
+<%@page import="java.util.List"%>
+<%@page import="cookking4.model.RecipeDAO"%>
 <%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -35,9 +38,46 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
   </head>
+<<<<<<< HEAD
+  <%
+  RecipeDAO dao = new RecipeDAO();
+  List<RecipeVO> list = dao.recipeList();
+  %> 
+  <div>
+  <table id="list" border = "1px">
+ 
+			<thead>
+				<tr>
+					<td>사진</td>
+					<td>제목</td>
+					<td>요약</td>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				for(int i=0; i<list.size(); i++){
+				%>
+				<div>
+				<tr>
+					<td><a href ="RecipeDetail.jsp">이미지</td>
+					<td><a href ="RecipeDetail.jsp"><%=list.get(i).getRecipe_name()%></td>
+					<td><%=list.get(i).getSummary() %></td>
+				</tr>
+				</div>
+				<%
+				} 
+				%>
+		
+			</tbody>
+		</table>
+		 </div>
+  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+=======
   <body class="u-body u-xl-mode">
   <%  VO mvo = (VO)session.getAttribute("mvo");   %>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -110,7 +150,7 @@
                   <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-2" src="">
                     <div class="u-container-layout u-container-layout-2">
                       <h2 class="u-custom-font u-text u-text-default u-text-1">
-                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="레시피-상세페이지.html" data-page-id="181319731">오징어 불고기</a>
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="RecipeDetail.jsp" data-page-id="181319731">오징어불고기</a>
                       </h2>
                       <p class="u-custom-font u-text u-text-default u-text-2">오징어로 불고기를 만들어 맛있게 드셔보세요~<br>간단하면서도 쉽게 맛낼 수 있답니다.<br>
                       </p>
