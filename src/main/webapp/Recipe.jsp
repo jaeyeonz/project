@@ -42,7 +42,7 @@
   <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
   <body class="u-body u-xl-mode">
   <%
-	List<RecipeVO> rvo = (List<RecipeVO>)request.getAttribute("list2");  
+	List<RecipeVO> rvoList = (List<RecipeVO>)request.getAttribute("list2");  
     VO mvo = (VO)session.getAttribute("mvo");   
   	
   %> 
@@ -67,14 +67,28 @@
 			<tbody>
 			
 				<%
+<<<<<<< HEAD
 				if(rvo != null){
 					for(int i=0; i<rvo.size(); i++){
+=======
+				if(rvoList != null){
+				for(int i=0; i<rvoList.size(); i++){
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 				%>
 				<div>
 				<tr>
+<<<<<<< HEAD
 					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>&summary=<%=rvo.get(i).getSummary() %>&name=<%=rvo.get(i).getRecipe_name()%>">이미지</td>
 					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>&summary=<%=rvo.get(i).getSummary() %>&name=<%=rvo.get(i).getRecipe_name()%>"><%=rvo.get(i).getRecipe_name()%></td>
 					<td><%=rvo.get(i).getSummary() %></td>
+=======
+					<td><a href ="RecipeDetail.jsp">이미지</td>
+					<td><a href ="RecipeDetail.jsp"><%=rvoList.get(i).getRecipe_name()%></td>
+					<td><%=rvoList.get(i).getSummary() %></td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>">이미지</td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>"><%=rvoList.get(i).getRecipe_name()%></td>
+					<td><%=rvoList.get(i).getSummary() %></td>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 				</tr>
 				</div>
 				<%
