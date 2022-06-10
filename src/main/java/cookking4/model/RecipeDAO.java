@@ -44,7 +44,7 @@ public class RecipeDAO {
 		// selectList("id", parameter)
 		// 채워줄 바인드 있으면 id, 채울값
 		// 없으면 id만
-		List<RecipeVO> list = session.selectList("recipeSearch");
+		List<RecipeVO> list = session.selectList("recipeSearch", keyword);
 
 		// 3. 빌려온 session 반환
 		session.close();
