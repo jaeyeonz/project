@@ -72,8 +72,8 @@
 				%>
 				<div>
 				<tr>
-					<td><a href ="RecipeDetail.jsp">이미지</td>
-					<td><a href ="RecipeDetail.jsp"><%=rvo.get(i).getRecipe_name()%></td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>">이미지</td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>"><%=rvo.get(i).getRecipe_name()%></td>
 					<td><%=rvo.get(i).getSummary() %></td>
 				</tr>
 				</div>
@@ -149,6 +149,7 @@
               <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-1" src="" data-image-width="463" data-image-height="581">
+                  <!--  이미지 -->
                     <div class="u-container-layout u-valign-middle u-container-layout-1" src=""></div>
                   </div>
                 </div>
@@ -226,6 +227,7 @@
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
               <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-20-md u-layout-cell-1">
+              <!-- 이미지 -->
                 <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
                   <div data-position="" class="u-position"><!--block-->
                     <div class="u-block">

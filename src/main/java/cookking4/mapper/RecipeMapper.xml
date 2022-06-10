@@ -13,4 +13,10 @@
 		select * from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
 	</select>
+	
+	<select id="recipeDetail" resultType="RecipeVO">
+    	select recipe_id, step_no, cooking_desc
+    	from recipe_proc
+    	where recipe_id = #{recipeNum}
+  	</select>
 </mapper>
