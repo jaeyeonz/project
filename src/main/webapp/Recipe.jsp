@@ -38,11 +38,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
   </head>
+  
+  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+  <body class="u-body u-xl-mode">
   <%
-  RecipeDAO dao = new RecipeDAO();
-  List<RecipeVO> list = dao.recipeList();
+	List<RecipeVO> rvo = (List<RecipeVO>)request.getAttribute("list2");  
+    VO mvo = (VO)session.getAttribute("mvo");   
+  	
   %> 
+  <form action="SearchService">
   <div>
+  <input name = "keyword" type ="text">
+  <input type = "submit" value ="검색">
+  <div>
+  
+  
+  </form>
   <table id="list" border = "1px">
  
 			<thead>
@@ -54,26 +65,26 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 				<%
-				for(int i=0; i<list.size(); i++){
+				if(rvo != null){
+				for(int i=0; i<rvo.size(); i++){
 				%>
 				<div>
 				<tr>
 					<td><a href ="RecipeDetail.jsp">이미지</td>
-					<td><a href ="RecipeDetail.jsp"><%=list.get(i).getRecipe_name()%></td>
-					<td><%=list.get(i).getSummary() %></td>
+					<td><a href ="RecipeDetail.jsp"><%=rvo.get(i).getRecipe_name()%></td>
+					<td><%=rvo.get(i).getSummary() %></td>
 				</tr>
 				</div>
 				<%
+				}
 				} 
 				%>
 		
 			</tbody>
 		</table>
 		 </div>
-  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
-  <body class="u-body u-xl-mode">
-  <%  VO mvo = (VO)session.getAttribute("mvo");   %>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
@@ -116,7 +127,7 @@
           <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
             <div class="u-form-group u-form-group-1">
               <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
-              <input type="text" id="email-2555" name="email" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
+              <input type="text" id="email-2555" name="keyword" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
             </div>
             <div class="u-align-left u-form-group u-form-submit">
               <a href="#" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">

@@ -5,8 +5,12 @@
 <mapper namespace="cookking4.model.RecipeDAO">
 
 
-  <select id="recipeList" 
-  		  resultType="RecipeVO">
-    select * from cgi_2_0516_1.recipe
-  </select>
+	<select id="recipeList" resultType="RecipeVO">
+		select * from recipe
+	</select>
+
+	<select id="recipeSearch" resultType="RecipeVO" >
+		select * from recipe
+		 where recipe_name like '%'||#{keyword}||'%'
+	</select>
 </mapper>

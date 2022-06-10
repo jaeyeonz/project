@@ -9,6 +9,8 @@
 	<typeAliases>		
 		<typeAlias type="cookking4.model.VO" alias="VO"/>
 		<typeAlias type="cookking4.model.DAO" alias = "DAO"/>
+		<typeAlias type="cookking4.model.RecipeDAO" alias = "RecipeDAO"/>
+		<typeAlias type="cookking4.model.RecipeVO" alias = "RecipeVO"/>
 		
 	</typeAliases>
 	
@@ -26,5 +28,6 @@
 	<!-- SQL문을 작성한 파일의 위치 -->
 	<mappers>
 		<mapper resource="cookking4/mapper/MemberMapper.xml" />
+		<mapper resource="cookking4/mapper/RecipeMapper.xml" />
 	</mappers>
 </configuration>
