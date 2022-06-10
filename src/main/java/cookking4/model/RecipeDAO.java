@@ -10,7 +10,9 @@ import cookking4.mapper.SqlSessionManager;
 public class RecipeDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
-
+	SqlSession session = null;
+	RecipeVO detailvo = null;
+	
 	public List<RecipeVO> recipeList() {
 
 		// 1. SqlSession ºô·Á¿À±â
@@ -53,5 +55,18 @@ public class RecipeDAO {
 		return list;
 		
 		
+	}
+
+	// Recipe Detail 
+	public RecipeVO detailRecipe(int recipeNum) {
+		try {
+			session = sqlSessionFactory.openSession(true);
+			detailvo = session.selectOne("recipeDetail", recipeNum);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}		
+		return detailvo;
 	}
 }

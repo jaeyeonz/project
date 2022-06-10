@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.RecipeVO"%>
 <%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -37,7 +38,9 @@
     
   </head>
   <body class="u-body u-xl-mode">
-  <%  VO mvo = (VO)session.getAttribute("mvo");   %>
+  <%  VO mvo = (VO)session.getAttribute("mvo"); 
+  	  RecipeVO detailVO = (RecipeVO)session.getAttribute("detailVO");
+  %>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
@@ -48,7 +51,8 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
+            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
@@ -58,7 +62,8 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
@@ -79,10 +84,10 @@
         <img class="u-image u-image-default u-image-1" src="images/f075f06c-1caf-c49f-ae8f-e31af4f9cd25.jpg" alt="" data-image-width="463" data-image-height="581">
         <div class="u-border-6 u-border-grey-30 u-shape u-shape-bottom u-shape-1"></div>
         <p class="u-custom-font u-text u-text-1">
-          <span style="font-size: 1.875rem;">오징어불고기</span>
+          <span style="font-size: 1.875rem;"><%=detailVO.getRecipe_name() %>오징어불고기</span>
         </p>
         <p class="u-custom-font u-text u-text-2">
-          <span style="font-size: 1.25rem;"> 오징어로 불고기를 만들어 맛있게 드셔보세요~&nbsp;<br>간단하면서도 쉽게 맛낼 수 있답니다.
+          <span style="font-size: 1.25rem;"><%=detailVO.getSummary() %> 오징어로 불고기를 만들어 맛있게 드셔보세요~&nbsp;<br>간단하면서도 쉽게 맛낼 수 있답니다.
           </span>
         </p>
         <p class="u-custom-font u-text u-text-3">요리순서</p>
