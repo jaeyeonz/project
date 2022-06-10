@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -68,10 +69,10 @@
 				</div>
 				<div class="u-custom-menu u-nav-container">
 					<ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">가격검색</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">냉장고</a></li>
 					</ul>
 				</div>
 				<div class="u-custom-menu u-nav-container-collapse">
@@ -81,10 +82,10 @@
 							<div class="u-menu-close"></div>
 							<ul
 								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-				                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
-				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
-				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
-				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
+				                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a>
+				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
+				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">가격검색</a>
+				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">냉장고</a>
 				</li>							
 				</ul>
 						</div>
@@ -92,6 +93,36 @@
 					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
 				</div>
 			</nav>
+			
+			<!-- 사용자가 로그인을 안한 상태에서 메뉴를 클릭했을때 로그인하도록 알려주는 모달창 -->
+			<!-- Button trigger modal -->
+<!-- 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			  Launch demo modal
+			</button>
+ -->			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">로그인 하세요~~~!</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			        로그인을 하셔야 서비스를 확인하실 수 있습니다. 
+			      </div>
+<!-- 			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+ -->			    </div>
+			  </div>
+			</div>
+			
+			
+			
+			
+			
 			<p class="u-align-right u-text u-text-default u-text-1">
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
