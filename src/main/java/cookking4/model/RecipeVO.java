@@ -20,5 +20,9 @@ public class RecipeVO {
 	private String calorie;
 	private String amount;
 	private String food_level;
+	private int step_no;
+	private String cooking_desc;
+	private String step_img_url;
+	private String step_tip;
 	
 }

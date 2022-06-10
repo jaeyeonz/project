@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="cookking4.model.RecipeVO"%>
 <%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -39,7 +40,9 @@
   </head>
   <body class="u-body u-xl-mode">
   <%  VO mvo = (VO)session.getAttribute("mvo"); 
-  	  RecipeVO detailVO = (RecipeVO)session.getAttribute("detailVO");
+  	  List<RecipeVO> detailvo = (List<RecipeVO>)request.getAttribute("detailVO");
+  	  String summary = (String)request.getAttribute("summary");
+  	  String name = (String)request.getAttribute("name");
   %>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -80,18 +83,33 @@
         </p>
       </div></header>
     <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-515e">
+    	<% if(detailvo != null){
+    	%>
       <div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-default u-image-1" src="images/f075f06c-1caf-c49f-ae8f-e31af4f9cd25.jpg" alt="" data-image-width="463" data-image-height="581">
         <div class="u-border-6 u-border-grey-30 u-shape u-shape-bottom u-shape-1"></div>
         <p class="u-custom-font u-text u-text-1">
-          <span style="font-size: 1.875rem;"><%=detailVO.getRecipe_name() %>오징어불고기</span>
+          <span style="font-size: 1.875rem;"><%=name %></span>
         </p>
         <p class="u-custom-font u-text u-text-2">
-          <span style="font-size: 1.25rem;"><%=detailVO.getSummary() %> 오징어로 불고기를 만들어 맛있게 드셔보세요~&nbsp;<br>간단하면서도 쉽게 맛낼 수 있답니다.
-          </span>
+          <span style="font-size: 1.25rem;"><%=summary %></span>
         </p>
-        <p class="u-custom-font u-text u-text-3">요리순서</p>
+        <p class="u-custom-font u-text u-text-3"><span style="font-size: 1.5rem;">요리순서</span></p>
+        	<% 		
+	   			for(int i = 0 ; i < detailvo.size() ; i++){ 	
+					for(int j = 0 ; j <= i ; j++) { %>
+        	<%		}%>
+        			<span style="font-size: 1.15rem;">
+	   				<%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc() %> <br>
+	   				<%if (detailvo.get(i).getStep_img_url() != null) { %>
+	   				<img src="<%=detailvo.get(i).getStep_img_url() %>"><br>
+	   				<% }  %>
+	   				<% if(detailvo.get(i).getStep_tip() != null) { %>
+	   				<%=detailvo.get(i).getStep_tip() %><br> </span>
+	   				<% } %>
+	   		<% 	}%>
       </div>
+      	<%	}   	%>
     </section>
     <section class="u-clearfix u-palette-4-light-2 u-section-2" id="sec-bf6f">
       <div class="u-clearfix u-sheet u-sheet-1">

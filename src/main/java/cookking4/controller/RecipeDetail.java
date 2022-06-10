@@ -1,6 +1,7 @@
 package cookking4.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,17 +24,21 @@ public class RecipeDetail extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		int recipeNum = Integer.parseInt(request.getParameter("recipeNum"));
-		
+		String summary = request.getParameter("summary");
+		String name = request.getParameter("name");
 		RecipeDAO dao = new RecipeDAO();
 		
-		RecipeVO detailResult = dao.detailRecipe(recipeNum);
+		List<RecipeVO> detailResult = dao.recipeDetail(recipeNum);
 				
-		request.setAttribute("detailVO", detailResult);
-		
-		// forward 방식으로 이동
-		String nextPage = "RecipeDetail.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(nextPage);
-		rd.forward(request, response);
+		if(detailResult != null ) {
+			request.setAttribute("detailVO", detailResult);
+			request.setAttribute("name", name);
+			request.setAttribute("summary", summary);
+			RequestDispatcher rd = request.getRequestDispatcher("RecipeDetail.jsp");
+			rd.forward(request, response);
+		} else {
+			System.out.println("result : 결과가 없다????");
+		}
 	}
 
 }

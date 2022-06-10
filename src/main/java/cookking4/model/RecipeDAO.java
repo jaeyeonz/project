@@ -11,7 +11,7 @@ public class RecipeDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
-	RecipeVO detailvo = null;
+	List<RecipeVO> detailvo = null;
 	
 	public List<RecipeVO> recipeList() {
 
@@ -58,10 +58,11 @@ public class RecipeDAO {
 	}
 
 	// Recipe Detail 
-	public RecipeVO detailRecipe(int recipeNum) {
+	public List<RecipeVO> recipeDetail(int recipeNum) {
 		try {
 			session = sqlSessionFactory.openSession(true);
-			detailvo = session.selectOne("recipeDetail", recipeNum);
+			System.out.println("session : " + recipeNum);
+			detailvo = session.selectList("recipeDetail", recipeNum);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

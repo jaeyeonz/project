@@ -68,17 +68,17 @@
 			
 				<%
 				if(rvo != null){
-				for(int i=0; i<rvo.size(); i++){
+					for(int i=0; i<rvo.size(); i++){
 				%>
 				<div>
 				<tr>
-					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>">이미지</td>
-					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>"><%=rvo.get(i).getRecipe_name()%></td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>&summary=<%=rvo.get(i).getSummary() %>&name=<%=rvo.get(i).getRecipe_name()%>">이미지</td>
+					<td><a href ="RecipeDetail?recipeNum=<%=rvo.get(i).getRecipe_id()%>&summary=<%=rvo.get(i).getSummary() %>&name=<%=rvo.get(i).getRecipe_name()%>"><%=rvo.get(i).getRecipe_name()%></td>
 					<td><%=rvo.get(i).getSummary() %></td>
 				</tr>
 				</div>
 				<%
-				}
+					}
 				} 
 				%>
 		
