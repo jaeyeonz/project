@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import cookking4.model.DAO;
 import cookking4.model.VO;
 
+// 로그인 서비스
+
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,9 +27,7 @@ public class LoginService extends HttpServlet {
 		VO mvo = new VO();
 		mvo.setUserId(userId);
 		mvo.setPw(pw);
-		
-//		System.out.println("login : " + mvo);		
-		
+
 		DAO dao = new DAO();
 		VO result = dao.Login(mvo);
 		

@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,8 +28,18 @@
     <meta name="theme-color" content="#e00b4c">
     <meta property="og:title" content="가격검색">
     <meta property="og:type" content="website">
+    
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
   </head>
-  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+  <body class="u-body u-xl-mode">
+  
+  <%  VO mvo = (VO)session.getAttribute("mvo");   %>
+  
+  <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -59,7 +70,8 @@
           </div>
         </nav>
         <p class="u-align-right u-text u-text-default u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="#">로그인<br>
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="#"><%=mvo.getName() %>님 환영합니다.
+		  <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
           </a>
         </p>
       </div></header>

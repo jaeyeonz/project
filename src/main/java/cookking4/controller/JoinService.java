@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import cookking4.model.DAO;
 import cookking4.model.VO;
 
+// 회원가입 서비스
+
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,13 +27,6 @@ public class JoinService extends HttpServlet {
 		String favIndr1 = request.getParameter("favIndr1");
 		String favIndr2 = request.getParameter("favIndr2");
 		String favIndr3 = request.getParameter("favIndr3");
-		
-//		System.out.println(userId);
-//		System.out.println(pw);
-//		System.out.println(name);
-//		System.out.println(favIndr1);
-//		System.out.println(favIndr2);
-//		System.out.println(favIndr3);
 		
 		VO mvo = new VO();
 		

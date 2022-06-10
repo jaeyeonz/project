@@ -39,6 +39,10 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode">
 	<header class="u-clearfix u-header u-header" id="sec-fe7f">
@@ -90,8 +94,7 @@
 			</nav>
 			<p class="u-align-right u-text u-text-default u-text-1">
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#loginModal">로그인</button>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
 
 				<!-- Modal -->
 			<div class="modal fade" id="loginModal" tabindex="-1"
@@ -408,11 +411,12 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 	
 </script>
 
+<!-- 아이디 중복체크 Ajax -->
 <script>
 	$("#id_check").click(function() {
-		console.log('들어왔나?')
+		//console.log('들어왔나?')
 		let userId = $('#signupId').val();
-		console.log(userId);
+		//console.log(userId);
 		$.ajax({
 			url : "IdCheckService",
 			type : "post",
@@ -421,11 +425,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			},
 			dataType : 'json',
 			success : function(result) {
-				console.log(result);
+			//	console.log(result);
 				if (result == 1) {
-					alert('index 사용중인 아이디입니다.')
+					alert('사용중인 아이디입니다.')
 				} else {
-					alert('index 사용 가능한 아이디입니다.')
+					alert('사용 가능한 아이디입니다.')
 				}
 			},
 			error : function() {
@@ -435,8 +439,6 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 	});
 </script>
 </body>
-=======
-  
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
