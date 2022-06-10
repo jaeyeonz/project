@@ -9,7 +9,7 @@
 		select * from recipe
 	</select>
 
-	<select id="recipeSearch" resultType="RecipeVO" >
+	<select id="recipeSearch" resultType="RecipeVO">
 		select * from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
 	</select>
