@@ -12,12 +12,14 @@
     <meta name="keywords" content="오징어 불고기, 마른오징어조림, 오징어 순대">
     <meta name="description" content="">
     <title>레시피</title>
-    <link rel="stylesheet" href="css/nicepage.css" media="screen">
-<link rel="stylesheet" href="css/Recipe.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
-    <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
     
+    
+    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+	<link rel="stylesheet" href="css/Recipe.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+ <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> 
+    <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
+
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Allerta:400">
     
     
@@ -27,20 +29,201 @@
 		"name": "",
 		"logo": "images/default-logo.png",
 		"sameAs": []
-}</script>
+}
+
+</script>
     <meta name="theme-color" content="#e00b4c">
     <meta property="og:title" content="레시피">
     <meta property="og:type" content="website">
     
         <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
-  </head>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
+	
+	
+	
+ </head>
   
-  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+  
+  
+  
   <body class="u-body u-xl-mode">
+<!--   <header class="u-clearfix u-header u-header" id="sec-fe7f"> -->
+  
+<!-- Header 메뉴 -->
+<!-- Header 메뉴 -->
+	<header class="u-clearfix u-header u-header" id="sec-fe7f">
+		<div class="u-clearfix u-sheet u-sheet-1">
+			<div class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
+				<div class="menu-collapse u-custom-font"
+					style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
+					<a
+						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+						href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink"
+								xlink:href="#menu-hamburger"></use></svg> <svg class="u-svg-content"
+							version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px"
+							y="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
+							xmlns="http://www.w3.org/2000/svg">
+							<g>
+							<rect y="1" width="16" height="2"></rect>
+							<rect y="7" width="16" height="2"></rect>
+							<rect y="13" width="16" height="2"></rect>
+</g></svg>
+					</a>
+				</div>
+				<div class="u-custom-menu u-nav-container">
+
+					<ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
+						<li class="u-nav-item"><a class="u-button-style u-nav-link"
+							href="Home.jsp" style="padding: 16px 12px;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link"
+							href="RecipeList" style="padding: 16px 12px;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link"
+							href="PriceSearch.jsp" style="padding: 16px 12px;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal">가격검색</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link"
+							href="Refrigerator.jsp" style="padding: 16px 12px;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal">냉장고</a></li>
+					</ul>
+				</div>
+				<div class="u-custom-menu u-nav-container-collapse">
+					<div
+						class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+						<div class="u-inner-container-layout u-sidenav-overflow">
+							<div class="u-menu-close"></div>
+							<ul
+								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="Home.jsp" data-bs-toggle="modal"
+									data-bs-target="#exampleModal">Home</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="RecipeList" data-bs-toggle="modal"
+									data-bs-target="#exampleModal">레시피</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="PriceSearch.jsp" data-bs-toggle="modal"
+									data-bs-target="#exampleModal">가격검색</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="Refrigerator.jsp" data-bs-toggle="modal"
+									data-bs-target="#exampleModal">냉장고</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+				</div>
+			</nav>
+
+			<!-- 사용자가 로그인을 안한 상태에서 메뉴를 클릭했을때 로그인하도록 알려주는 모달창 -->
+			<!-- Button trigger modal -->
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">😊로그인 하세요~~~!</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">🥗🥦🥙 로그인 후 서비스 이용 바랍니다. 🥘🍄🍲</div>
+					</div>
+				</div>
+			</div>
+
+			<p class="u-align-right u-text u-text-default u-text-1">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+					data-bs-target="#loginModal">로그인</button>
+
+				<!-- Modal -->
+			<div class="modal fade" id="loginModal" tabindex="-1"
+				aria-labelledby="loginModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="loginModalLabel">로그인</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form action="LoginService" method="post">
+								<div class="mb-3">
+									<label for="loginId" class="form-label">Id</label> <input
+										type="text" class="form-control" id="loginId" name="userId">
+								</div>
+								<div class="mb-3">
+									<label for="loginPw" class="form-label">Password</label> <input
+										type="password" class="form-control" id="loginPw" name="pw">
+								</div>
+								<div class="mb-3"></div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+						</div>
+						<div class="modal-header">
+							<h5 class="modal-title" id="loginModalLabel">회원가입</h5>
+						</div>
+						<div class="modal-body">
+							<form action="JoinService" method="post">
+								<div class="mb-3">
+									<label for="signupId" class="form-label">Id</label> <input
+										type="text" class="form-control" id="signupId" name="userId">
+									<button class="btn btn-outline-secondary" type="button"
+										id="id_check">중복검사</button>
+								</div>
+								<div class="mb-3">
+									<label for="signupPw" class="form-label">Password</label> <input
+										type="password" class="form-control" id="signupPw" name="pw">
+								</div>
+								<div class="mb-3">
+									<label for="signupName" class="form-label">이름</label> <input
+										type="text" class="form-control" id="signupName" name="name">
+								</div>
+								<div class="mb-3">
+									<label for="Favorite1" class="form-label">선호식재료1</label> <input
+										type="text" class="form-control" id="Favorite1"
+										name="favIndr1">
+								</div>
+								<div class="mb-3">
+									<label for="Favorite2" class="form-label">선호식재료2</label> <input
+										type="text" class="form-control" id="Favorite2"
+										name="favIndr2">
+								</div>
+								<div class="mb-3">
+									<label for="Favorite3" class="form-label">선호식재료3</label> <input
+										type="text" class="form-control" id="Favorite3"
+										name="favIndr3">
+								</div>
+								<div class="mb-3"></div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</p>
+
+		</div>
+	</header>
+      
+  <div class="u-clearfix u-sheet u-sheet-1">
+
   <%
 	List<RecipeVO> rvoList = (List<RecipeVO>)request.getAttribute("list2");  
     VO mvo = (VO)session.getAttribute("mvo");   
@@ -85,45 +268,13 @@
 		
 			</tbody>
 		</table>-->
-		 </div>
-  <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
-        <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a></li>
-<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a></li>
-<li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a></li>
-<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
-</ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-        <p class="u-align-right u-text u-text-default u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="#"><%=mvo.getName() %>님 환영합니다.
-	      <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
-          </a>
-        </p>
-      </div>
-      </header>
+		
+		</div>
+		 
+		 
+		 
+
+      
     <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-c505">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-form u-form-1">
@@ -265,7 +416,10 @@
             </div>
           </div>
         </div>
-      </div></footer>
+      </div>
+      </footer>
+      
+      
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
         <span>Website Templates</span>
@@ -276,6 +430,7 @@
       <a class="u-link" href="" target="_blank">
         <span>Website Builder Software</span>
       </a>. 
+      
     </section>
   </body>
 </html>

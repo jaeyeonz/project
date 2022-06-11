@@ -1,3 +1,12 @@
+.new-align{
+	width: 100%;
+}
+
+#rankImg{
+	display: block;
+	margin: 0 auto; 
+}
+
  .u-section-1 {
   background-image: url("../images/default-image.jpg?rand=852f");
   min-height: 597px;

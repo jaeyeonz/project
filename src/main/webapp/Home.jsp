@@ -88,66 +88,181 @@
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-palette-2-light-3 u-section-2" id="carousel_fa2d">
-      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <p class="u-custom-font u-text u-text-default u-text-grey-80 u-text-1">
-          <span style="font-size: 2.25rem;">요리 랭킹</span>
-          <span style="font-size: 1rem;"></span>
-        </p>
-        <img src="images/food1.jpg" alt="" class="u-image u-image-default u-image-1" data-image-width="600" data-image-height="600">
-        <div class="u-carousel u-gallery u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-9387">
-          <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-            <li data-u-target="#carousel-9387" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-            <li data-u-target="#carousel-9387" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-          </ol>
-          <div class="u-carousel-inner u-gallery-inner" role="listbox">
-            <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
-              <div class="u-back-slide" data-image-width="400" data-image-height="268">
-                <img class="u-back-image u-expanded" src="images/rank_1.jpg">
-              </div>
-              <div class="u-over-slide u-over-slide-1">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-carousel-item u-gallery-item u-carousel-item-2">
-              <div class="u-back-slide" data-image-width="400" data-image-height="268">
-                <img class="u-back-image u-expanded" src="images/rank_2.jpg">
-              </div>
-              <div class="u-over-slide u-over-slide-2">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-          </div>
-          <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-9387" role="button" data-u-slide="prev">
-            <span aria-hidden="true">
-              <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-            </span>
-            <span class="sr-only">
-              <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-            </span>
-          </a>
-          <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-9387" role="button" data-u-slide="next">
-            <span aria-hidden="true">
-              <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
-            </span>
-            <span class="sr-only">
-              <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
     
+    <!-- 요리랭킹 정보 -->
+    <section class="u-clearfix u-palette-2-light-3 u-section-2"
+		id="carousel_fa2d">
+		<div
+			class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+			<div class="new-align">
+				<!-- 			  <img src="images/title_ranking.png" data-image-width="50" data-image-height="50" align="middle">
+					
+
+ -->
+				<img src="images/title_ranking.png" id="rankImg">
+			</div>
+			<!--            <span style="font-size: 2.25rem;"><img src="images/title_ranking.png"></span>
+          <span style="font-size: 1rem;"></span>
+  -->
+			</p>
+			<img src="images/food1.jpg" alt=""
+				class="u-image u-image-default u-image-1" data-image-width="600"
+				data-image-height="600">
+			<div
+				class="u-carousel u-gallery u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1"
+				data-interval="5000" data-u-ride="carousel" id="carousel-9387">
+				<ol
+					class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+					<li data-u-target="#carousel-9387" data-u-slide-to="0"
+						class="u-active u-grey-70 u-shape-circle"
+						style="width: 10px; height: 10px;"></li>
+					<li data-u-target="#carousel-9387" data-u-slide-to="1"
+						class="u-grey-70 u-shape-circle"
+						style="width: 10px; height: 10px;"></li>
+				</ol>
+				<!-- 요리랭킹(1~11) 슬라이드 이미지 처리 부분 -->
+				<div class="u-carousel-inner u-gallery-inner" role="listbox">
+					<div
+						class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_1.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-1">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-2">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_2.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-2">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-3">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_3.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-3">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-4">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_4.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-4">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-5">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_5.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-5">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-6">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_6.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-6">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-7">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_7.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-7">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-8">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_8.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-8">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-9">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_9.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-9">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-10">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_10.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-10">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+					<div class="u-carousel-item u-gallery-item u-carousel-item-11">
+						<div class="u-back-slide" data-image-width="400"
+							data-image-height="268">
+							<img class="u-back-image u-expanded" src="images/rank_11.jpg">
+						</div>
+						<div class="u-over-slide u-over-slide-11">
+							<h3 class="u-gallery-heading"></h3>
+							<p class="u-gallery-text"></p>
+						</div>
+					</div>
+				</div>
+
+				<a
+					class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1"
+					href="#carousel-9387" role="button" data-u-slide="prev"> <span
+					aria-hidden="true"> <svg viewBox="0 0 451.847 451.847">
+              <path
+								d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+			  </svg>
+				</span> <span class="sr-only"> <svg viewBox="0 0 451.847 451.847">
+              <path
+								d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+              </svg>
+				</span>
+				</a> <a
+					class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2"
+					href="#carousel-9387" role="button" data-u-slide="next"> <span
+					aria-hidden="true"> <svg viewBox="0 0 451.846 451.847">
+              <path
+								d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+              </svg>
+				</span> <span class="sr-only"> <svg viewBox="0 0 451.846 451.847">
+              <path
+								d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+              </svg>
+				</span>
+				</a>
+			</div>
+		</div>
+	</section>
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">

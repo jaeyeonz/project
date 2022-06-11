@@ -6,7 +6,7 @@
 
 
 	<select id="recipeList" resultType="RecipeVO">
-		select * from recipe
+		select * from recipe where ROWNUM&lt;=15  
 	</select>
 
 	<select id="recipeSearch" resultType="RecipeVO">
