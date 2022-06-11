@@ -13,31 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 import cookking4.model.RecipeDAO;
 import cookking4.model.RecipeVO;
 
-@WebServlet("/SearchService")
-public class SearchService extends HttpServlet {
+@WebServlet("/RecipeList")
+public class RecipeList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		String keyword = request.getParameter("keyword");
-		System.out.println("잘 넘어가니?");
-		System.out.println(keyword);
-		
-
+		System.out.println("들어왔어?");
 		RecipeDAO dao = new RecipeDAO();
 		
-		List<RecipeVO> list = dao.recipeSearchList(keyword);
+		List<RecipeVO> list = dao.recipeList();
 		
 		if(list != null) {
-			request.setAttribute("list2", list);
+			request.setAttribute("list", list);
 			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
 			rd.forward(request, response);
 		}		
-	
-	
-	
 	}
 
 }
