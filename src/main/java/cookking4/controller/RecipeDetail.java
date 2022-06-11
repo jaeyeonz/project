@@ -28,12 +28,15 @@ public class RecipeDetail extends HttpServlet {
 		String name = request.getParameter("name");
 		RecipeDAO dao = new RecipeDAO();
 		
+		System.out.println(recipeNum + " : " + name + " : " + summary );
+		
 		List<RecipeVO> detailResult = dao.recipeDetail(recipeNum);
 				
 		if(detailResult != null ) {
 			request.setAttribute("detailVO", detailResult);
 			request.setAttribute("name", name);
 			request.setAttribute("summary", summary);
+			request.setAttribute("recipeNum", recipeNum);
 			RequestDispatcher rd = request.getRequestDispatcher("RecipeDetail.jsp");
 			rd.forward(request, response);
 		}

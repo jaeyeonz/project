@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="cookking4.model.RecipeVO"%>
 <%@page import="cookking4.model.VO"%>
@@ -43,6 +44,8 @@
   	  List<RecipeVO> detailvo = (List<RecipeVO>)request.getAttribute("detailVO");
   	  String summary = (String)request.getAttribute("summary");
   	  String name = (String)request.getAttribute("name");
+  	  int recipeNum = (int)request.getAttribute("recipeNum");
+
   %>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -59,7 +62,7 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a></li>
             </ul>
@@ -70,7 +73,7 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a></li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a></li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a></li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
                 </ul>
@@ -86,39 +89,64 @@
         </p>
       </div></header>
       
-      <!-- 레시피 상세정보 -->
-    <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-515e">
-    	<% if(detailvo != null){  	%>
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-image u-image-default u-image-1" src="images/f075f06c-1caf-c49f-ae8f-e31af4f9cd25.jpg" alt="" data-image-width="463" data-image-height="581">
-        <br>
-        <div class="u-border-6 u-border-grey-30 u-shape u-shape-bottom u-shape-1"></div>
-        <p class="u-custom-font u-text u-text-1"><span style="font-size: 1.875rem;"><%=name %></span></p>
-        <p class="u-custom-font u-text u-text-2"><span style="font-size: 1.25rem;"><%=summary %></span></p>
-        <p class="u-custom-font u-text u-text-3"><span style="font-size: 1.5rem;">요리순서</span></p>       	
-        <% 		
-	   			for(int i = 0 ; i < detailvo.size() ; i++){ 	
-					for(int j = 0 ; j <= i ; j++) { %>
-        	<%		}%>
-        				<span style="font-size: 1.15rem;">
-	   					<%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc() %> <br>
-	   					<%if (detailvo.get(i).getStep_img_url() != null) { %>
-	   						<img src="<%=detailvo.get(i).getStep_img_url() %>"><br>
-	   					<% }  %>
-	   					<% if(detailvo.get(i).getStep_tip() != null) { %>
-	   						<%=detailvo.get(i).getStep_tip() %><br> </span>
-	   					<% } %>
-	   			<% 	}%>
-      	</div>
-      		<%	}   	%>
-    </section>
-    
-    
-    <section class="u-clearfix u-palette-4-light-2 u-section-2" id="sec-bf6f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-border-6 u-border-grey-30 u-shape u-shape-top u-shape-1"></div>
-      </div>
-    </section>    
+      <!-- Header 끝 -->
+
+      <section class="u-align-right u-clearfix u-section-1" id="carousel_73c0">
+        <% if (detailvo != null) {	%>
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+              <div class="u-layout-row">
+                <div class="u-align-center-sm u-align-center-xs u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-24 u-layout-cell-1">
+                  <div class="u-container-layout u-container-layout-1">
+                    <div class="u-image u-image-circle u-image-1" data-image-width="1302" data-image-height="1000"> <img src="recipeImg/<%=recipeNum%>.jpg"></div>
+                  </div>
+                </div>
+                <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-36 u-layout-cell-2">
+                  <div class="u-container-layout u-container-layout-2">
+                    <h1 class="u-text u-text-1"><%=name%></h1>
+                    <h1 class="u-text u-text-2"><%=summary%></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="u-clearfix u-white u-section-2" id="carousel_1297">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+              <div class="u-layout-row">
+                <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1">
+                  <div class="u-container-layout u-container-layout-1">
+                    <h1 class="u-text u-text-palette-4-dark-1 u-text-1">요리순서</h1>
+                    <p class="u-text u-text-2">
+                      <%	for (int i = 0; i < detailvo.size(); i++) {
+						                for (int j = 0; j <= i; j++) {
+					            %>
+					
+            					<%	  }				%>
+					           <%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc()%>
+						<br> <%
+	 					if (detailvo.get(i).getStep_img_url() != null) {%> 
+	 						<img	src="<%=detailvo.get(i).getStep_img_url()%>"><br> 
+	 					<% } %>
+						<%
+						if (detailvo.get(i).getStep_tip() != null) {
+						%> <%=detailvo.get(i).getStep_tip()%><br>
+					<%	}	%>
+					<%	}	%>
+ 			 <%	}	%>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
