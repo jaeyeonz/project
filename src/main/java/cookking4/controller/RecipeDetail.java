@@ -36,8 +36,6 @@ public class RecipeDetail extends HttpServlet {
 			request.setAttribute("summary", summary);
 			RequestDispatcher rd = request.getRequestDispatcher("RecipeDetail.jsp");
 			rd.forward(request, response);
-		} else {
-			System.out.println("result : 결과가 없다????");
 		}
 	}
 

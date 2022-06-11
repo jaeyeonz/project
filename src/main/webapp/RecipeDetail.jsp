@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <title>레시피 상세페이지</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
-<link rel="stylesheet" href="css/RecipeDetail.css" media="screen">
+	<link rel="stylesheet" href="css/RecipeDetail.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
@@ -49,28 +49,31 @@
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g><rect y="1" width="16" height="2"></rect>
+              <rect y="7" width="16" height="2"></rect>
+              <rect y="13" width="16" height="2"></rect>
+			</g></svg>
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
-</li></ul>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a></li>
+            </ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
-</li></ul>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
+                </ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -82,41 +85,40 @@
           </a>
         </p>
       </div></header>
+      
+      <!-- 레시피 상세정보 -->
     <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-515e">
-    	<% if(detailvo != null){
-    	%>
+    	<% if(detailvo != null){  	%>
       <div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-default u-image-1" src="images/f075f06c-1caf-c49f-ae8f-e31af4f9cd25.jpg" alt="" data-image-width="463" data-image-height="581">
+        <br>
         <div class="u-border-6 u-border-grey-30 u-shape u-shape-bottom u-shape-1"></div>
-        <p class="u-custom-font u-text u-text-1">
-          <span style="font-size: 1.875rem;"><%=name %></span>
-        </p>
-        <p class="u-custom-font u-text u-text-2">
-          <span style="font-size: 1.25rem;"><%=summary %></span>
-        </p>
-        <p class="u-custom-font u-text u-text-3"><span style="font-size: 1.5rem;">요리순서</span></p>
-        	<% 		
+        <p class="u-custom-font u-text u-text-1"><span style="font-size: 1.875rem;"><%=name %></span></p>
+        <p class="u-custom-font u-text u-text-2"><span style="font-size: 1.25rem;"><%=summary %></span></p>
+        <p class="u-custom-font u-text u-text-3"><span style="font-size: 1.5rem;">요리순서</span></p>       	
+        <% 		
 	   			for(int i = 0 ; i < detailvo.size() ; i++){ 	
 					for(int j = 0 ; j <= i ; j++) { %>
         	<%		}%>
-        			<span style="font-size: 1.15rem;">
-	   				<%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc() %> <br>
-	   				<%if (detailvo.get(i).getStep_img_url() != null) { %>
-	   				<img src="<%=detailvo.get(i).getStep_img_url() %>"><br>
-	   				<% }  %>
-	   				<% if(detailvo.get(i).getStep_tip() != null) { %>
-	   				<%=detailvo.get(i).getStep_tip() %><br> </span>
-	   				<% } %>
-	   		<% 	}%>
-      </div>
-      	<%	}   	%>
+        				<span style="font-size: 1.15rem;">
+	   					<%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc() %> <br>
+	   					<%if (detailvo.get(i).getStep_img_url() != null) { %>
+	   						<img src="<%=detailvo.get(i).getStep_img_url() %>"><br>
+	   					<% }  %>
+	   					<% if(detailvo.get(i).getStep_tip() != null) { %>
+	   						<%=detailvo.get(i).getStep_tip() %><br> </span>
+	   					<% } %>
+	   			<% 	}%>
+      	</div>
+      		<%	}   	%>
     </section>
+    
+    
     <section class="u-clearfix u-palette-4-light-2 u-section-2" id="sec-bf6f">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-6 u-border-grey-30 u-shape u-shape-top u-shape-1"></div>
       </div>
-    </section>
-    
+    </section>    
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
