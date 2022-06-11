@@ -87,8 +87,7 @@
           <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
           </a>
         </p>
-      </div></header>
-      
+      </div></header>      
       <!-- Header 끝 -->
 
       <section class="u-align-right u-clearfix u-section-1" id="carousel_73c0">
