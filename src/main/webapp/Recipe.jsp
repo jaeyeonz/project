@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
 <link rel="stylesheet" href="css/Recipe.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Allerta:400">
@@ -44,16 +44,17 @@
   <%
 	List<RecipeVO> rvoList = (List<RecipeVO>)request.getAttribute("list2");  
     VO mvo = (VO)session.getAttribute("mvo");   
+    List<RecipeVO> baseList = (List<RecipeVO>)request.getAttribute("list");  
   	
   %> 
-  <form action="SearchService">
+<!--   <form action="SearchService">
   <div>
   <input name = "keyword" type ="text">
   <input type = "submit" value ="검색">
   <div>
   
   
-  </form>
+  </form> 
   <table id="list" border = "1px">
  
 			<thead>
@@ -83,7 +84,7 @@
 				%>
 		
 			</tbody>
-		</table>
+		</table>-->
 		 </div>
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -105,11 +106,12 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
-</li></ul>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a></li>
+<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a></li>
+<li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a></li>
+<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
+</ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -120,20 +122,21 @@
 	      <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
           </a>
         </p>
-      </div></header>
+      </div>
+      </header>
     <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-c505">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
+        
+        <!-- 검색창 -->
+          <form action="SearchService" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
             <div class="u-form-group u-form-group-1">
               <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
               <input type="text" id="email-2555" name="keyword" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
             </div>
+        <!-- 검색버튼 -->
             <div class="u-align-left u-form-group u-form-submit">
-              <a href="#" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">
-                <br>
-              </a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <input type="submit" value='' class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
@@ -145,12 +148,17 @@
 	s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg></span>
         <div class="u-align-center u-clearfix u-gutter-18 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
+          <!-- 초기화면 : 레시피 테이블 정보 -->          
+	      <% 
+		  	if(baseList != null){
+              	for(int i = 0; i<baseList.size(); i++){ %>
             <div class="u-layout-row">
               <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-1" src="" data-image-width="463" data-image-height="581">
+            
                   <!--  이미지 -->
-                    <div class="u-container-layout u-valign-middle u-container-layout-1" src=""></div>
+                    <div class="u-container-layout u-valign-middle u-container-layout-1" src=""><a href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary() %>&name=<%=baseList.get(i).getRecipe_name()%>"></a></div>
                   </div>
                 </div>
               </div>
@@ -159,66 +167,50 @@
                   <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-2" src="">
                     <div class="u-container-layout u-container-layout-2">
                       <h2 class="u-custom-font u-text u-text-default u-text-1">
-                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="RecipeDetail.jsp" data-page-id="181319731">오징어불고기</a>
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary() %>&name=<%=baseList.get(i).getRecipe_name()%>"><%=baseList.get(i).getRecipe_name()%></a>
                       </h2>
-                      <p class="u-custom-font u-text u-text-default u-text-2">오징어로 불고기를 만들어 맛있게 드셔보세요~<br>간단하면서도 쉽게 맛낼 수 있답니다.<br>
+                      <p class="u-custom-font u-text u-text-default u-text-2"><%=baseList.get(i).getSummary() %><br>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="u-align-center u-clearfix u-gutter-18 u-layout-wrap u-layout-wrap-2">
-          <div class="u-gutter-0 u-layout">
+              <%}
+              	} %>
+	      
+	      <!-- 검색결과 보여주는 레시피 정보 -->
+	      <%
+	  	if(rvoList != null){
+              	for(int i = 0; i<rvoList.size(); i++){ %>
             <div class="u-layout-row">
               <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
                 <div class="u-layout-row">
-                  <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-2" src="" data-image-width="1500" data-image-height="1125">
-                    <div class="u-container-layout u-valign-middle u-container-layout-3" src=""></div>
+                  <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-1" src="" data-image-width="463" data-image-height="581">
+            
+                  <!--  이미지 -->
+                    <div class="u-container-layout u-valign-middle u-container-layout-1" src=""><a href="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>"></a></div>
                   </div>
                 </div>
               </div>
               <div class="u-size-31-sm u-size-31-xs u-size-36-lg u-size-36-xl u-size-60-md">
                 <div class="u-layout-col">
-                  <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-4" src="">
-                    <div class="u-container-layout u-container-layout-4">
-                      <h2 class="u-custom-font u-text u-text-default u-text-3">마른오징어조림</h2>
-                      <p class="u-custom-font u-text u-text-4"> 마른 오징어를 맛있는 양념장에 버무리면&nbsp;<br> 쫄깃함과 양념의 맛이 씹어도 씹어도 질리지 않아요~
+                  <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-2" src="">
+                    <div class="u-container-layout u-container-layout-2">
+                      <h2 class="u-custom-font u-text u-text-default u-text-1">
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>"><%=rvoList.get(i).getRecipe_name()%></a>
+                      </h2>
+                      <p class="u-custom-font u-text u-text-default u-text-2"><%=rvoList.get(i).getSummary() %><br>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
+              <%}
+              	} %>
             </div>
           </div>
         </div>
-        <div class="u-align-center u-clearfix u-gutter-18 u-layout-wrap u-layout-wrap-3">
-          <div class="u-gutter-0 u-layout">
-            <div class="u-layout-row">
-              <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
-                <div class="u-layout-row">
-                  <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-3" src="" data-image-width="2080" data-image-height="2080">
-                    <div class="u-container-layout u-valign-middle u-container-layout-5" src=""></div>
-                  </div>
-                </div>
-              </div>
-              <div class="u-size-31-sm u-size-31-xs u-size-36-lg u-size-36-xl u-size-60-md">
-                <div class="u-layout-col">
-                  <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-6" src="">
-                    <div class="u-container-layout u-container-layout-6">
-                      <h2 class="u-custom-font u-text u-text-default u-text-5">오징어 순대</h2>
-                      <p class="u-custom-font u-text u-text-6"> 오징어로 순대를 만든다?&nbsp;<br> 아주 색다른 음식이죠.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        
     </section>
     
     

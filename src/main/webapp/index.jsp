@@ -70,7 +70,7 @@
 				<div class="u-custom-menu u-nav-container">
 					<ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;" data-bs-toggle="modal" data-bs-target="#exampleModal">냉장고</a></li>
 					</ul>
@@ -83,7 +83,7 @@
 							<ul
 								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
 				                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a>
-				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
+				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a>
 				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">가격검색</a>
 				</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" data-bs-toggle="modal" data-bs-target="#exampleModal">냉장고</a>
 				</li>							
