@@ -157,7 +157,7 @@
         <div class="u-form u-form-1">
         
         <!-- 검색창 -->
-          <form action="SearchService" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
+          <form action="SearchService" method="POST" class="u-clearfix u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
             <div class="u-form-group u-form-group-1">
               <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
               <input type="text" id="email-2555" name="keyword" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
