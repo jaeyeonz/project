@@ -29,7 +29,7 @@
 		"logo": "images/default-logo.png",
 		"sameAs": []
 }</script>
-    <meta name="theme-color" content="#e00b4c">
+    <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="레시피 상세페이지">
     <meta property="og:type" content="website">
     
@@ -90,38 +90,27 @@
       </div></header>      
       <!-- Header 끝 -->
 
-      <section class="u-align-right u-clearfix u-section-1" id="carousel_73c0">
-        <% if (detailvo != null) {	%>
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-              <div class="u-layout-row">
-                <div class="u-align-center-sm u-align-center-xs u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-24 u-layout-cell-1">
-                  <div class="u-container-layout u-container-layout-1">
-                    <div class="u-image u-image-circle u-image-1" data-image-width="1302" data-image-height="1000"> <img src="recipeImg/<%=recipeNum%>.jpg"></div>
-                  </div>
-                </div>
-                <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-36 u-layout-cell-2">
-                  <div class="u-container-layout u-container-layout-2">
-                    <h1 class="u-text u-text-1"><%=name%></h1>
-                    <h1 class="u-text u-text-2"><%=summary%></h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="u-clearfix u-white u-section-2" id="carousel_1297">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-              <div class="u-layout-row">
-                <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1">
-                  <div class="u-container-layout u-container-layout-1">
-                    <h1 class="u-text u-text-palette-4-dark-1 u-text-1">요리순서</h1>
-                    <p class="u-text u-text-2">
-                      <%	for (int i = 0; i < detailvo.size(); i++) {
+    <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-515e">
+	<% if (detailvo != null) {	%>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <span><img class="u-image u-image-default u-image-1" src="recipeImg/<%=recipeNum%>.jpg" alt="" data-image-width="350" data-image-height="350"></span>
+        <p class="u-custom-font u-text u-text-1">
+          <span style="font-size: 2.5rem;"><%=name%></span>
+        </p>
+        <p class="u-custom-font u-text u-text-2">
+          <span style="font-size: 2rem;"> <%=summary%> </span>
+        </p>
+        </div>     
+        <br> <br> <br>  
+    </section>
+    
+    <section class="u-clearfix u-palette-4-light-2 u-section-2" id="sec-bf6f">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-1">
+        <span style="font-size: 2rem;"> 요리순서 </span></p>
+        <p class="u-custom-font u-text u-text-2">
+        <span style="font-size: 1.5rem;"> 
+        <%	for (int i = 0; i < detailvo.size(); i++) {
 						                for (int j = 0; j <= i; j++) {
 					            %>
 					
@@ -136,16 +125,10 @@
 						%> <%=detailvo.get(i).getStep_tip()%><br>
 					<%	}	%>
 					<%	}	%>
- 			 <%	}	%>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-     
+ 			 <%	}	%>  
+ 			 </span></p>
+      </div>
+    </section>     
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
