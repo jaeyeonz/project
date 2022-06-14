@@ -78,6 +78,10 @@
     <section class="u-clearfix u-palette-4-base u-section-1" id="sec-213c">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-form u-form-1">
+        
+        
+        <!-- ///////////////////////////////////////////////검색창////////////////////////////// -->
+        
           <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
             <div class="u-form-group u-form-group-1">
               <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
@@ -97,14 +101,30 @@
 	s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
 	c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
 	s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg></span>
+	
+	<!-- 테이블 구간  -->
         <div class="u-container-style u-expanded-width u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <p class="u-custom-font u-text u-text-default u-text-1">롯데마트</p>
-            <p class="u-custom-font u-text u-text-default u-text-2">홈플러스</p>
-            <p class="u-custom-font u-text u-text-default u-text-3">이마트</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
+        
+              <div class="u-container-style u-expanded-width u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-custom-font u-text u-text-default u-text-3" id = "mart-name">이마트</p>
+            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+          </div>
+        </div>
+        
+              <div class="u-container-style u-expanded-width u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-custom-font u-text u-text-default u-text-2">홈플러스</p>
+            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+          </div>
+        </div>
+        
+        
       </div>
     </section>
     

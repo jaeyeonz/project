@@ -1,5 +1,6 @@
 package cookking4.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -70,4 +71,22 @@ public class RecipeDAO {
 		}		
 		return detailvo;
 	}
+	
+	// 페이지나누기
+	public int recipePage(String keyword) {
+		
+		int cnt = 0;
+		
+		try {
+			session = sqlSessionFactory.openSession(true);
+			System.out.println("session : " + cnt);
+			cnt = session.selectOne("recipePage", keyword);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}		
+		return cnt;
+	}
+	
 }
