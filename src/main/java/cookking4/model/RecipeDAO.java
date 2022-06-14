@@ -90,4 +90,9 @@ public class RecipeDAO {
 		// 4. 쿼리실행 결과 리턴
 		return list;
 	}
+
+	public List<RecipeVO> priceList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
