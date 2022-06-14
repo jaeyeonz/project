@@ -48,7 +48,7 @@
 
 .u-section-1 .u-image-1 {
   min-height: 281px;
-  background-image: url("../images/f075f06c-1caf-c49f-ae8f-e31af4f9cd25.jpg");
+ 
   background-position: 50% 50%;
 }
 
@@ -356,4 +356,31 @@
   font-style: normal;
   font-weight: 400;
   src: url(../fonts/GodoM.ttf);
+}
+
+.u-layout-row{
+	display: flex;
+    justify-content: center;
+}
+#pageBlock{
+	display : flex;
+	font-size : 25px;
+	letter-spacing: 20px;
+	color : #4444;
+	
+}
+#recipeImg{
+	min-height: 100%;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+	
+}
+
+.page_wrap {
+	letter-spacing: 20px;
+    font-size: 25px;
 }

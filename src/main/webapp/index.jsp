@@ -91,7 +91,7 @@
 							href="Home.jsp" style="padding: 16px 12px;"
 							data-bs-toggle="modal" data-bs-target="#exampleModal">Home</a></li>
 						<li class="u-nav-item"><a class="u-button-style u-nav-link"
-							href="RecipeList" style="padding: 16px 12px;"
+							href="SearchService" style="padding: 16px 12px;"
 							data-bs-toggle="modal" data-bs-target="#exampleModal">레시피</a></li>
 						<li class="u-nav-item"><a class="u-button-style u-nav-link"
 							href="PriceSearch.jsp" style="padding: 16px 12px;"

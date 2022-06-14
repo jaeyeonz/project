@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cookking4.model.RecipeDAO;
 import cookking4.model.RecipeVO;
@@ -24,14 +25,17 @@ public class SearchService extends HttpServlet {
 		String keyword = request.getParameter("keyword");
 		System.out.println("잘 넘어가니?");
 		System.out.println(keyword);
-		
-
 		RecipeDAO dao = new RecipeDAO();
-		
-		List<RecipeVO> list = dao.recipeSearchList(keyword);
-		
+		List<RecipeVO> list = null;
+		if(keyword == null) {
+			list = dao.recipeList();
+		}else {
+			list = dao.recipeSearchList(keyword);
+		}
+
 		if(list != null) {
-			request.setAttribute("list2", list);
+			HttpSession session = request.getSession();
+			session.setAttribute("list", list);
 			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
 			rd.forward(request, response);
 		}		

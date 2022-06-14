@@ -6,7 +6,7 @@
 
 
 	<select id="recipeList" resultType="RecipeVO">
-		select * from recipe where ROWNUM&lt;=15  
+		select * from recipe where ROWNUM&lt;=10  
 	</select>
 
 	<select id="recipeSearch" resultType="RecipeVO">
@@ -19,6 +19,7 @@
     	select * from recipe_proc
     	where recipe_id = #{recipeNum}
   	</select>
+<<<<<<< HEAD
 	
 	<!-- 레시피 평점 -->
   	<update id="reviewPoint" parameterType="RecipeVO">
@@ -27,4 +28,15 @@
   		where recipe_id = #{recipe_id}
   	</update>
   	
+=======
+  	
+	<select id="refSelect" resultType="RefVO">
+    	select * from refrigerator
+    	where member_id = #{member_id}
+	</select>
+  	<select id="recipePage" resultType="Integer">
+  		 select count(*) from recipe
+		 where recipe_name like '%'||#{keyword}||'%'
+  	</select>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 </mapper>
