@@ -24,5 +24,6 @@ public class RecipeVO {
 	private String cooking_desc;
 	private String step_img_url;
 	private String step_tip;
+	private int point;
 	
 }

@@ -24,6 +24,7 @@ public class LoginService extends HttpServlet {
 		String userId = request.getParameter("userId");
 		String pw = request.getParameter("pw");
 		
+		System.out.println(userId + " : " + pw);
 		VO mvo = new VO();
 		mvo.setUserId(userId);
 		mvo.setPw(pw);

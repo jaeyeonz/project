@@ -14,6 +14,7 @@
     <title>레시피 상세페이지</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
 	<link rel="stylesheet" href="css/RecipeDetail.css" media="screen">
+	<link  rel="stylesheet" href="css/star.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
@@ -91,6 +92,20 @@
       <!-- Header 끝 -->
 
     <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-515e">
+    	<br>
+        <form action="reviewPoint?recipeNum=<%=recipeNum %>&name=<%=name %>&summary=<%=summary %>" class="mb-3" name="myform" id="myform" method="post" align="center">
+			<fieldset>
+				<span style="font-size: 3rem; color: #db545a;">레시피에 대한 별점을 선택해주세요</span>
+				<br>  				
+  				<input type="radio" name="reviewStar" value="5" id="rate1"><label for="rate1">★</label>
+				<input type="radio" name="reviewStar" value="4" id="rate2"><label for="rate2">★</label>
+				<input type="radio" name="reviewStar" value="3" id="rate3"><label for="rate3">★</label>
+				<input type="radio" name="reviewStar" value="2" id="rate4"><label for="rate4">★</label>
+				<input type="radio" name="reviewStar" value="1" id="rate5"><label for="rate5">★</label>	
+			</fieldset>			
+			<input type="submit" name="star" value="submit">
+		</form>  
+    
 	<% if (detailvo != null) {	%>
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <span><img class="u-image u-image-default u-image-1" src="recipeImg/<%=recipeNum%>.jpg" alt="" data-image-width="350" data-image-height="350"></span>
@@ -101,7 +116,6 @@
           <span style="font-size: 2rem;"> <%=summary%> </span>
         </p>
         </div>     
-        <br> <br> <br>  
     </section>
     
     <section class="u-clearfix u-palette-4-light-2 u-section-2" id="sec-bf6f">
@@ -128,22 +142,23 @@
  			 <%	}	%>  
  			 </span></p>
       </div>
+    
     </section>     
     
     <footer class="u-clearfix u-footer u-grey-70" id="sec-a2b1"><div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+        <!-- <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
               <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-20-md u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
-                  <div data-position="" class="u-position"><!--block-->
+                <div class="u-container-layout u-valign-middle u-container-layout-1">position
+                  <div data-position="" class="u-position">block
                     <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-block-header u-text"><!--block_header_content--> Block header <!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-block-content u-text"><!--block_content_content--> Block content. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices. <!--/block_content_content--></div><!--/block_content-->
+                      <div class="u-block-container u-clearfix">block_header
+                        <h5 class="u-block-header u-text">block_header_content Block header /block_header_content</h5>/block_header--><!--block_content
+                        <div class="u-block-content u-text">block_content_content Block content. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices. /block_content_content</div>/block_content
                       </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
+                    </div>/block
+                  </div>/position
                 </div>
               </div>
               <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-20-md u-layout-cell-2">
@@ -180,7 +195,7 @@
             </div>
           </div>
         </div>
-      </div></footer>
+      </div> --></footer>
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
         <span>Website Templates</span>
@@ -192,5 +207,9 @@
         <span>Website Builder Software</span>
       </a>. 
     </section>
+    
+    <script>
+    
+    </script>
   </body>
 </html>

@@ -13,6 +13,7 @@ public class RecipeDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
 	List<RecipeVO> detailvo = null;
+	int cnt = 0;
 	
 	
 	///////////////////// 모든 레시피
@@ -74,6 +75,20 @@ public class RecipeDAO {
 		}		
 		return detailvo;
 	}
+
+	// 레시피 평점주기
+	public int reviewPoint(RecipeVO pointVO) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		try {			
+			cnt = session.update("reviewPoint", pointVO);
+			System.out.println("review - DAO" + " : " + cnt);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		
+		return cnt;	
+	}
 	
 	public List<RefVO> refSelect(int member_id) {
 		SqlSession session = sqlSessionFactory.openSession(true);
@@ -92,5 +107,10 @@ public class RecipeDAO {
 
 		// 4. 쿼리실행 결과 리턴
 		return list;
+	}
+
+	public List<RecipeVO> priceList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
