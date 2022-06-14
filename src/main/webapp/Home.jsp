@@ -49,21 +49,23 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
-</li></ul>
+            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a></li>
+            </ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
-</li></ul>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
+                </ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -75,8 +77,20 @@
           </a>
         </p>
       </div></header> 
+      <!-- header 끝 -->
+      
+      
     <section class="u-clearfix u-image u-section-1" id="sec-ff00" data-image-width="2000" data-image-height="1333">
-      <div class="u-clearfix u-expanded-width u-gradient u-layout-wrap u-layout-wrap-1">
+    <span style="font-size: 2rem;"> <%=mvo.getName() %>님이 선호😍하는 식재료🍖🥕🧅기반 레시피🥘🥣 추천👍 입니다~~</span>
+    
+    <span style="font-size: 1.5rem;">
+    <%=mvo.getFavIndr1() %>
+    <br>
+    <%=mvo.getFavIndr2() %>
+    <br>
+    <%=mvo.getFavIndr3() %>
+    <br></span>
+      <!-- <div class="u-clearfix u-expanded-width u-gradient u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
             <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-right-cell u-shading u-size-60 u-image-1" data-image-width="1080" data-image-height="864">
@@ -86,7 +100,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     
     <!-- 요리랭킹 정보 -->
