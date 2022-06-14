@@ -19,7 +19,6 @@
     	select * from recipe_proc
     	where recipe_id = #{recipeNum}
   	</select>
-<<<<<<< HEAD
 	
 	<!-- 레시피 평점 -->
   	<update id="reviewPoint" parameterType="RecipeVO">
@@ -27,8 +26,7 @@
   		set point = #{point}
   		where recipe_id = #{recipe_id}
   	</update>
-  	
-=======
+ 	
   	
 	<select id="refSelect" resultType="RefVO">
     	select * from refrigerator
@@ -38,5 +36,5 @@
   		 select count(*) from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
+
 </mapper>

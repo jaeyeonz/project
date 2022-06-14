@@ -72,7 +72,6 @@ public class RecipeDAO {
 		}		
 		return detailvo;
 	}
-<<<<<<< HEAD
 
 	// 레시피 평점주기
 	public int reviewPoint(RecipeVO pointVO) {
@@ -85,8 +84,8 @@ public class RecipeDAO {
 		}
 		session.close();
 		
-		return cnt;		
-=======
+		return cnt;	
+	}
 	
 	public List<RefVO> refSelect(int member_id) {
 		SqlSession session = sqlSessionFactory.openSession(true);
@@ -105,6 +104,5 @@ public class RecipeDAO {
 
 		// 4. 쿼리실행 결과 리턴
 		return list;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	}
 }
