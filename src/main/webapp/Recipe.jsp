@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.DAO"%>
 <%@page import="cookking4.model.RecipeVO"%>
 <%@page import="java.util.List"%>
 <%@page import="cookking4.model.RecipeDAO"%>
@@ -58,19 +59,34 @@
 	
 	
  </head>
-  
-    <%
-	List<RecipeVO> rvoList = (List<RecipeVO>)request.getAttribute("list2");  
-    VO mvo = (VO)session.getAttribute("mvo");   
-    List<RecipeVO> baseList = (List<RecipeVO>)request.getAttribute("list");  
-  	
-  %>
- 
-  
   <body class="u-body u-xl-mode">
 <!--   <header class="u-clearfix u-header u-header" id="sec-fe7f"> -->
   
 <!-- Header 메뉴 -->
+   <%
+    VO mvo = (VO)session.getAttribute("mvo");   
+    List<RecipeVO> baseList = (List<RecipeVO>)session.getAttribute("list");  
+    /* int cnt2 = Integer.parseInt(cnt1); */  	
+
+    int pageSize = 5;
+    
+    String pageNum = request.getParameter("pageNum");
+    if(pageNum == null){ 
+    	pageNum ="1";
+    }
+  //7-4. 시작행번호계산
+  //10개씩 컬럼 나누고 2페이지에서 시작행이 11이되고 3페이지에서 시작행이 21이 되게끔 만들기
+    int currentPage = Integer.parseInt(pageNum);
+    int startRow = (currentPage-1) * pageSize;
+  //7-5. 끈행번호계산
+  //currentPage가 2인경우, 2*10 = 20
+//currentPage가 3인경우, 3*10 = 30
+    int endRow= startRow + (pageSize-1);
+  //4. 게시판 글의 수를 화면에 데이터 출력
+  //게시판 총 글의 수 : cnt개
+  //5. getBoardList() 메서드생성
+
+  %>
 
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -109,46 +125,6 @@
         </p>
       </div></header> 
   <div class="u-clearfix u-sheet u-sheet-1">
-
-<!--   <form action="SearchService">
-  <div>
-  <input name = "keyword" type ="text">
-  <input type = "submit" value ="검색">
-  <div>
-  
-  
-  </form> 
-  <table id="list" border = "1px">
- 
-			<thead>
-				<tr>
-					<td>사진</td>
-					<td>제목</td>
-					<td>요약</td>
-					
-				</tr>
-			</thead>
-			<tbody>
-			
-				<%
-				if(rvoList != null){
-				for(int i=0; i<rvoList.size(); i++){
-				%>
-				<div>
-				<tr>
-					<td><a href ="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>">이미지</a></td>
-					<td><a href ="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>"><%=rvoList.get(i).getRecipe_name()%></a></td>
-					<td><%=rvoList.get(i).getSummary() %></td>
-				</tr>
-				</div>
-				<%
-					}
-				} 
-				%>
-		
-			</tbody>
-		</table>-->
-		
 		</div>
 		 
 	      
@@ -157,18 +133,20 @@
         <div class="u-form u-form-1">
         
         <!-- 검색창 -->
-          <form action="SearchService" method="POST" class="u-clearfix u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
+          <form action="SearchService" method="Get" class="u-clearfix u-form-spacing-10 u-inner-form " style="padding: 10px" source="email" name="form" >
+            
             <div class="u-form-group u-form-group-1">
               <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
               <input type="text" id="email-2555" name="keyword" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
             </div>
         <!-- 검색버튼 -->
             <div class="u-align-left u-form-group u-form-submit">
-              <input type="submit" value='' class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">
+              <input type="submit" value='' class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1" >
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">
+            
           </form>
         </div><span class="u-icon u-icon-rectangle u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7494"></use></svg><svg class="u-svg-content" viewBox="0 0 56.966 56.966" x="0px" y="0px" id="svg-7494" style="enable-background:new 0 0 56.966 56.966;"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
 	s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
@@ -177,16 +155,18 @@
         <div class="u-align-center u-clearfix u-gutter-18 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
           <!-- 초기화면 : 레시피 테이블 정보 -->          
-	      <% 
+	      <%
+	      	// 값 조건식 ==> 연산자
+	      	// (list.size()-1 > endRow ? endRow : list.size()-1)
 		  	if(baseList != null){
-              	for(int i = 0; i<baseList.size(); i++){ %>
-            <div class="u-layout-row">
+              	for(int i = startRow; i<=(baseList.size()-1 > endRow ? endRow : baseList.size()-1); i++){ %>
+            <div class="u-layout-row" id= "img-row" style="padding-bottom: 30px">
               <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-1" src="" data-image-width="463" data-image-height="581">
             
                   <!--  이미지 -->
-                    <div class="u-container-layout u-valign-middle u-container-layout-1" src=""><a href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary() %>&name=<%=baseList.get(i).getRecipe_name()%>"></a></div>
+                    <div class="u-container-layout u-valign-middle u-container-layout-1"><img id = "recipeImg" src="recipeImg/<%=baseList.get(i).getRecipe_id()%>.jpg"><a href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary() %>&name=<%=baseList.get(i).getRecipe_name()%>"></a></div>
                   </div>
                 </div>
               </div>
@@ -203,42 +183,62 @@
                   </div>
                 </div>
               </div>
-              <%}
-              	} %>
+              <%}}
+	      	
+	      	////////////////////// 페이징 ////////////////////////////////
+	      	if(baseList != null){
+              	if(baseList.size() != 0){
+              		
+              		int pageCount = baseList.size()/pageSize + (baseList.size()%pageSize == 0? 0:1);
+              		int pageBlock = 5;
+              		
+              		int startPage = ((currentPage-1)/pageBlock) * pageBlock + 1;
+              		int endPage = startPage + pageBlock - 1;
+              		if(endPage > pageCount){
+              			endPage = pageCount;
+              		}
+			%>
+              		
+            <%
+             		if(startPage > pageBlock){
+              			%>
+              			<li class="page-item disabled"><span class="page-link"><a href= "Recipe.jsp?pageNum=<%=startPage-pageBlock%>">Previous</a></span></li>
+              			<%
+              		}
+              		
+              		//숫자
+              		for(int i=startPage; i<=endPage; i++){
+              			%>
+              			<li class="page-item"><a class="page-link" href="Recipe.jsp?pageNum=<%=i%>"><%=i %></a></li>
+              			<%
+              		}
+              		//다음
+              		if(endPage < pageCount){
+              			%>
+              			<li class="page-item"><a class="page-link" href="Recipe.jsp?pageNum=<%=startPage+pageBlock%>">Next</a></li>
+              			
+              		<%
+              		}
+              		
+              	}}
+              		%>
+              		
+              		
+              		
+              		
+          
+
+              	 
+              
 	      
-	      <!-- 검색결과 보여주는 레시피 정보 -->
-	      <%
-	  	if(rvoList != null){
-              	for(int i = 0; i<rvoList.size(); i++){ %>
-            <div class="u-layout-row">
-              <div class="u-size-24-lg u-size-24-xl u-size-29-sm u-size-29-xs u-size-60-md">
-                <div class="u-layout-row">
-                  <div class="u-align-left u-container-style u-image u-image-round u-layout-cell u-left-cell u-radius-50 u-size-60 u-image-1" src="" data-image-width="463" data-image-height="581">
-            
-                  <!--  이미지 -->
-                    <div class="u-container-layout u-valign-middle u-container-layout-1" src=""><a href="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>"></a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="u-size-31-sm u-size-31-xs u-size-36-lg u-size-36-xl u-size-60-md">
-                <div class="u-layout-col">
-                  <div class="u-align-left u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-60 u-white u-layout-cell-2" src="">
-                    <div class="u-container-layout u-container-layout-2">
-                      <h2 class="u-custom-font u-text u-text-default u-text-1">
-                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-90 u-btn-2" href="RecipeDetail?recipeNum=<%=rvoList.get(i).getRecipe_id()%>&summary=<%=rvoList.get(i).getSummary() %>&name=<%=rvoList.get(i).getRecipe_name()%>"><%=rvoList.get(i).getRecipe_name()%></a>
-                      </h2>
-                      <p class="u-custom-font u-text u-text-default u-text-2"><%=rvoList.get(i).getSummary() %><br>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <%}
-              	} %>
+	      
             </div>
           </div>
         </div>
-        
+
+	
+	
+</div>
     </section>
     
     
