@@ -19,7 +19,7 @@
 	<insert id="SignupInsert"	parameterType="VO">
  		insert into member
  		values(#{userId},
- 			   #{pw}, 			   
+ 			   #{pw},
  			   #{name},
  			   #{favIndr1}, 
  			   #{favIndr2}, 

@@ -25,7 +25,7 @@ public class RecipeList extends HttpServlet {
 		RecipeDAO dao = new RecipeDAO();
 		
 		List<RecipeVO> list = dao.recipeList();
-		
+
 		if(list != null) {
 			request.setAttribute("list1", list);
 			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
