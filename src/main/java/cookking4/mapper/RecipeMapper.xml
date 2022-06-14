@@ -38,8 +38,5 @@
   	</select>
 
 	<!-- 마트별 상품 가격 -->
-	<select id="priceList" parameterType = "ReicpeVO">
-		select * from mart_price 
-		where 
-	</select>
+	
 </mapper>
