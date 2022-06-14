@@ -8,7 +8,7 @@
 }
 
  .u-section-1 {
-  background-image: url("../images/default-image.jpg?rand=852f");
+  background-image: url("../images/pic01.jpg");
   min-height: 597px;
   background-position: 50% 50%;
 }
@@ -26,6 +26,7 @@
 }
 
 .u-section-1 .u-text-1 {
+letter-spacing : 20px;
   font-family: GodoM;
   font-size: 5.625rem;
   margin: 227px auto 0;
@@ -157,8 +158,9 @@
     margin-right: 0;
   }
 }@font-face {
-  font-family: 'GodoM';
+  font-family: 'GodoB';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/GodoM.ttf);
+  src: url(../fonts/GodoB.otf);
 }
+
