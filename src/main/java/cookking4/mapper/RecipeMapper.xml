@@ -14,8 +14,17 @@
 		 where recipe_name like '%'||#{keyword}||'%'
 	</select>
 	
+	<!-- 레시피 상세 -->
 	<select id="recipeDetail" resultType="RecipeVO">
     	select * from recipe_proc
     	where recipe_id = #{recipeNum}
   	</select>
+	
+	<!-- 레시피 평점 -->
+  	<update id="reviewPoint" parameterType="RecipeVO">
+  		update recipe_point
+  		set point = #{point}
+  		where recipe_id = #{recipe_id}
+  	</update>
+  	
 </mapper>
