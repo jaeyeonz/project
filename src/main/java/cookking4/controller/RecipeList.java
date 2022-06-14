@@ -26,11 +26,9 @@ public class RecipeList extends HttpServlet {
 		
 		List<RecipeVO> list = dao.recipeList();
 		// 모든 게시글의 개수 세는 방법
-		int cnt = dao.recipePage(""); // 전체 글 갯수
 		
 		if(list != null) {
 			request.setAttribute("list1", list);
-			request.setAttribute("cnt", cnt);
 			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
 			rd.forward(request, response);
 		}		

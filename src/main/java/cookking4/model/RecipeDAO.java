@@ -14,6 +14,8 @@ public class RecipeDAO {
 	SqlSession session = null;
 	List<RecipeVO> detailvo = null;
 	
+	
+	///////////////////// 모든 레시피
 	public List<RecipeVO> recipeList() {
 
 		// 1. SqlSession 빌려오기
@@ -37,6 +39,7 @@ public class RecipeDAO {
 
 	}
 	
+	////////////// 검색된 레시피
 	public List<RecipeVO> recipeSearchList(String keyword) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 
