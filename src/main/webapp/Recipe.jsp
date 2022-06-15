@@ -98,7 +98,7 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe" style="padding: 16px 12px;">Home</a>
+            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?userId=<%=mvo.getUserId() %>" style="padding: 16px 12px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
@@ -108,7 +108,7 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?userId=<%=mvo.getUserId() %>">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
