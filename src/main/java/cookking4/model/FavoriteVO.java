@@ -7,12 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VO {
+public class FavoriteVO {
 
-	private String Log_id;
-	private String pw;
 	private String name;
 	private String prfr_Ingr1;
 	private String prfr_Ingr2;
 	private String prfr_Ingr3;
+	private int recipe_id;
+	private String recipe_name;
+	private String summary;
+	private int point;
 }
