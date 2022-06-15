@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.RecipeVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,6 +37,7 @@
   <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
 
     <%  VO mvo = (VO)session.getAttribute("mvo");   %>
+    <%  RecipeVO rvo = (RecipeVO)session.getAttribute("rvo");   %>
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse " style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -136,7 +138,7 @@
                 </tbody>
               </table>
             </div>
-            <p class=" u-text u-text-1">롯데마트</p>
+            <p class=" u-text u-text-1">이마트</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
@@ -183,7 +185,7 @@
                 </tbody>
               </table>
             </div>
-            <p class=" u-text u-text-1">롯데마트</p>
+            <p class=" u-text u-text-1">홈플러스</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>

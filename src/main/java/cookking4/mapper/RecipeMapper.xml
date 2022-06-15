@@ -37,6 +37,11 @@
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
 
-	<!-- 마트별 상품 가격 -->
-	
+	<!-- 이마트, 홈플러스, 롯데마트 상위 5개 데이터 보여주기 -->
+	<select id="priceList" resultType="RecipeVO">
+		select mart_name, ingr_name, price, price_100 
+		from(
+    		select * from mart_price where mart_num = 1)
+		where ROWNUM =5;
+	</select>
 </mapper>

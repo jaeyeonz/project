@@ -19,16 +19,24 @@ public class PriceList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		// 인코딩
 		request.setCharacterEncoding("UTF-8");
 		
+		// 파라미터 수집
 		String ingr_name = request.getParameter("ingr_name");
 		String price = request.getParameter("price");
 		String price_100 = request.getParameter("price_100");
-
+		
+		// 수집한거 보여주기
+		RecipeVO rvo = new RecipeVO();
+		rvo.setIngr_name(ingr_name);
+		rvo.setPrice(price);
+		rvo.setPrice_100(price_100);
+		
 		System.out.println("들어왔어?");
 		RecipeDAO dao = new RecipeDAO();
-
+		
 		List<RecipeVO> list = dao.priceList();
 
 		if (list != null) {

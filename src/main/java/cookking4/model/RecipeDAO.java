@@ -109,6 +109,7 @@ public class RecipeDAO {
 		return list;
 	}
 
+	// mart_price sql구문 실행
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
