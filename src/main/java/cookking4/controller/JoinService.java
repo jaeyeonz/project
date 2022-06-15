@@ -28,6 +28,8 @@ public class JoinService extends HttpServlet {
 		String prfr_Ingr2 = request.getParameter("prfr_Ingr2");
 		String prfr_Ingr3 = request.getParameter("prfr_Ingr3");
 		
+		System.out.println("회원가입???");
+		
 		VO mvo = new VO();
 		
 		mvo.setLog_id(Log_id);

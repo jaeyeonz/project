@@ -53,7 +53,7 @@ public class FavoriteRecipe extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("FavoriteVO", memberfav);
 
-			response.sendRedirect("Home.jsp");
+			response.sendRedirect("new_recipe.jsp");
 		}
 		
 		

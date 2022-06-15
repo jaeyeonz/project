@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.FavoriteVO"%>
 <%@page import="cookking4.model.VO"%>
 <%@page import="cookking4.model.RecipeVO"%>
 <%@page import="java.util.List"%>
@@ -41,6 +42,7 @@
 	<%
 	VO mvo = (VO) session.getAttribute("mvo");
 	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
+	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");
 	int pageSize = 5;
 
 	String pageNum = request.getParameter("pageNum");
@@ -64,7 +66,7 @@
 	<!-- ////////////////////// header 영역 //////////////////////////////////  -->
 
 	<header class="masthead"
-		style="background-image: url('_assets/img/home-bg.jpg')">
+		style="background-image: url('images/recipe_bg2.jpg')">
 		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
@@ -81,6 +83,33 @@
 		</div>
 	</header>
 
+	
+	<% if(fvo != null) {
+		for(int i = 0 ; i < fvo.size() ; i++) {
+	%>
+	<div class="recipeList">
+		<div class="leftImg">
+			<img id="procPic" src="recipeImg/<%=fvo.get(i).getRecipe_id()%>.jpg"></a>
+		</div>
+		
+		<div class="recipeText">
+		<div class="rightText">
+			<h2 class="post-title">
+				<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
+			</h2>
+			<br>
+			<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
+			</h3>
+			<br>
+		</div>
+		</div>
+		
+		<br>
+		
+	</div>
+	<% } } %>
+	
+	
 
 	<%
 	// 값 조건식 ==> 연산자

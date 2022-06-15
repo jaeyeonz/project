@@ -21,9 +21,12 @@
             rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        
     </head>
 
     <body>
+    
+    
         <!-- Background Video-->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="_assets/mp4/bg.mp4" type="video/mp4" />
@@ -40,14 +43,13 @@
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
                     <h1 class="fst-italic lh-1 mb-4">회원가입</h1>
-                    <form id="JoinService" method="post" data-sb-form-api-token="API_TOKEN">
+                    <form action="JoinService" method="post" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
                             <div class="col"><label for="id" class="form-label">ID</label>
                                 <input name = "Log_id" class="form-control" id="signupId" type="text" placeholder="Enter ID..."
                                     aria-label="Enter ID..." data-sb-validations="required,email" />
-                                    <button class="btn btn-outline-secondary" type="button"
-										id="id_check">중복검사</button>
+                                    <button class="btn btn-primary btn-submit" id="id_check">중복검사</button>
                             </div>
                             <div class="col"><label for="password" class="form-label">Password</label>
                                 <input name = "pw" type="password" class="form-control" id="password"
@@ -114,7 +116,11 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    
 		<!-- 아이디 중복체크 Ajax -->
 		<script>
 			$("#id_check").click(function() {

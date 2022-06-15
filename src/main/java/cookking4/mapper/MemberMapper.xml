@@ -12,8 +12,8 @@
 		where log_id = #{Log_id} and pw = #{pw}
 	</select>
 	
-	<select id="idcheck" parameterType="String" resultType = "Integer">
-		select count(*) from member where log_id = #{Log_id}
+	<select id="checkId" parameterType="String" resultType = "Integer">
+		select count(*) from member where Log_id = #{Log_id}
 	</select>	
 	
 	<insert id="SignupInsert"	parameterType="VO">
@@ -21,9 +21,9 @@
  		values(#{Log_id},
  			   #{pw},
  			   #{name},
- 			   #{favIndr1}, 
- 			   #{favIndr2}, 
- 			   #{favIndr3}) 	
+ 			   #{prfr_Ingr1}, 
+ 			   #{prfr_Ingr2}, 
+ 			   #{prfr_Ingr3}) 	
 	</insert>
 
 

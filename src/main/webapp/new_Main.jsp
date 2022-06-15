@@ -1,3 +1,4 @@
+<%@page import="cookking4.model.VO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
 
 <body>
 
-
+<% VO mvo = (VO)session.getAttribute("mvo"); %>
 
 
   <!--YOUTUBE VIDEO-->
@@ -90,7 +91,7 @@
 
       <img src="./images/pjw.png" alt="" class="pjwImg" />
       <div class="text-group">
-        <a href="new_recipe.jsp"><h1>레시피 추천</h1></a>
+        <a href="FavoriteRecipe?name=<%=mvo.getName()%>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1()%>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2()%>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3()%>"><h1>레시피 추천</h1></a>
         <span class="material-symbols-outlined">
           arrow_right_alt
         </span>

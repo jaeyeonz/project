@@ -19,7 +19,7 @@ public class IdCheckService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String userId = request.getParameter("userId");
+		String Log_id = request.getParameter("Log_id");
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -28,7 +28,7 @@ public class IdCheckService extends HttpServlet {
 		
 		DAO dao = new DAO();
 		
-		int idCheck = dao.checkId(userId);
+		int idCheck = dao.checkId(Log_id);
 		
 		out.print(idCheck);
 	}

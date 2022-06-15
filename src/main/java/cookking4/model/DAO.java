@@ -30,7 +30,7 @@ public class DAO {
 	public int checkId(String Log_id) {
 		try {
 			session = sqlSessionFactory.openSession(true);
-			cnt = session.selectOne("idcheck", Log_id);
+			cnt = session.selectOne("checkId", Log_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
