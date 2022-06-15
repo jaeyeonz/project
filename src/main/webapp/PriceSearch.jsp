@@ -117,7 +117,7 @@
                 </tbody>
               </table>
             </div>
-            <p class=" u-text u-text-1">롯데마트</p>
+            <p class=" u-text u-text-1">이마트</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
@@ -136,31 +136,19 @@
                     <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
                     <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
                   </tr>
+                  <%
+                  for(int i = 0; i< Lottelist.size(); i++){%> 
                   <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
+                    <td class="u-table-cell"><%=Lottelist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Lottelist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Lottelist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Lottelist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
                   </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-border-1 u-border-white u-table-cell"></td>
-                  </tr>
+                  		<%}%>
                 </tbody>
               </table>
             </div>
@@ -183,35 +171,23 @@
                     <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
                     <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
                   </tr>
+                   <%
+                  for(int i = 0; i< Homelist.size(); i++){%> 
                   <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
+                    <td class="u-table-cell"><%=Homelist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
                   </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-border-1 u-border-white u-table-cell"></td>
-                  </tr>
+                  		<%}%>
                 </tbody>
               </table>
             </div>
-            <p class=" u-text u-text-1">롯데마트</p>
+            <p class=" u-text u-text-1">홈플러스</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>

@@ -23,7 +23,7 @@ public class PriceList extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-		
+
 		String ingr_name = request.getParameter("ingr_name");
 		String price = request.getParameter("price");
 		String price_100 = request.getParameter("price_100");
@@ -35,14 +35,15 @@ public class PriceList extends HttpServlet {
 		List<PriceVO> list2 = dao.LotteList();
 		List<PriceVO> list3 = dao.HomeList();
 
-		if (list1 != null && list2 != null && list3 != null) {
-			request.setAttribute("list1", list1);
-			request.setAttribute("list2", list2);
-			request.setAttribute("list3", list3);
-			RequestDispatcher rd = request.getRequestDispatcher("PriceSearch.jsp");
-			rd.forward(request, response);
+		if (list1 != null && list2 != null && list3 != null ) {
+			
+				request.setAttribute("list1", list1);
+				request.setAttribute("list2", list2);
+				request.setAttribute("list3", list3);
+				RequestDispatcher rd = request.getRequestDispatcher("PriceSearch.jsp");
+				rd.forward(request, response);
+			
 		}
-
 	}
 
 }
