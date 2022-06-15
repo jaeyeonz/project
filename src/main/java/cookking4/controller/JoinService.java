@@ -21,7 +21,7 @@ public class JoinService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String userId = request.getParameter("userId");
+		String Log_id = request.getParameter("Log_id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String favIndr1 = request.getParameter("favIndr1");
@@ -30,12 +30,12 @@ public class JoinService extends HttpServlet {
 		
 		VO mvo = new VO();
 		
-		mvo.setUserId(userId);
+		mvo.setLog_id(Log_id);
 		mvo.setPw(pw);
 		mvo.setName(name);
-		mvo.setFavIndr1(favIndr1);
-		mvo.setFavIndr2(favIndr1);
-		mvo.setFavIndr3(favIndr1);
+		mvo.setPrfr_Ingr1(favIndr1);
+		mvo.setPrfr_Ingr2(favIndr1);
+		mvo.setPrfr_Ingr3(favIndr1);
 		
 		DAO dao = new DAO();
 		

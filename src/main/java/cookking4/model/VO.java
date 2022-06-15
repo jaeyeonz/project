@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VO {
 
-	private String userId;
+	private String Log_id;
 	private String pw;
 	private String name;
-	private String favIndr1;
-	private String favIndr2;
-	private String favIndr3;
+	private String prfr_Ingr1;
+	private String prfr_Ingr2;
+	private String prfr_Ingr3;
 }

@@ -9,16 +9,16 @@
 	
 	<select id="Login" parameterType="VO" resultType="VO">
 		select * from member 
-		where log_id = #{userId} and pw = #{pw}
+		where log_id = #{Log_id} and pw = #{pw}
 	</select>
 	
 	<select id="idcheck" parameterType="String" resultType = "Integer">
-		select count(*) from member where log_id = #{userId}
+		select count(*) from member where log_id = #{Log_id}
 	</select>	
 	
 	<insert id="SignupInsert"	parameterType="VO">
  		insert into member
- 		values(#{userId},
+ 		values(#{Log_id},
  			   #{pw},
  			   #{name},
  			   #{favIndr1}, 

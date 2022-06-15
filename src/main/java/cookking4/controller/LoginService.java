@@ -21,19 +21,16 @@ public class LoginService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String userId = request.getParameter("userId");
+		String Log_id = request.getParameter("Log_id");
 		String pw = request.getParameter("pw");
-		
-		System.out.println(userId + " : " + pw);
+		System.out.println(Log_id + " : " + pw);
+
 		VO mvo = new VO();
-		mvo.setUserId(userId);
+		mvo.setLog_id(Log_id);
 		mvo.setPw(pw);
 
 		DAO dao = new DAO();
 		VO result = dao.Login(mvo);
-		System.out.println(result.getFavIndr1());
-		System.out.println(result.getFavIndr2());
-		System.out.println(result.getFavIndr3());
 		
 		if(result == null) {
 			System.out.println("로그인 실패");

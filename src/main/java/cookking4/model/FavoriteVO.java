@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 public class FavoriteVO {
 
 	private String name;
-	private String favIndr1;
-	private String favIndr2;
-	private String favIndr3;
+	private String prfr_Ingr1;
+	private String prfr_Ingr2;
+	private String prfr_Ingr3;
 	private int recipe_id;
 	private String recipe_name;
 	private String summary;

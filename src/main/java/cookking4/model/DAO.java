@@ -27,10 +27,10 @@ public class DAO {
 	}
 	
 	// 아이디 중복 체크
-	public int checkId(String userId) {
+	public int checkId(String Log_id) {
 		try {
 			session = sqlSessionFactory.openSession(true);
-			cnt = session.selectOne("idcheck", userId);
+			cnt = session.selectOne("idcheck", Log_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

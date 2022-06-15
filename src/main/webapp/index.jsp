@@ -208,7 +208,7 @@ h1 span:nth-child(8) { animation-delay: .7s; }
 							<form action="LoginService" method="post">
 								<div class="mb-3">
 									<label for="loginId" class="form-label">Id</label> <input
-										type="text" class="form-control" id="loginId" name="userId">
+										type="text" class="form-control" id="loginId" name="Log_id">
 								</div>
 								<div class="mb-3">
 									<label for="loginPw" class="form-label">Password</label> <input
@@ -225,7 +225,7 @@ h1 span:nth-child(8) { animation-delay: .7s; }
 							<form action="JoinService" method="post">
 								<div class="mb-3">
 									<label for="signupId" class="form-label">Id</label> <input
-										type="text" class="form-control" id="signupId" name="userId">
+										type="text" class="form-control" id="signupId" name="Log_id">
 									<button class="btn btn-outline-secondary" type="button"
 										id="id_check">중복검사</button>
 								</div>
@@ -643,13 +643,13 @@ h1 span:nth-child(8) { animation-delay: .7s; }
 <script>
 	$("#id_check").click(function() {
 		//console.log('들어왔나?')
-		let userId = $('#signupId').val();
+		let Log_id = $('#signupId').val();
 		//console.log(userId);
 		$.ajax({
 			url : "IdCheckService",
 			type : "post",
 			data : {
-				userId : userId
+				Log_id : Log_id
 			},
 			dataType : 'json',
 			success : function(result) {

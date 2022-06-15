@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="cookking4.model.FavoriteVO"%>
 <%@page import="cookking4.model.VO"%>
@@ -40,7 +41,7 @@
   </head>
   <body class="u-body u-xl-mode">
   <%  VO mvo = (VO)session.getAttribute("mvo"); 
-  	//List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");	
+  	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");	
   %>
   
   <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
@@ -54,7 +55,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 16px 12px;">Home</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>" style="padding: 16px 12px;">Home</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceList" style="padding: 16px 12px;">가격검색</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a></li>
@@ -65,7 +66,7 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Home</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>">Home</a></li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a></li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceList">가격검색</a></li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a></li>
@@ -82,16 +83,32 @@
         </p>
       </div></header> 
       <!-- header 끝 -->
- 	      
-    <span style="font-size: 2rem;"> <%=mvo.getName() %>님이 선호😍하는 식재료🍖🥕🧅기반 레시피🥘🥣 추천👍 입니다~~</span>
+      
+    <form action="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>">  
+ 	<div align="center">      
+    <span style="font-size: 2rem;"> <%=mvo.getName() %>님 선호😍하는 식재료🍖🥕🧅기반 레시피🥘🥣 추천👍 ~~</span>
     <br>
-    <span style="font-size: 1.5rem;">
-    <%=mvo.getFavIndr1() %>
+    </span></div>
+    
+    <div>
+    <% if(fvo != null) { 
+    	for(int i = 0 ; i < fvo.size() ; i++){
+    %>	 
+    <img src="recipeImg/<%=fvo.get(i).getRecipe_id() %>.jpg">
     <br>
-    <%=mvo.getFavIndr2() %>
+    <%=fvo.get(i).getRecipe_name() %>
     <br>
-    <%=mvo.getFavIndr3() %>
-    <br></span>
+    <%=fvo.get(i).getSummary() %>
+    <br>
+    <% } %>
+    <br>
+    	<% } %>
+    <br>
+	</div>         
+    </form>
+    
+    
+    
 
 
     
