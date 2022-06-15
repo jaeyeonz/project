@@ -28,7 +28,7 @@ public class RecipeList extends HttpServlet {
 
 		if(list != null) {
 			request.setAttribute("list1", list);
-			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("new_recipe.jsp");
 			rd.forward(request, response);
 		}		
 	}
