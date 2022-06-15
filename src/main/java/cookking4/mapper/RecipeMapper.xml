@@ -47,4 +47,5 @@
 		order by point
 	</select>
 
+
 </mapper>
