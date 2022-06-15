@@ -111,6 +111,8 @@ public class RecipeDAO {
 	}
 
 	// mart_price sql구문 실행
+
+	// mart_price sql구문 실행
 	// 선호식재료 리트스
 	public List<FavoriteVO> favoriteSelect(FavoriteVO fvo) {
 		try {
@@ -124,7 +126,7 @@ public class RecipeDAO {
 		}		
 		return favlist;
 	}
-	
+
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
