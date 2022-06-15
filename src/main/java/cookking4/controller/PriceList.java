@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cookking4.model.PriceDAO;
+import cookking4.model.PriceVO;
 import cookking4.model.RecipeDAO;
 import cookking4.model.RecipeVO;
 
@@ -27,12 +29,16 @@ public class PriceList extends HttpServlet {
 		String price_100 = request.getParameter("price_100");
 
 		System.out.println("들어왔어?");
-		RecipeDAO dao = new RecipeDAO();
+		PriceDAO dao = new PriceDAO();
 
-		List<RecipeVO> list = dao.priceList();
+		List<PriceVO> list1 = dao.EmartList();
+		List<PriceVO> list2 = dao.LotteList();
+		List<PriceVO> list3 = dao.HomeList();
 
-		if (list != null) {
-			request.setAttribute("list", list);
+		if (list1 != null && list2 != null && list3 != null) {
+			request.setAttribute("list1", list1);
+			request.setAttribute("list2", list2);
+			request.setAttribute("list3", list3);
 			RequestDispatcher rd = request.getRequestDispatcher("PriceSearch.jsp");
 			rd.forward(request, response);
 		}

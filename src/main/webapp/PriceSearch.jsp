@@ -1,3 +1,6 @@
+<%@page import="cookking4.controller.PriceList"%>
+<%@page import="cookking4.model.PriceVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,7 +38,10 @@
   </head>
   <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
 
-    <%  VO mvo = (VO)session.getAttribute("mvo");   %>
+    <%  VO mvo = (VO)session.getAttribute("mvo");
+    	List<PriceVO> Emartlist = (List<PriceVO>)request.getAttribute("list1");
+    	List<PriceVO> Lottelist = (List<PriceVO>)request.getAttribute("list2"); 
+    	List<PriceVO> Homelist = (List<PriceVO>)request.getAttribute("list3");  %>
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse " style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -94,31 +100,20 @@
                     <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
                     <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
                   </tr>
+                  <!-- 마트가격 가져오기 -->
+                  <%
+                  for(int i = 0; i< Emartlist.size(); i++){%> 
                   <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
                   </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                  </tr>
-                  <tr style="height: 100px;">
-                    <td class="u-table-cell"></td>
-                    <td class="u-table-cell"></td>
-                    <td class="u-border-1 u-border-white u-table-cell"></td>
-                  </tr>
+                  		<%}%>
                 </tbody>
               </table>
             </div>

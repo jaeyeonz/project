@@ -18650,6 +18650,7 @@ a.pswp__share--download:hover {
 }
 .u-table th,
 .u-table td {
+  text-align: center;
   padding: 10px;
   font-weight: inherit;
   position: inherit;
