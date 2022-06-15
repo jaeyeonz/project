@@ -37,7 +37,6 @@
   		 select count(*) from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
-<<<<<<< HEAD
   	
   	<select id="favoriteSelect" resultType="FavVO">
 		select * from member<!-- , recipe -->
@@ -48,9 +47,7 @@
 		  recipe_name like '%'||#{keyword}||'%') -->
 	</select>
 
-=======
 
 	<!-- 마트별 상품 가격 -->
 	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 </mapper>

@@ -110,7 +110,6 @@ public class RecipeDAO {
 		return list;
 	}
 
-<<<<<<< HEAD
 	public List<FavoriteVO> favoriteSelect(String member_id) {
 		try {
 			session = sqlSessionFactory.openSession(true);
@@ -122,7 +121,8 @@ public class RecipeDAO {
 			session.close();
 		}		
 		return favvo;
-=======
+	}
+	
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
@@ -143,6 +143,6 @@ public class RecipeDAO {
 
 		// 4. 쿼리실행 결과 리턴
 		return list;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
+
 	}
 }
