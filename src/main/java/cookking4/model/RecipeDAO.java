@@ -110,9 +110,7 @@ public class RecipeDAO {
 		return list;
 	}
 
-<<<<<<< HEAD
 	// mart_price sql구문 실행
-=======
 	// 선호식재료 리트스
 	public List<FavoriteVO> favoriteSelect(FavoriteVO fvo) {
 		try {
@@ -127,7 +125,6 @@ public class RecipeDAO {
 		return favlist;
 	}
 	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
