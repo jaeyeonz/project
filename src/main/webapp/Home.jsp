@@ -54,11 +54,14 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
+<<<<<<< HEAD
             <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceList" style="padding: 16px 12px;">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
 </li></ul>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
             <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1">
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>" style="padding: 16px 12px;">Home</a></li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a></li>

@@ -7,7 +7,7 @@
 	<select id="EmartSearch" resultType="PriceVO">
 		select * from mart_price
 		where ingr_info_irdnt_nm = '감자' and 
-		mart_num = 1 and ROWNUM&lt;=5
+		mart_num = 1 and ROWNUM&lt;=5 
 	</select>
 	<select id="LotteSearch" resultType="PriceVO">
 		select * from mart_price
