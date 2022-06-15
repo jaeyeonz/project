@@ -31,6 +31,61 @@
 <meta name="theme-color" content="#e00b4c">
 <meta property="og:title" content="Home">
 <meta property="og:type" content="website">
+<style>
+h1 {
+  height: 100px;
+}
+
+h1 span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce .3s ease infinite alternate;
+  font-family: 'GodoB';
+  font-size: 80px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CCC,
+               0 2px 0 #CCC,
+               0 3px 0 #CCC,
+               0 4px 0 #CCC,
+               0 5px 0 #CCC,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .4);
+}
+
+ h1 span:nth-child(2) { animation-delay: .1s; } 
+ h1 span:nth-child(3) { animation-delay: .2s; } 
+h1 span:nth-child(4) { animation-delay: .3s; }
+h1 span:nth-child(5) { animation-delay: .4s; }
+h1 span:nth-child(6) { animation-delay: .5s; }
+h1 span:nth-child(7) { animation-delay: .6s; }
+h1 span:nth-child(8) { animation-delay: .7s; }
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC, 
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC, 
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}
+@font-face {
+  font-family: 'GodoB';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/GodoB.otf);
+}
+</style>
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -42,17 +97,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<!-- CSS only -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -163,7 +208,7 @@
 							<form action="LoginService" method="post">
 								<div class="mb-3">
 									<label for="loginId" class="form-label">Id</label> <input
-										type="text" class="form-control" id="loginId" name="userId">
+										type="text" class="form-control" id="loginId" name="Log_id">
 								</div>
 								<div class="mb-3">
 									<label for="loginPw" class="form-label">Password</label> <input
@@ -180,7 +225,7 @@
 							<form action="JoinService" method="post">
 								<div class="mb-3">
 									<label for="signupId" class="form-label">Id</label> <input
-										type="text" class="form-control" id="signupId" name="userId">
+										type="text" class="form-control" id="signupId" name="Log_id">
 									<button class="btn btn-outline-secondary" type="button"
 										id="id_check">중복검사</button>
 								</div>
@@ -228,8 +273,12 @@
 						class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-right-cell u-shading u-size-60 u-image-1"
 						data-image-width="1080" data-image-height="864">
 						<div class="u-container-layout">
-							<p
-								class="u-align-center u-custom-font u-text u-text-default u-text-1">집밥도사</p>
+							<h1 class="u-align-center u-custom-font u-text u-text-default u-text-1">
+							<span>집</span>
+							<span>밥</span>
+							<span>도</span>
+							<span>사</span>
+							</h1>
 						</div>
 					</div>
 				</div>
@@ -594,13 +643,13 @@
 <script>
 	$("#id_check").click(function() {
 		//console.log('들어왔나?')
-		let userId = $('#signupId').val();
+		let Log_id = $('#signupId').val();
 		//console.log(userId);
 		$.ajax({
 			url : "IdCheckService",
 			type : "post",
 			data : {
-				userId : userId
+				Log_id : Log_id
 			},
 			dataType : 'json',
 			success : function(result) {

@@ -24,5 +24,15 @@ public class RecipeVO {
 	private String cooking_desc;
 	private String step_img_url;
 	private String step_tip;
+	private int point;
+	
+	// mart_price Å×ÀÌºí
+	private int mart_num;
+	private String mart_name;
+	private String ingr_name;
+	private String price;
+	private String price_100;
+	private int ingr_info_irdnt_sn;
+	private int ingr_info_irdnt_nm;
 	
 }

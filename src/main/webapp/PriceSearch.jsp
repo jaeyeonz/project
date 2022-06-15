@@ -1,7 +1,10 @@
-<%@page import="cookking4.model.VO"%>
+<%@page import="cookking4.controller.PriceList"%>
+<%@page import="cookking4.model.PriceVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@page import="cookking4.model.VO"%>
 <html style="font-size: 16px;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,20 +31,19 @@
     <meta name="theme-color" content="#e00b4c">
     <meta property="og:title" content="가격검색">
     <meta property="og:type" content="website">
-    
-        <!-- CSS only -->
+    <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
   </head>
-  <body class="u-body u-xl-mode">
-  
-  <%  VO mvo = (VO)session.getAttribute("mvo");   %>
-  
-  <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
+
+    <%  VO mvo = (VO)session.getAttribute("mvo");
+    	List<PriceVO> Emartlist = (List<PriceVO>)request.getAttribute("list1");
+    	List<PriceVO> Lottelist = (List<PriceVO>)request.getAttribute("list2"); 
+    	List<PriceVO> Homelist = (List<PriceVO>)request.getAttribute("list3");  %>
         <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
+          <div class="menu-collapse " style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
@@ -49,8 +51,8 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a>
+            <ul class=" u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?userId=<%=mvo.getLog_id() %>" style="padding: 16px 12px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
 </li></ul>
@@ -59,8 +61,8 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?userId=<%=mvo.getLog_id() %>">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
 </li></ul>
@@ -70,61 +72,126 @@
           </div>
         </nav>
         <p class="u-align-right u-text u-text-default u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="#"><%=mvo.getName() %>님 환영합니다.
-		  <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style  u-hover-none u-none u-text-palette-1-base u-btn-1" href="#"><%=mvo.getName() %>님 환영합니다.
+            <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
           </a>
         </p>
       </div></header>
     <section class="u-clearfix u-palette-4-base u-section-1" id="sec-213c">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-form u-form-1">
-        
-        
-        <!-- ///////////////////////////////////////////////검색창////////////////////////////// -->
-        
-          <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="form">
-            <div class="u-form-group u-form-group-1">
-              <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
-              <input type="text" id="email-2555" name="email" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
-            </div>
-            <div class="u-align-left u-form-group u-form-submit">
-              <a href="#" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">
-                <br>
-              </a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
-            </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
-        </div><span class="u-icon u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1a0b"></use></svg><svg class="u-svg-content" viewBox="0 0 56.966 56.966" x="0px" y="0px" id="svg-1a0b" style="enable-background:new 0 0 56.966 56.966;"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
+          
+        </div><!-- <span class="u-icon u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1a0b"></use></svg><svg class="u-svg-content" viewBox="0 0 56.966 56.966" x="0px" y="0px" id="svg-1a0b" style="enable-background:new 0 0 56.966 56.966;"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
 	s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
 	c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
-	s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg></span>
-	
-	<!-- 테이블 구간  -->
-        <div class="u-container-style u-expanded-width u-group u-white u-group-1">
+	s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg></span> -->
+        <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-custom-font u-text u-text-default u-text-1">롯데마트</p>
+            <div class="u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="33.3%">
+                  <col width="33.3%">
+                  <col width="33.4%">
+                </colgroup>
+                <tbody class="u-table-body">
+                  <tr style="height: 100px;">
+                    <td class="u-align-center  u-table-cell u-table-cell-1">이름</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
+                  </tr>
+                  <!-- 마트가격 가져오기 -->
+                  <%
+                  for(int i = 0; i< Emartlist.size(); i++){%> 
+                  <tr style="height: 100px;">
+                    <td class="u-table-cell"><%=Emartlist.get(i).getIngr_name() %></font></td>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
+                	<%}%>
+                  </tr>
+                  		<%}%>
+                </tbody>
+              </table>
+            </div>
+            <p class=" u-text u-text-1">이마트</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
-        
-              <div class="u-container-style u-expanded-width u-group u-white u-group-1">
+        <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-custom-font u-text u-text-default u-text-3" id = "mart-name">이마트</p>
+            <div class="u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="33.3%">
+                  <col width="33.3%">
+                  <col width="33.4%">
+                </colgroup>
+                <tbody class="u-table-body">
+                  <tr style="height: 100px;">
+                    <td class="u-align-center  u-table-cell u-table-cell-1">이름</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
+                  </tr>
+                   <!-- 마트가격 가져오기 -->
+                  <%
+                  for(int i = 0; i< Homelist.size(); i++){%> 
+                  <tr style="height: 100px;">
+                    <td class="u-table-cell"><%=Homelist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
+                  </tr>
+                  		<%}%>
+                </tbody>
+              </table>
+            </div>
+            <p class=" u-text u-text-1">홈플러스</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
-        
-              <div class="u-container-style u-expanded-width u-group u-white u-group-1">
+        <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-custom-font u-text u-text-default u-text-2">홈플러스</p>
+            <div class="u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="33.3%">
+                  <col width="33.3%">
+                  <col width="33.4%">
+                </colgroup>
+                <tbody class="u-table-body">
+                  <tr style="height: 100px;">
+                    <td class="u-align-center  u-table-cell u-table-cell-1">이름</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
+                  </tr>
+                   <!-- 마트가격 가져오기 -->
+                  <%
+                  for(int i = 0; i< Lottelist.size(); i++){%> 
+                  <tr style="height: 100px;">
+                    <td class="u-table-cell"><%=Lottelist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Lottelist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Lottelist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Lottelist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
+                  </tr>
+                  		<%}%>
+                </tbody>
+              </table>
+            </div>
+            <p class=" u-text u-text-1">롯데마트</p>
             <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
-        
-        
       </div>
     </section>
     
