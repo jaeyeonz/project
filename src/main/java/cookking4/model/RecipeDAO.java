@@ -13,6 +13,7 @@ public class RecipeDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
 	List<RecipeVO> detailvo = null;
+	List<FavoriteVO> favvo = null;
 	int cnt = 0;
 	
 	public List<RecipeVO> recipeList() {
@@ -104,5 +105,18 @@ public class RecipeDAO {
 
 		// 4. 쿼리실행 결과 리턴
 		return list;
+	}
+
+	public List<FavoriteVO> favoriteSelect(String member_id) {
+		try {
+			session = sqlSessionFactory.openSession(true);
+			System.out.println("session : " + member_id);
+			favvo = session.selectList("favoriteSelect", member_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}		
+		return favvo;
 	}
 }

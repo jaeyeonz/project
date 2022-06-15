@@ -12,6 +12,7 @@
 		<typeAlias type="cookking4.model.RecipeDAO" alias = "RecipeDAO"/>
 		<typeAlias type="cookking4.model.RecipeVO" alias = "RecipeVO"/>
 		<typeAlias type="cookking4.model.RefVO" alias = "RefVO"/>
+		<typeAlias type="cookking4.model.FavoriteVO" alias = "FavVO"/>
 	</typeAliases>
 	
 	<environments default="development">

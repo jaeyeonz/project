@@ -32,9 +32,19 @@
     	select * from refrigerator
     	where member_id = #{member_id}
 	</select>
+	
   	<select id="recipePage" resultType="Integer">
   		 select count(*) from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
+  	
+  	<select id="favoriteSelect" resultType="FavVO">
+		select * from member<!-- , recipe -->
+		 where log_id = #{member_id} 
+		 <!-- and 
+		 (recipe_name like '%'||#{keyword}||'%' or 
+		  recipe_name like '%'||#{keyword}||'%' or 
+		  recipe_name like '%'||#{keyword}||'%') -->
+	</select>
 
 </mapper>
