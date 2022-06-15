@@ -40,31 +40,33 @@
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
                     <h1 class="fst-italic lh-1 mb-4">회원가입</h1>
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form id="JoinService" method="post" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
                             <div class="col"><label for="id" class="form-label">ID</label>
-                                <input class="form-control" id="id" type="text" placeholder="Enter ID..."
+                                <input name = "Log_id" class="form-control" id="signupId" type="text" placeholder="Enter ID..."
                                     aria-label="Enter ID..." data-sb-validations="required,email" />
+                                    <button class="btn btn-outline-secondary" type="button"
+										id="id_check">중복검사</button>
                             </div>
                             <div class="col"><label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password"
+                                <input name = "pw" type="password" class="form-control" id="password"
                                     placeholder="Enter password..." aria-label="Enter password...">
                             </div>
                             <div class="col"><label for="name" class="form-label">name</label>
-                                <input type="text" class="form-control" id="password"
+                                <input name = "name" type="text" class="form-control" id="name"
                                     placeholder="Enter name..." aria-label="Enter name...">
                             </div>
                             <div class="col"><label for="fav-ingr1" class="form-label">선호식재료1</label>
-                                <input type="text" class="form-control" id="fav-ingr1"
+                                <input name ="prfr_Ingr1" type="text" class="form-control" id="fav-ingr1"
                                     placeholder="Enter 선호식재료1..." aria-label="Enter 선호식재료1...">
                             </div>
                             <div class="col"><label for="fav-ingr2" class="form-label">선호식재료2</label>
-                                <input type="text" class="form-control" id="fav-ingr2"
+                                <input name ="prfr_Ingr2" type="text" class="form-control" id="fav-ingr2"
                                     placeholder="Enter 선호식재료2..." aria-label="Enter 선호식재료2...">
                             </div>
                             <div class="col"><label for="fav-ingr3" class="form-label">선호식재료3</label>
-                                <input type="text" class="form-control" id="text"
+                                <input name ="prfr_Ingr3" type="text" class="form-control" id="fav-ingr3"
                                     placeholder="Enter 선호식재료3..." aria-label="Enter 선호식재료3...">
                             </div>
                             <div class="col-auto"><button class="btn btn-primary btn-submit" type="submit">Submit</button></div>
@@ -112,6 +114,34 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+		<!-- 아이디 중복체크 Ajax -->
+		<script>
+			$("#id_check").click(function() {
+				console.log('들어왔나?')
+				let Log_id = $('#signupId').val();
+				console.log(Log_id);
+				$.ajax({
+					url : "IdCheckService",
+					type : "post",
+					data : {
+						Log_id : Log_id
+					},
+					dataType : 'json',
+					success : function(result) {
+					//	console.log(result);
+						if (result == 1) {
+							alert('사용중인 아이디입니다.')
+						} else {
+							alert('사용 가능한 아이디입니다.')
+						}
+					},
+					error : function() {
+						console.log("서버요청실패");
+					}
+				});
+			});
+		</script>        
     </body>
 
     </html>
