@@ -19,21 +19,6 @@ public class RecipeList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
-		
-		System.out.println("들어왔어?");
-		RecipeDAO dao = new RecipeDAO();
-		
-		List<RecipeVO> list = dao.recipeList();
-		// 모든 게시글의 개수 세는 방법
-		int cnt = dao.recipePage(""); // 전체 글 갯수
-		
-		if(list != null) {
-			request.setAttribute("list1", list);
-			request.setAttribute("cnt", cnt);
-			RequestDispatcher rd = request.getRequestDispatcher("Recipe.jsp");
-			rd.forward(request, response);
-		}		
 	}
 
 	
