@@ -23,7 +23,7 @@
 	<!-- 레시피 평점 -->
   	<update id="reviewPoint" parameterType="RecipeVO">
   		update recipe_point
-  		set point = #{point}
+  		set a_point = #{a_point}
   		where recipe_id = #{recipe_id}
   	</update>
   	
@@ -38,13 +38,13 @@
   	</select>
 
   	<select id="favoriteSelect" resultType="FavVO">
-		select a.name, a.prfr_ingr1, a.prfr_ingr2, a.prfr_ingr3, b.recipe_id, b.recipe_name, b.summary, b.point 
+		select a.name, a.prfr_ingr1, a.prfr_ingr2, a.prfr_ingr3, b.recipe_id, b.recipe_name, b.summary, b.a_point 
 		from member a, recipe b
 		where a.name = #{name} and		  
 		 (b.recipe_name like '%'||#{prfr_Ingr1}||'%' or 
 		  b.recipe_name like '%'||#{prfr_Ingr2}||'%' or 
 		  b.recipe_name like '%'||#{prfr_Ingr3}||'%') and ROWNUM&lt;=5
-		order by point
+		order by a_point
 	</select>
 
 

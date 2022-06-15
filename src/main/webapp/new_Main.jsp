@@ -90,7 +90,7 @@
 
       <img src="./images/pjw.png" alt="" class="pjwImg" />
       <div class="text-group">
-        <a href="RecipeDetail?recipeNum=<%=1 %>"><h1>레시피 추천</h1></a>
+        <a href="new_recipe.jsp"><h1>레시피 추천</h1></a>
         <span class="material-symbols-outlined">
           arrow_right_alt
         </span>

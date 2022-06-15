@@ -48,7 +48,7 @@ public class FavoriteRecipe extends HttpServlet {
 			System.out.println(memberfav.size());
 			System.out.println(memberfav.get(0).getRecipe_name());
 			System.out.println(memberfav.get(0).getSummary());
-			System.out.println(memberfav.get(0).getPoint());
+			System.out.println(memberfav.get(0).getA_point());
 
 			HttpSession session = request.getSession();
 			session.setAttribute("FavoriteVO", memberfav);

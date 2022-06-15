@@ -16,5 +16,5 @@ public class FavoriteVO {
 	private int recipe_id;
 	private String recipe_name;
 	private String summary;
-	private int point;
+	private int a_point;
 }

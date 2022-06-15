@@ -23,15 +23,15 @@ public class reviewPoint extends HttpServlet {
 		
 		
 		int recipe_id = Integer.parseInt(request.getParameter("recipeNum")); 
-		int point = Integer.parseInt(request.getParameter("reviewStar"));
+		int a_point = Integer.parseInt(request.getParameter("reviewStar"));
 		String recipe_name = request.getParameter("name");
 		String summary = request.getParameter("summary");	 		
 		
-		System.out.println(recipe_id + " : " + point + " : " + recipe_name + " : " + summary );
+		System.out.println(recipe_id + " : " + a_point + " : " + recipe_name + " : " + summary );
 		
 		RecipeVO pointVO = new RecipeVO(); 
 		pointVO.setRecipe_id(recipe_id); 
-		pointVO.setPoint(point);
+		pointVO.setA_point(a_point);
 		pointVO.setRecipe_name(recipe_name);
 		pointVO.setSummary(summary);
 		
