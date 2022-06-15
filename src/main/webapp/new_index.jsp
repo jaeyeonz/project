@@ -34,12 +34,12 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form action="LoginService" method="post" data-sb-form-api-token="API_TOKEN">
                         <div class="row input-group-newsletter">
                             <div class="col"><label for="id" class="form-label">ID</label>
-                                <input class="form-control" id="id" type="text" placeholder="Enter ID..." aria-label="Enter ID..." data-sb-validations="required,email" /></div>
+                                <input name="Log_id" class="form-control" id="id" type="text" placeholder="Enter ID..." aria-label="Enter ID..." data-sb-validations="required,email" /></div>
                             <div class="col"><label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter password..." aria-label="Enter password..."></div>
+                                <input name="pw" type="password" class="form-control" id="password" placeholder="Enter password..." aria-label="Enter password..."></div>
                     		<div class="col-auto"><button class="btn btn-primary" id="signupButton" type = "button" onclick="location.href='new_signup.jsp';">Sign up</button></div>
                             <div class="col-auto"><button class="btn btn-primary" id="signinButton" type="submit">Sign in</button></div>
                         </div>

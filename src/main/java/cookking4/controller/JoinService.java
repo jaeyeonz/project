@@ -24,18 +24,18 @@ public class JoinService extends HttpServlet {
 		String Log_id = request.getParameter("Log_id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String favIndr1 = request.getParameter("favIndr1");
-		String favIndr2 = request.getParameter("favIndr2");
-		String favIndr3 = request.getParameter("favIndr3");
+		String prfr_Ingr1 = request.getParameter("prfr_Ingr1");
+		String prfr_Ingr2 = request.getParameter("prfr_Ingr2");
+		String prfr_Ingr3 = request.getParameter("prfr_Ingr3");
 		
 		VO mvo = new VO();
 		
 		mvo.setLog_id(Log_id);
 		mvo.setPw(pw);
 		mvo.setName(name);
-		mvo.setPrfr_Ingr1(favIndr1);
-		mvo.setPrfr_Ingr2(favIndr1);
-		mvo.setPrfr_Ingr3(favIndr1);
+		mvo.setPrfr_Ingr1(prfr_Ingr1);
+		mvo.setPrfr_Ingr2(prfr_Ingr2);
+		mvo.setPrfr_Ingr3(prfr_Ingr3);
 		
 		DAO dao = new DAO();
 		
@@ -43,7 +43,8 @@ public class JoinService extends HttpServlet {
 		
 		if(cnt > 0) {
 			request.setAttribute("mvo",  mvo);
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			System.out.println("joinservice : " + mvo.getName());
+			RequestDispatcher rd = request.getRequestDispatcher("new_index.jsp");
 			rd.forward(request, response);
 		}		
 	}
