@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cookking4.model.PriceDAO">
+	
+	<select id="EmartSearch" resultType="PriceVO">
+		select * from mart_price
+		where ingr_info_irdnt_nm = '감자' and 
+		mart_num = 1 and ROWNUM&lt;=5
+	</select>
+	<select id="LotteSearch" resultType="PriceVO">
+		select * from mart_price
+		where ingr_info_irdnt_nm = '감자' and 
+		mart_num = 2 and ROWNUM&lt;=5 
+	</select>
+	<select id="HomeSearch" resultType="PriceVO">
+		select * from mart_price
+		where ingr_info_irdnt_nm = '감자' and 
+		mart_num = 3 and ROWNUM&lt;=5
+	</select>
+
+
+</mapper>

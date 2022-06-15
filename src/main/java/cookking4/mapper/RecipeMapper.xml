@@ -26,22 +26,14 @@
   		set point = #{point}
   		where recipe_id = #{recipe_id}
   	</update>
- 	
   	
 	<select id="refSelect" resultType="RefVO">
     	select * from refrigerator
     	where member_id = #{member_id}
 	</select>
+	
   	<select id="recipePage" resultType="Integer">
   		 select count(*) from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
-
-	<!-- 이마트, 홈플러스, 롯데마트 상위 5개 데이터 보여주기 -->
-	<select id="priceList" resultType="RecipeVO">
-		select mart_name, ingr_name, price, price_100 
-		from(
-    		select * from mart_price where mart_num = 1)
-		where ROWNUM =5;
-	</select>
 </mapper>
