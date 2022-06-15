@@ -11252,7 +11252,7 @@ header.masthead .site-heading .h1 {
   overflow: hidden;
   width: 960px; margin: 0 auto;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .leftImg {
@@ -11263,12 +11263,13 @@ header.masthead .site-heading .h1 {
 #procPic {
   /* margin-right: 20px; */
   width: 250px;
+  height: 250px;
 }
 
 .recipeList .rightText {
-  width: 750px;
+
   float: right;
-  margin-left: 20px;
+  margin : auto;
 }
 
 .recipeProc {
@@ -11281,4 +11282,49 @@ header.masthead .site-heading .h1 {
 
 body {
   background-color: #f6e7d6;
+}
+
+.paging{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end
+}
+
+.search .searchbar{
+	top:0;
+	bottom : 0;
+	margin : auto 0;
+  width: 1000px;
+  height: 50px;
+  border: 2px solid rgb(209, 207, 207);
+  border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.searchbtn {
+		top:0;
+	bottom : 0;
+	margin : auto 0;
+  width: 100px;
+  height: 50px;
+  border: 2px solid rgb(209, 207, 207);
+  
+
+	
+}
+ input::placeholder{
+  text-align: center;
+  font-size: 24px;
+}  
+
+
+.recipeText {
+	 padding: 30px 60px;
+	margin-left: 30px;
+	
 }
