@@ -13,6 +13,7 @@ public class RecipeDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	SqlSession session = null;
 	List<RecipeVO> detailvo = null;
+	List<FavoriteVO> favlist = null;
 	int cnt = 0;
 	
 	
@@ -109,6 +110,22 @@ public class RecipeDAO {
 		return list;
 	}
 
+	// mart_price sql구문 실행
+
+	// mart_price sql구문 실행
+	// 선호식재료 리트스
+	public List<FavoriteVO> favoriteSelect(FavoriteVO fvo) {
+		try {
+			session = sqlSessionFactory.openSession(true);
+			System.out.println("session : " + fvo);
+			favlist = session.selectList("favoriteSelect", fvo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}		
+		return favlist;
+	}
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
@@ -129,5 +146,6 @@ public class RecipeDAO {
 
 		// 4. 쿼리실행 결과 리턴
 		return list;
+
 	}
 }

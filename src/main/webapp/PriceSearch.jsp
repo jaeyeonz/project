@@ -51,7 +51,7 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class=" u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 16px 12px;">Home</a>
+            <ul class=" u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>" style="padding: 16px 12px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp" style="padding: 16px 12px;">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp" style="padding: 16px 12px;">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
@@ -61,7 +61,7 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Recipe.jsp">레시피</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceSearch.jsp">가격검색</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
@@ -104,14 +104,13 @@
                   <%
                   for(int i = 0; i< Emartlist.size(); i++){%> 
                   <tr style="height: 100px;">
-                    <td class="u-table-cell"><%=Emartlist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Emartlist.get(i).getIngr_name() %></font></td>
                     <td class="u-table-cell"><%=Emartlist.get(i).getPrice() %></td>
                   		<%if(i<5){%>
                     <td class="u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
                    <%}else {%>
                     <td class="u-border-1 u-border-white u-table-cell"><%=Emartlist.get(i).getPrice_100() %></td>
-                	<% 
-                   }%>
+                	<%}%>
                   </tr>
                   		<%}%>
                 </tbody>
@@ -136,6 +135,47 @@
                     <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
                     <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
                   </tr>
+                   <!-- 마트가격 가져오기 -->
+                  <%
+                  for(int i = 0; i< Homelist.size(); i++){%> 
+                  <tr style="height: 100px;">
+                    <td class="u-table-cell"><%=Homelist.get(i).getIngr_name() %></td>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice() %></td>
+                  		<%if(i<5){%>
+                    <td class="u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                   <%}else {%>
+                    <td class="u-border-1 u-border-white u-table-cell"><%=Homelist.get(i).getPrice_100() %></td>
+                	<% 
+                   }%>
+                  </tr>
+                  		<%}%>
+                </tbody>
+              </table>
+            </div>
+<<<<<<< HEAD
+            <p class=" u-text u-text-1">이마트</p>
+=======
+            <p class=" u-text u-text-1">홈플러스</p>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
+            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+          </div>
+        </div>
+        <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="33.3%">
+                  <col width="33.3%">
+                  <col width="33.4%">
+                </colgroup>
+                <tbody class="u-table-body">
+                  <tr style="height: 100px;">
+                    <td class="u-align-center  u-table-cell u-table-cell-1">이름</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-2">가격</td>
+                    <td class="u-align-center  u-table-cell u-table-cell-3">100g당</td>
+                  </tr>
+                   <!-- 마트가격 가져오기 -->
                   <%
                   for(int i = 0; i< Lottelist.size(); i++){%> 
                   <tr style="height: 100px;">

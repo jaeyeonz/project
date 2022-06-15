@@ -26,16 +26,26 @@
   		set point = #{point}
   		where recipe_id = #{recipe_id}
   	</update>
- 	
   	
 	<select id="refSelect" resultType="RefVO">
     	select * from refrigerator
     	where member_id = #{member_id}
 	</select>
+	
   	<select id="recipePage" resultType="Integer">
   		 select count(*) from recipe
 		 where recipe_name like '%'||#{keyword}||'%'
   	</select>
+  	<select id="favoriteSelect" resultType="FavVO">
+		select a.name, a.prfr_ingr1, a.prfr_ingr2, a.prfr_ingr3, b.recipe_id, b.recipe_name, b.summary, b.point 
+		from member a, recipe b
+		where a.name = #{name} and		  
+		 (b.recipe_name like '%'||#{prfr_Ingr1}||'%' or 
+		  b.recipe_name like '%'||#{prfr_Ingr2}||'%' or 
+		  b.recipe_name like '%'||#{prfr_Ingr3}||'%') and ROWNUM&lt;=5
+		order by point
+	</select>
+
 
 	<!-- 마트별 상품 가격 -->
 	
