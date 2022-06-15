@@ -11441,3 +11441,6 @@ video.bg-video {
 .input-group-newsletter {
   position: relative;
 }
+.btn-submit {
+  margin-top: 20px;
+}
