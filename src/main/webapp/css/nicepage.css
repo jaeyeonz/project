@@ -18650,6 +18650,7 @@ a.pswp__share--download:hover {
 }
 .u-table th,
 .u-table td {
+  text-align: center;
   padding: 10px;
   font-weight: inherit;
   position: inherit;
@@ -37126,9 +37127,20 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-nav-1 {
   font-weight: 700;
-  font-family: GodoM;
+  font-family: 'GodoM';
   font-size: 1.5rem;
   letter-spacing: normal;
+}
+@font-face {
+  font-family: 'GodoB';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/GodoB.otf);
+}@font-face {
+  font-family: 'GodoM';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/GodoM.ttf);
 }
 
 .u-header .u-nav-2 {

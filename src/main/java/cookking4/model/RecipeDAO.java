@@ -16,6 +16,8 @@ public class RecipeDAO {
 	List<FavoriteVO> favvo = null;
 	int cnt = 0;
 	
+	
+	///////////////////// 모든 레시피
 	public List<RecipeVO> recipeList() {
 
 		// 1. SqlSession 빌려오기
@@ -39,6 +41,7 @@ public class RecipeDAO {
 
 	}
 	
+	////////////// 검색된 레시피
 	public List<RecipeVO> recipeSearchList(String keyword) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 
@@ -107,6 +110,7 @@ public class RecipeDAO {
 		return list;
 	}
 
+<<<<<<< HEAD
 	public List<FavoriteVO> favoriteSelect(String member_id) {
 		try {
 			session = sqlSessionFactory.openSession(true);
@@ -118,5 +122,27 @@ public class RecipeDAO {
 			session.close();
 		}		
 		return favvo;
+=======
+	public List<RecipeVO> priceList() {
+		
+		// 1. SqlSession 빌려오기
+		// openSession(auto commit);
+		SqlSession session = sqlSessionFactory.openSession(true);
+
+		// 2. sql문 실행
+		// select : 1) selectOne : select문의 결과가 하나 -> VO
+		// 2) selectList : select문의 결과가 다수 -> List<VO>
+		// insert delete update : 똑같은 이름의 메소드 사용
+		// selectList("id", parameter)
+		// 채워줄 바인드 있으면 id, 채울값
+		// 없으면 id만
+		List<RecipeVO> list = session.selectList("priceList");
+
+		// 3. 빌려온 session 반환
+		session.close();
+
+		// 4. 쿼리실행 결과 리턴
+		return list;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	}
 }
