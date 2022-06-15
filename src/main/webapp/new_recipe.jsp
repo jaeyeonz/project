@@ -98,13 +98,13 @@
 		<div class="leftImg">
 			<img id="procPic"
 				src="recipeImg/<%=baseList.get(i).getRecipe_id()%>.jpg"><a
-				href="new_recipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"></a>
+				href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"></a>
 		</div>
 		<div class="recipeText">
 		<div class="rightText">
 			<h2 class="post-title">
 				<a
-					href="new_recipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"><%=baseList.get(i).getRecipe_name()%></a>
+					href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"><%=baseList.get(i).getRecipe_name()%></a>
 			</h2>
 			<h3 class="post-subtitle"><%=baseList.get(i).getSummary()%><br>
 			</h3>
