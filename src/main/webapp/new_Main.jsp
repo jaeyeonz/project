@@ -60,6 +60,9 @@
     </div>
     <div class="youtube__cover"></div>
     <div class="inner">
+    <div class = "position-relative row logo">
+					<a href="new_Main.jsp"><img class="logoMain" src="./images/logo.png"/></a>
+					</div>
 
     </div>
   </section>

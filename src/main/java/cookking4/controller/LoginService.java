@@ -38,7 +38,7 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("mvo", result);
 		}
-		response.sendRedirect("new_Main.jsp");		
+		response.sendRedirect("new_Main2.jsp");		
 	}
 
 }

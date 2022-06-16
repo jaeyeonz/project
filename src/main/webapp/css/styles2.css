@@ -11119,7 +11119,7 @@ footer {
 
 header.masthead {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: no-repeat center center;
@@ -11224,6 +11224,7 @@ header.masthead .site-heading .h1 {
   color: #0085A1;
 }
 .post-preview > a > .post-title {
+	font-family : "ELANDB";
   font-size: 1.875rem;
   margin-top: 1.875rem;
   margin-bottom: 0.625rem;
@@ -11262,7 +11263,7 @@ header.masthead .site-heading .h1 {
 
 #procPic {
   /* margin-right: 20px; */
-  width: 250px;
+  width: 300px;
   height: 250px;
 }
 
@@ -11328,3 +11329,48 @@ body {
 	margin-left: 30px;
 	
 }
+.px-lg-5 .recipeOut{
+	display : flex;
+	
+}
+
+
+.recipeOut {
+	top: 0;
+    position: absolute !important;
+    right: 0;
+    
+}
+.recipe-Out{
+	color : white;
+}
+
+.logo{
+	    top: 0;
+    position: absolute !important;
+    
+
+}
+.logoimg{
+	width: 250px;
+    top: 30px;
+    position: absolute;
+    left: 30px;
+}
+
+#mainbg {
+	height: 800px;
+}
+
+.banner1 img{
+	    width: 100%;
+}
+.banner2 img{
+	    width: 100%;
+}
+	
+@font-face { /* 애플산돌고딕 폰트 적용 */
+  font-family: "ELANDB";
+  src: url("fonts/ELAND 초이스 B.ttf") format("truetype");
+  font-weight: normal;
+} 
