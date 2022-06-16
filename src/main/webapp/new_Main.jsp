@@ -60,7 +60,6 @@
     </div>
     <div class="youtube__cover"></div>
     <div class="inner">
-
     </div>
   </section>
 
