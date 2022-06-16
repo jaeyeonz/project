@@ -76,7 +76,11 @@
 
       <div class="text-group">
         
+<<<<<<< HEAD
+          <!-- <a href=""><h1>냉장고로 이동</h1></a> -->
+=======
           <a href="Refrigerator.jsp"><h1>냉장고로 이동</h1></a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
           <span class="material-symbols-outlined">
             arrow_right_alt
           </span>
@@ -93,15 +97,50 @@
     <div class="inner">
 
       <img src="./images/pjw.png" alt="" class="pjwImg" />
-      <div class="text-group">
-        <a href="FavoriteRecipe?name=<%=mvo.getName()%>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1()%>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2()%>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3()%>"><h1>레시피 추천</h1></a>
+      <div class="text-group goRecipe">
+        <!-- <a href=""><h1>레시피 추천</h1></a> -->
+        
+        
         <span class="material-symbols-outlined">
           arrow_right_alt
         </span>
       </div>
     </div>
   </section>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+        
+     <script>
+              var id = "<%=mvo.getLog_id() %>";
+              console.log(id);
+              var aTag = $('a');
+              var address = "FavoriteRecipe?name=<%=mvo.getName()%>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1()%>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2()%>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3()%>";
+              
+           // 2. ex01Ajax 서블릿 파일로 데이터를 요청
+              $.ajax({
+                 // 요청할 서버의 url
+                 // 내 컴퓨터 172.30.1.254
+                 url : 'http://172.30.1.32:8081/',
+                 type : 'GET',
+                 // 보내줄 데이터 지정
+                 data : 'id='+id,
+                 
+                 success : function(res){
+                    // res -> 서버페이지에서 받아온 결과값
+                    for(let i =0; i< 5; i++){
+                       address += "&recipe_id"+(i+1)+"="+res.index[i]
+                    }
+                    $('.goRecipe').append('<a href='+address+'><h1>레시피 추천</h1>'+'</a>');
+                    console.log(res);
+                    console.log(address);
+                    // alert('요청성공!');
+                 },
+                 error : function(){
+                    alert('요청실패!');
+                 }
+              });              
+        </script>
 </body>
 
 </html>

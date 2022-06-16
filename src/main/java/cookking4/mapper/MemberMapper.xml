@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <!-- namespace : mapper 파일을 구분할 수 있는 고유 식별자 -->
   <!-- 이름을 지정해줄 때 DAO 클래스파일명과 일치시키는 경우가 많음 -->
-<mapper namespace="cookking2.model.DAO">
+<mapper namespace="cookking4.model.DAO">
 	<!-- parameterType : alias 지정했는지 확인할 것 -->
 	
 	<select id="Login" parameterType="VO" resultType="VO">
@@ -15,6 +15,10 @@
 	<select id="checkId" parameterType="String" resultType = "Integer">
 		select count(*) from member where Log_id = #{Log_id}
 	</select>	
+	
+	<select id="LoginCheck" parameterType="VO" resultType = "Integer">
+		select count(*) from member where Log_id = #{Log_id} and pw = #{pw}
+	</select>
 	
 	<insert id="SignupInsert"	parameterType="VO">
  		insert into member

@@ -19,6 +19,8 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+    
+	    
         <!-- Background Video-->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="_assets/mp4/bg.mp4" type="video/mp4" /></video>
         <!-- Masthead-->
@@ -86,5 +88,46 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    	crossorigin="anonymous"></script>
+    
+		<!-- 로그인 정보 확인 Ajax -->
+		<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+		<script>
+			$("#signinButton").click(function() {
+				console.log('들어왔나?')
+				let Log_id = $('#id').val();
+				let pw = $('#password').val();
+				console.log(Log_id);
+				
+				$.ajax({4
+					url : "loginCheckService",
+					type : "post",
+					data : {
+						Log_id : Log_id,
+						pw : pw
+					},
+					dataType : 'json',
+					success : function(result) {
+					//	console.log(result);
+						if (result == 0) {
+							alert('😥로그인 정보가 올바르지 않습니다.😥')							
+						} else  {
+							console.log('로그인 성공')	
+						}						
+					},
+					error : function() {
+						console.log('😥로그인 정보가 올바르지 않습니다.😥')
+					}
+				});
+			});
+		</script>        
+        
+        
     </body>
 </html>

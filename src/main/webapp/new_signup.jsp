@@ -33,6 +33,7 @@
         </video>
         <!-- Masthead-->
         <div class="masthead">
+        	
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
                     <!-- * * * * * * * * * * * * * * *-->
@@ -43,13 +44,15 @@
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
                     <h1 class="fst-italic lh-1 mb-4">회원가입</h1>
-                    <form action="JoinService" method="post" data-sb-form-api-token="API_TOKEN">
+            <button id = "id_check" class = "btn btn-primary">중복검사</button>
+                    
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
+                    <form action="JoinService" method="post" data-sb-form-api-token="API_TOKEN" id="joinform">
                             <div class="col"><label for="id" class="form-label">ID</label>
                                 <input name = "Log_id" class="form-control" id="signupId" type="text" placeholder="Enter ID..."
                                     aria-label="Enter ID..." data-sb-validations="required,email" />
-                                    <button class="btn btn-primary btn-submit" id="id_check">중복검사</button>
+                                    
                             </div>
                             <div class="col"><label for="password" class="form-label">Password</label>
                                 <input name = "pw" type="password" class="form-control" id="password"
@@ -72,6 +75,8 @@
                                     placeholder="Enter 선호식재료3..." aria-label="Enter 선호식재료3...">
                             </div>
                             <div class="col-auto"><button class="btn btn-primary btn-submit" type="submit">Submit</button></div>
+                            </form>
+                            
                         </div>
 
                         <!-- <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
@@ -94,7 +99,7 @@
                         <!-- This is what your users will see when there is-->
                         <!-- an error submitting the form-->
                         <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div> -->
-                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -122,11 +127,16 @@
     	crossorigin="anonymous"></script>
     
 		<!-- 아이디 중복체크 Ajax -->
+		<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 		<script>
 			$("#id_check").click(function() {
 				console.log('들어왔나?')
 				let Log_id = $('#signupId').val();
 				console.log(Log_id);
+				
 				$.ajax({
 					url : "IdCheckService",
 					type : "post",
@@ -138,8 +148,10 @@
 					//	console.log(result);
 						if (result == 1) {
 							alert('사용중인 아이디입니다.')
+							
 						} else {
 							alert('사용 가능한 아이디입니다.')
+							
 						}
 					},
 					error : function() {

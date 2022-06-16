@@ -14,7 +14,9 @@ public class RecipeDAO {
 	SqlSession session = null;
 	List<RecipeVO> detailvo = null;
 	List<FavoriteVO> favlist = null;
+	List<FavoriteVO> similist = null;
 	int cnt = 0;
+	
 	
 	
 	///////////////////// 모든 레시피
@@ -127,6 +129,20 @@ public class RecipeDAO {
 		return favlist;
 	}
 
+	// 유사도 레시피 리스트
+	public List<FavoriteVO> similist(RecipeIdVO recipe_ids){
+		try {
+			session = sqlSessionFactory.openSession(true);
+			System.out.println("session : " + recipe_ids);
+			similist = session.selectList("similist", recipe_ids);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}		
+		return similist;
+	}
+	
 	public List<RecipeVO> priceList() {
 		
 		// 1. SqlSession 빌려오기
