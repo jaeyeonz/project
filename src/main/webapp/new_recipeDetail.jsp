@@ -63,7 +63,7 @@
 		  		</div>
 		  	<div class="logo"style= "text-align:center;">
 		  	<br>
-		  	<a href= "new_Main.jsp">집밥도사</a>
+		  	<a href= "new_Main2.jsp">집밥도사</a>
 		  	</div>
 		  	<br>
 	  		<div class="logout"style= "text-align:center;">
