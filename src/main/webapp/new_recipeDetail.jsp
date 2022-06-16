@@ -24,22 +24,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles2.css" rel="stylesheet" />
     <link  rel="stylesheet" href="css/star.css" media="screen">
-    <style>
-    button.logo, button.logout{
-    	width : 100px:
-    	height : 50px:
-    	}
-	button.logo {
-	  position: absolute;
-	  top: 50px;
-	  left : 150px; 
-	}
-	button.logout {
-	  position: absolute;
-	  top: 50px;
-	  right : 150px;
-}
-</style>
+    
 </head>
 
 <body>
@@ -54,22 +39,6 @@
     
     <!-- 요리 메인 사진 -->
     <div class="content">
-    <div class = "remocon" style = "border: 1px solid black;display: block; position: fixed; top: 600px; right: 100px; z-index: 1000;">
-			<div class = "move" style = "text-align:center; cursor:move; border: 1px solid black">
-		  		<strong>리모컨</strong>
-		  		</div>
-		  	<div class = "menu" style= "text-align:center;">
-		  		<a href= "new_recipe.jsp">MENU</a>
-		  		</div>
-		  	<div class="logo"style= "text-align:center;">
-		  	<br>
-		  	<a href= "new_Main2.jsp">집밥도사</a>
-		  	</div>
-		  	<br>
-	  		<div class="logout"style= "text-align:center;">
-	  		<a href= "new_index.jsp">로그아웃</a>
-	  		</div>
-	</div>
         <header class="masthead" style="background-image: url('images/detailbg.jpg')">
 	        <div class="position-relative recipeOut">
 						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
