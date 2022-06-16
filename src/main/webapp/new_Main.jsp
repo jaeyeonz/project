@@ -60,6 +60,9 @@
     </div>
     <div class="youtube__cover"></div>
     <div class="inner">
+    <div class = "position-relative row logo">
+					<a href="new_Main.jsp"><img class="logoMain" src="./images/logo.png"/></a>
+					</div>
 
     </div>
   </section>
@@ -73,7 +76,11 @@
 
       <div class="text-group">
         
+<<<<<<< HEAD
           <!-- <a href=""><h1>냉장고로 이동</h1></a> -->
+=======
+          <a href="Refrigerator.jsp"><h1>냉장고로 이동</h1></a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
           <span class="material-symbols-outlined">
             arrow_right_alt
           </span>

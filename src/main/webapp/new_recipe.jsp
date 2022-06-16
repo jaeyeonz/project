@@ -42,8 +42,12 @@
 	<%
 	VO mvo = (VO) session.getAttribute("mvo");
 	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
+<<<<<<< HEAD
 	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");
 	List<FavoriteVO> svo = (List<FavoriteVO>)session.getAttribute("SimilVO");
+=======
+	List<FavoriteVO> fvo = (List<FavoriteVO>) session.getAttribute("FavoriteVO");
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	int pageSize = 5;
 
 	String pageNum = request.getParameter("pageNum");
@@ -68,17 +72,28 @@
 
 	<header class="masthead"
 		style="background-image: url('images/recipe_bg2.jpg')">
-		<div class="container position-relative px-4 px-lg-5">
+
+		<div class="position-relative recipeOut">
+						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
+									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+					</div>
+					<div class = "position-relative row logo">
+					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					</div>
+		<div class="container position-relative px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
-				
-				<!-- /////////// 검색창 /////////////////// -->
+					
+
+					<!-- /////////// 검색창 /////////////////// -->
 					<form action="SearchService" method="Get">
 						<div class="search">
-							<input class = "searchbar" type="text" name="keyword" placeholder="재료를 입력하세요.">
-							<input class = "searchbtn" type="submit" value="검색">
+							<input class="searchbar" type="text" name="keyword"
+								placeholder="재료를 입력하세요."> <input class="searchbtn"
+								type="submit" value="검색">
 						</div>
 					</form>
+
 				</div>
 			</div>
 		</div>
@@ -86,31 +101,39 @@
 		</table>
 	</header>
 
+<<<<<<< HEAD
 	<h1 align="center"><%=mvo.getName() %>님 선호식재료 기반 추천 레시피</h1>
 	<br>
 	<% if(fvo != null) {
 		for(int i = 0 ; i < fvo.size() ; i++) {
+=======
+
+	<%
+	if (fvo != null) {
+		for (int i = 0; i < fvo.size(); i++) {
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	%>
 	<div class="recipeList">
 		<div class="leftImg">
 			<img id="procPic" src="recipeImg/<%=fvo.get(i).getRecipe_id()%>.jpg"></a>
 		</div>
-		
+
 		<div class="recipeText">
-		<div class="rightText">
-			<h2 class="post-title">
-				<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
-			</h2>
-			<br>
-			<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
-			</h3>
-			<br>
+			<div class="rightText">
+				<h2 class="post-title">
+					<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
+				</h2>
+				<br>
+				<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
+				</h3>
+				<br>
+			</div>
 		</div>
-		</div>
-		
+
 		<br>
-		
+
 	</div>
+<<<<<<< HEAD
 	<% } } %>
 	<br>
 	<h1 align="center"><%=mvo.getName() %>님 평가한 평점기반 추천 레시피</h1>
@@ -140,6 +163,14 @@
 	</div>
 	<% } } %>
 	
+=======
+	<%
+	}
+	}
+	%>
+
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 
 	<%
 	// 값 조건식 ==> 연산자
@@ -160,32 +191,32 @@
 				href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"></a>
 		</div>
 		<div class="recipeText">
-		<div class="rightText">
-			<h2 class="post-title">
-				<a
-					href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"><%=baseList.get(i).getRecipe_name()%></a>
-			</h2>
-			<h3 class="post-subtitle"><%=baseList.get(i).getSummary()%><br>
-			</h3>
-		</div>
+			<div class="rightText">
+				<h2 class="post-title">
+					<a
+						href="RecipeDetail?recipeNum=<%=baseList.get(i).getRecipe_id()%>&summary=<%=baseList.get(i).getSummary()%>&name=<%=baseList.get(i).getRecipe_name()%>"><%=baseList.get(i).getRecipe_name()%></a>
+				</h2>
+				<h3 class="post-subtitle"><%=baseList.get(i).getSummary()%><br>
+				</h3>
+			</div>
 		</div>
 	</div>
-		<%
-		}
-		}
+	<%
+	}
+	}
 
-		if (baseList != null) {
-		if (baseList.size() != 0) {
+	if (baseList != null) {
+	if (baseList.size() != 0) {
 
-		int pageCount = baseList.size() / pageSize + (baseList.size() % pageSize == 0 ? 0 : 1);
-		int pageBlock = 5;
+	int pageCount = baseList.size() / pageSize + (baseList.size() % pageSize == 0 ? 0 : 1);
+	int pageBlock = 5;
 
-		int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;
-		int endPage = startPage + pageBlock - 1;
-		if (endPage > pageCount) {
-			endPage = pageCount;
-		}
-		%>
+	int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;
+	int endPage = startPage + pageBlock - 1;
+	if (endPage > pageCount) {
+		endPage = pageCount;
+	}
+	%>
 	<ul class="paging">
 		<%
 		if (startPage > pageBlock) {
@@ -214,7 +245,7 @@
 		}
 		}
 		%>
-		</ul>
+	</ul>
 	<!-- Footer-->
 	<!-- Bootstrap core JS-->
 	<script

@@ -27,8 +27,8 @@
         <div class="masthead">
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">Our Website is Coming Soon</h1>
-                    <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p>
+                    <h1 class="fst-italic lh-1 mb-4">집밥도사</h1>
+                    <p class="mb-5">Part of the secret of success in life is to eat what you like and let the food fight it out inside.</p>
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
                     <!-- * * * * * * * * * * * * * * *-->
@@ -39,9 +39,9 @@
                     <form action="LoginService" method="post" data-sb-form-api-token="API_TOKEN">
                         <div class="row input-group-newsletter">
                             <div class="col"><label for="id" class="form-label">ID</label>
-                                <input name="Log_id" class="form-control" id="id" type="text" placeholder="Enter ID..." aria-label="Enter ID..." data-sb-validations="required,email" /></div>
+                                <input name="Log_id" class="form-control" id="id" type="text" placeholder="아이디" aria-label="Enter ID..." data-sb-validations="required,email" /></div>
                             <div class="col"><label for="password" class="form-label">Password</label>
-                                <input name="pw" type="password" class="form-control" id="password" placeholder="Enter password..." aria-label="Enter password..."></div>
+                                <input name="pw" type="password" class="form-control" id="password" placeholder="비밀번호" aria-label="Enter password..."></div>
                     		<div class="col-auto"><button class="btn btn-primary" id="signupButton" type = "button" onclick="location.href='new_signup.jsp';">Sign up</button></div>
                             <div class="col-auto"><button class="btn btn-primary" id="signinButton" type="submit">Sign in</button></div>
                         </div>

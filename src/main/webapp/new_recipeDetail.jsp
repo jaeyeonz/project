@@ -24,6 +24,22 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles2.css" rel="stylesheet" />
     <link  rel="stylesheet" href="css/star.css" media="screen">
+    <style>
+    button.logo, button.logout{
+    	width : 100px:
+    	height : 50px:
+    	}
+	button.logo {
+	  position: absolute;
+	  top: 50px;
+	  left : 150px; 
+	}
+	button.logout {
+	  position: absolute;
+	  top: 50px;
+	  right : 150px;
+}
+</style>
 </head>
 
 <body>
@@ -34,10 +50,34 @@
     String name = (String)request.getAttribute("name");
     int recipeNum = (int)request.getAttribute("recipeNum");
 %>  	  
-    <!-- Page Header-->
+    <!-- Page Header -->
+    
     <!-- 요리 메인 사진 -->
     <div class="content">
-        <header class="masthead" style="background-image: url('images/background.jpg')">
+    <div class = "remocon" style = "border: 1px solid black;display: block; position: fixed; top: 600px; right: 100px; z-index: 1000;">
+			<div class = "move" style = "text-align:center; cursor:move; border: 1px solid black">
+		  		<strong>리모컨</strong>
+		  		</div>
+		  	<div class = "menu" style= "text-align:center;">
+		  		<a href= "new_recipe.jsp">MENU</a>
+		  		</div>
+		  	<div class="logo"style= "text-align:center;">
+		  	<br>
+		  	<a href= "new_Main2.jsp">집밥도사</a>
+		  	</div>
+		  	<br>
+	  		<div class="logout"style= "text-align:center;">
+	  		<a href= "new_index.jsp">로그아웃</a>
+	  		</div>
+	</div>
+        <header class="masthead" style="background-image: url('images/detailbg.jpg')">
+	        <div class="position-relative recipeOut">
+						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
+									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+					</div>
+					<div class = "position-relative row logo">
+					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					</div>
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -52,13 +92,14 @@
         
         <form action="reviewPoint?recipeNum=<%=recipeNum %>&name=<%=name %>&summary=<%=summary %>" class="mb-3" name="myform" id="myform" method="post" align="center">
 			<fieldset>
-				<span style="font-size: 3rem; color: #db545a;">레시피에 대한 별점을 선택해주세요</span>
+				<span style="font-size: 2rem; color: #db545a;">레시피에 대한 별점을 선택해주세요</span>
 				<br>  				
   				<input type="radio" name="reviewStar" value="5" id="rate1"><label for="rate1">★</label>
 				<input type="radio" name="reviewStar" value="4" id="rate2"><label for="rate2">★</label>
 				<input type="radio" name="reviewStar" value="3" id="rate3"><label for="rate3">★</label>
 				<input type="radio" name="reviewStar" value="2" id="rate4"><label for="rate4">★</label>
 				<input type="radio" name="reviewStar" value="1" id="rate5"><label for="rate5">★</label>	
+				
 			</fieldset>			
 			<input type="submit" name="star" value="별점등록">
 		</form>
@@ -85,7 +126,7 @@
         <div class="recipeProc">
             <div class="rightText">
             <br><br>
-                <h3 class="post-title">요리순서</h3>
+                <h3 class="recipe-post-title">요리순서</h3>
                 <h4 class="post-subtitle">
                         <%	for (int i = 0; i < detailvo.size(); i++) {
 						                for (int j = 0; j <= i; j++) {
@@ -106,6 +147,7 @@
                 </h4>
             </div>
         </div>
+    </div>
     
     
     <!-- Bootstrap core JS-->

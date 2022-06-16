@@ -78,7 +78,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'twayair';
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -675,11 +675,14 @@ progress {
 }
 .row > * {
   flex-shrink: 0;
-  width: 100%;
+  width : 700px;
   max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+  display: block;
+    margin: 200px;
+    margin-left: 100px;
 }
 
 .col {
@@ -2998,13 +3001,13 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0085A1;
-  border-color: #0085A1;
+  background-color: #508742;
+  border-color: #508742;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #007189;
-  border-color: #006a81;
+  background-color: #BCD614;
+  border-color: #BCD614;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
@@ -7079,6 +7082,7 @@ textarea.form-control-lg {
 
 .mb-3 {
   margin-bottom: 1rem !important;
+  margin-top: 4rem;
 }
 
 .mb-4 {
@@ -11119,7 +11123,7 @@ footer {
 
 header.masthead {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: no-repeat center center;
@@ -11140,6 +11144,7 @@ header.masthead:before {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
+	font-family: 'Hahmlet-Bold';
   color: #fff;
 }
 header.masthead .page-heading,
@@ -11224,6 +11229,7 @@ header.masthead .site-heading .h1 {
   color: #0085A1;
 }
 .post-preview > a > .post-title {
+	font-family: 'Hahmlet-Bold';
   font-size: 1.875rem;
   margin-top: 1.875rem;
   margin-bottom: 0.625rem;
@@ -11231,6 +11237,7 @@ header.masthead .site-heading .h1 {
 .post-preview > a > .post-subtitle {
   font-weight: 300;
   margin-bottom: 0.625rem;
+  margin-top: 60px;
 }
 .post-preview > .post-meta {
   font-size: 1.125rem;
@@ -11243,6 +11250,7 @@ header.masthead .site-heading .h1 {
 }
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
+  font-family: 'Hahmlet-Bold';
     font-size: 2.25rem;
   }
 }
@@ -11253,6 +11261,7 @@ header.masthead .site-heading .h1 {
   width: 960px; margin: 0 auto;
   display: flex;
   margin-bottom: 60px;
+  margin-top : 60px;
 }
 
 .leftImg {
@@ -11262,7 +11271,7 @@ header.masthead .site-heading .h1 {
 
 #procPic {
   /* margin-right: 20px; */
-  width: 250px;
+  width: 300px;
   height: 250px;
 }
 
@@ -11328,3 +11337,72 @@ body {
 	margin-left: 30px;
 	
 }
+.px-lg-5 .recipeOut{
+	display : flex;
+	
+}
+
+
+.recipeOut {
+	top: 0;
+    position: absolute !important;
+    right: 0;
+    
+}
+.recipe-Out{
+	color : white;
+}
+
+.logo{
+	    top: 0;
+    position: absolute !important;
+    
+
+}
+.logoimg{
+	width: 250px;
+    top: 30px;
+    position: absolute;
+    left: 30px;
+}
+
+#mainbg {
+	height: 800px;
+}
+
+.banner1 img{
+	    width: 100%;
+}
+.banner2 img{
+	    width: 100%;
+}
+	
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hahmlet-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.post-subtitle{
+	font-family: 'Hahmlet-Bold';
+}
+
+
+.post-title{
+	font-family: 'Hahmlet-Bold';
+}
+
+.recipe-post-title {
+	margin-bottom: 40px !important;
+}
+
+
