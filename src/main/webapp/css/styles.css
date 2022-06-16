@@ -11430,10 +11430,11 @@ video.bg-video {
   }
 }
 #signinButton {
-  position: absolute;
-  margin-top: 24px;
-  left: 310px;
+	position: absolute;
+    margin-top: 24px;
+    left: 310px;
 }
+
 #signupButton {
   margin-top: 24px;
 }
@@ -11443,4 +11444,12 @@ video.bg-video {
 }
 .btn-submit {
   margin-top: 20px;
+}
+
+#id_check {
+	position: absolute;
+    top: 111px;
+    left: 440px;
+    height: 59px;
+    width: 100px;
 }

@@ -46,6 +46,11 @@
 		  b.recipe_name like '%'||#{prfr_Ingr3}||'%') and ROWNUM&lt;=5
 		order by a_point
 	</select>
-
+	
+	<select id="similist" resultType="FavVO" parameterType="cookking4.model.RecipeIdVO">
+	select recipe_id, recipe_name, summary from recipe
+	where recipe_id in 
+       (#{recipe_id1},#{recipe_id2},#{recipe_id3},#{recipe_id4},#{recipe_id5})
+	</select>
 
 </mapper>
