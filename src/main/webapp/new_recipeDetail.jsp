@@ -24,6 +24,22 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles2.css" rel="stylesheet" />
     <link  rel="stylesheet" href="css/star.css" media="screen">
+    <style>
+    button.logo, button.logout{
+    	width : 100px:
+    	height : 50px:
+    	}
+	button.logo {
+	  position: absolute;
+	  top: 50px;
+	  left : 150px; 
+	}
+	button.logout {
+	  position: absolute;
+	  top: 50px;
+	  right : 150px;
+}
+</style>
 </head>
 
 <body>
@@ -34,10 +50,28 @@
     String name = (String)request.getAttribute("name");
     int recipeNum = (int)request.getAttribute("recipeNum");
 %>  	  
-    <!-- Page Header-->
+    <!-- Page Header -->
+    
     <!-- 요리 메인 사진 -->
     <div class="content">
+    <div class = "remocon" style = "border: 1px solid black;display: block; position: fixed; top: 600px; right: 100px; z-index: 1000;">
+			<div class = "move" style = "text-align:center; cursor:move; border: 1px solid black">
+		  		<strong>리모컨</strong>
+		  		</div>
+		  	<div class = "menu" style= "text-align:center;">
+		  		<a href= "new_recipe.jsp">MENU</a>
+		  		</div>
+		  	<div class="logo"style= "text-align:center;">
+		  	<br>
+		  	<a href= "new_Main.jsp">집밥도사</a>
+		  	</div>
+		  	<br>
+	  		<div class="logout"style= "text-align:center;">
+	  		<a href= "new_index.jsp">로그아웃</a>
+	  		</div>
+	</div>
         <header class="masthead" style="background-image: url('images/background.jpg')">
+	        
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -59,6 +93,7 @@
 				<input type="radio" name="reviewStar" value="3" id="rate3"><label for="rate3">★</label>
 				<input type="radio" name="reviewStar" value="2" id="rate4"><label for="rate4">★</label>
 				<input type="radio" name="reviewStar" value="1" id="rate5"><label for="rate5">★</label>	
+				
 			</fieldset>			
 			<input type="submit" name="star" value="별점등록">
 		</form>
@@ -106,6 +141,7 @@
                 </h4>
             </div>
         </div>
+    </div>
     
     
     <!-- Bootstrap core JS-->
