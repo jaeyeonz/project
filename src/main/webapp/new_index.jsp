@@ -25,8 +25,9 @@
         <div class="masthead">
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">집밥도사</h1>
-                    <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p>
+                    <h1 class="lh-1 mb-4" style="font-family:'SCDream6';">초보요리사의</h1>
+                    <h1 class="lh-1 mb-4" style="font-family:'SCDream6';">레시피 공간</h1>
+                    <p class="mb-5" style="font-family:'SCDream4';">쉽고 재밌는 요리를 선사합니다!</p>
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
                     <!-- * * * * * * * * * * * * * * *-->
