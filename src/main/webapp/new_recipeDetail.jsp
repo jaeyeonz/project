@@ -62,19 +62,29 @@
 			</fieldset>			
 			<input type="submit" name="star" value="별점등록">
 		</form>
-		<br><br>
-        <div class="recipeProc">        
+		<br><br>		
+		
         <% if (detailvo != null) {	%>
-            <div class="leftImg"><img id="procPic" src="recipeImg/<%=recipeNum%>.jpg" alt=""></div>
+        <div class="recipeProc">        
+            <div class="leftImg">
+            	<img id="procPic" src="recipeImg/<%=recipeNum%>.jpg" alt="">
+            </div>
+            
+            <div class="recipeText">
             <div class="rightText">
                 <h2 class="post-title"><%=name%></h2>
+                <br>
                 <h3 class="post-subtitle"><%=summary%></h3>
+                <br>
+            </div>
             </div>
         </div>
+        
         
         <!-- 사진없을 때 -->
         <div class="recipeProc">
             <div class="rightText">
+            <br><br>
                 <h3 class="post-title">요리순서</h3>
                 <h4 class="post-subtitle">
                         <%	for (int i = 0; i < detailvo.size(); i++) {
@@ -96,7 +106,8 @@
                 </h4>
             </div>
         </div>
-    </div>
+    
+    
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
