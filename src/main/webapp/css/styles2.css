@@ -11405,4 +11405,12 @@ body {
 	margin-bottom: 40px !important;
 }
 
+#ingr {
+	height:80px;
+	width:100px;
+}
 
+.u-section-1 {
+	display: flex;
+	text-align: center;
+}

@@ -1,94 +1,91 @@
+<%@page import="cookking4.model.FavoriteVO"%>
 <%@page import="cookking4.model.VO"%>
+<%@page import="cookking4.model.RecipeVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="font-size: 16px;">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Creative&nbsp;Stories, Time to Makea Difference, Create YourVisual Style, We developDigital Strategies, We are nominated to Agency of Year">
-    <meta name="description" content="">
-    <title>냉장고</title>
-    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Clean Blog - Start Bootstrap Theme</title>
+<link rel="icon" type="image/x-icon" href="_assets/favicon.ico" />
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+	crossorigin="anonymous"></script>
+
+
+
+
+<!-- Google fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+	rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="css/styles2.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/nicepage.css" media="screen">
 <link rel="stylesheet" href="css/Refrigerator.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.12.5, nicepage.com">
-    
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Allerta:400">
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png",
-		"sameAs": []
-}</script>
-    <meta name="theme-color" content="#e00b4c">
-    <meta property="og:title" content="냉장고">
-    <meta property="og:type" content="website">
-    
-        <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <style>
-    #ingr {
-    	width : 150px;
-    	height : 100px;
-    }
-    </style>
-  </head>
-  <body class="u-body u-overlap u-xl-mode">
-  <%  
-  VO mvo = (VO)session.getAttribute("mvo");   
-  
-  %>
-  
-  <header class="u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
-        <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: GodoM; font-weight: 700;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
 
-            <ul class="u-custom-font u-nav u-spacing-25 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>" style="padding: 16px 12px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList" style="padding: 16px 12px;">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceList" style="padding: 16px 12px;">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp" style="padding: 16px 12px;">냉장고</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
+</head>
 
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FavoriteRecipe?name=<%=mvo.getName() %>&prfr_Ingr1=<%=mvo.getPrfr_Ingr1() %>&prfr_Ingr2=<%=mvo.getPrfr_Ingr2() %>&prfr_Ingr3=<%=mvo.getPrfr_Ingr3() %>">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RecipeList">레시피</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PriceList">가격검색</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Refrigerator.jsp">냉장고</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-        <p class="u-align-right u-text u-text-default u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="#"><%=mvo.getName() %>님 환영합니다.
-	      <a href="Logout"><button type="button" class="btn btn-primary" >로그아웃</button></a>
-          </a>
-        </p>
-      </div></header>
-      
-      <!-- /////////////////// section /////////////////////// -->
-    <section class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-clearfix u-palette-4-light-2 u-section-1" id="carousel_e725">
+<body>
+	<!-- Navigation-->
+	<!-- Page Header-->
+	<%
+	VO mvo = (VO) session.getAttribute("mvo");
+	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
+	List<FavoriteVO> fvo = (List<FavoriteVO>) session.getAttribute("FavoriteVO");
+	int pageSize = 5;
+
+	String pageNum = request.getParameter("pageNum");
+	if (pageNum == null) {
+		pageNum = "1";
+	}
+
+	//7-4. 시작행번호계산
+	//10개씩 컬럼 나누고 2페이지에서 시작행이 11이되고 3페이지에서 시작행이 21이 되게끔 만들기
+	int currentPage = Integer.parseInt(pageNum);
+	int startRow = (currentPage - 1) * pageSize;
+	//7-5. 끈행번호계산
+	//currentPage가 2인경우, 2*10 = 20
+	//currentPage가 3인경우, 3*10 = 30
+	int endRow = startRow + (pageSize - 1);
+	//4. 게시판 글의 수를 화면에 데이터 출력
+	//게시판 총 글의 수 : cnt개
+	//5. getBoardList() 메서드생성
+	%>
+
+	<!-- ////////////////////// header 영역 //////////////////////////////////  -->
+
+	<header class="masthead"
+		style="background-image: url('images/refbg.jpg')">
+
+		<div class="position-relative recipeOut">
+						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
+									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+					</div>
+					<div class = "position-relative row logo">
+					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					</div>
+		<div class="container position-relative px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-md-10 col-lg-8 col-xl-7">
+			
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-clearfix u-palette-4-light-2 u-section-1" id="carousel_e725 containerIngr">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-custom-font u-text u-text-1">나의 냉장고</h1>
         <div class="u-align-center u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-container-style u-custom-item u-list-item u-repeater-item">
@@ -122,13 +119,17 @@
         
       </div>
     </section>
-    <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
-background-color: #ffffff !important
-}</style>
-    
-    
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	<!-- ///////////////////////////////content /////////////////////////-->
+
+
+	<!-- Footer-->
+	<!-- Bootstrap core JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts2.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
     var codeSel = $('#ingrList');
@@ -178,8 +179,10 @@ background-color: #ffffff !important
             optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg0[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
+            optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg0[i]+'">';
             optionHtml += '<h3 class="u-custom-font u-gallery-heading u-text-body-alt-color" style="font-size: 1.25rem; font-family: GodoM;">'+ctg0[i]+'</h3>';
             optionHtml += '<p class="u-gallery-text" style="margin-top: 0px;"></p>';
+            optionHtml += '</a>'
             optionHtml += '</div>';
             optionHtml += '</div>';
         }
@@ -252,5 +255,6 @@ background-color: #ffffff !important
 
     })
     </script>
-  </body>
+</body>
+
 </html>

@@ -11,7 +11,7 @@ public class PriceDAO {
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	
-	public List<PriceVO> EmartList() {
+	public List<PriceVO> EmartList(String ingr_info_irdnt_nm) {
 
 		// 1. SqlSession 빌려오기
 		// openSession(auto commit);
@@ -24,7 +24,7 @@ public class PriceDAO {
 		// selectList("id", parameter)
 		// 채워줄 바인드 있으면 id, 채울값
 		// 없으면 id만
-		List<PriceVO> list1 = session.selectList("EmartSearch");
+		List<PriceVO> list1 = session.selectList("EmartSearch",ingr_info_irdnt_nm);
 		
 
 		// 3. 빌려온 session 반환
@@ -34,7 +34,7 @@ public class PriceDAO {
 		return list1;
 
 	}
-	public List<PriceVO> LotteList() {
+	public List<PriceVO> LotteList(String ingr_info_irdnt_nm) {
 		
 		// 1. SqlSession 빌려오기
 		// openSession(auto commit);
@@ -47,7 +47,7 @@ public class PriceDAO {
 		// selectList("id", parameter)
 		// 채워줄 바인드 있으면 id, 채울값
 		// 없으면 id만
-		List<PriceVO> list = session.selectList("LotteSearch");
+		List<PriceVO> list = session.selectList("LotteSearch",ingr_info_irdnt_nm);
 		
 		
 		// 3. 빌려온 session 반환
@@ -57,7 +57,7 @@ public class PriceDAO {
 		return list;
 		
 	}
-	public List<PriceVO> HomeList() {
+	public List<PriceVO> HomeList(String ingr_info_irdnt_nm) {
 		
 		// 1. SqlSession 빌려오기
 		// openSession(auto commit);
@@ -70,7 +70,7 @@ public class PriceDAO {
 		// selectList("id", parameter)
 		// 채워줄 바인드 있으면 id, 채울값
 		// 없으면 id만
-		List<PriceVO> list = session.selectList("HomeSearch");
+		List<PriceVO> list = session.selectList("HomeSearch",ingr_info_irdnt_nm);
 		
 		
 		// 3. 빌려온 session 반환
