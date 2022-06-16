@@ -70,8 +70,14 @@
 	  		<a href= "new_index.jsp">로그아웃</a>
 	  		</div>
 	</div>
-        <header class="masthead" style="background-image: url('images/background.jpg')">
-	        
+        <header class="masthead" style="background-image: url('images/detailbg.jpg')">
+	        <div class="position-relative recipeOut">
+						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
+									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+					</div>
+					<div class = "position-relative row logo">
+					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					</div>
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -86,7 +92,7 @@
         
         <form action="reviewPoint?recipeNum=<%=recipeNum %>&name=<%=name %>&summary=<%=summary %>" class="mb-3" name="myform" id="myform" method="post" align="center">
 			<fieldset>
-				<span style="font-size: 3rem; color: #db545a;">레시피에 대한 별점을 선택해주세요</span>
+				<span style="font-size: 2rem; color: #db545a;">레시피에 대한 별점을 선택해주세요</span>
 				<br>  				
   				<input type="radio" name="reviewStar" value="5" id="rate1"><label for="rate1">★</label>
 				<input type="radio" name="reviewStar" value="4" id="rate2"><label for="rate2">★</label>
@@ -120,7 +126,7 @@
         <div class="recipeProc">
             <div class="rightText">
             <br><br>
-                <h3 class="post-title">요리순서</h3>
+                <h3 class="recipe-post-title">요리순서</h3>
                 <h4 class="post-subtitle">
                         <%	for (int i = 0; i < detailvo.size(); i++) {
 						                for (int j = 0; j <= i; j++) {

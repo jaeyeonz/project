@@ -54,4 +54,18 @@ public class DAO {
 
 		return cnt;
 	}
+
+	public int checkLogin(VO mvo) {
+		try {
+			session = sqlSessionFactory.openSession(true);
+			cnt = session.selectOne("LoginCheck", mvo);
+			System.out.println("dao :" + cnt);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return cnt; 
+		
+	}
 }

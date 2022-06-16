@@ -19,6 +19,8 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+    
+	    
         <!-- Background Video-->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="_assets/mp4/bg.mp4" type="video/mp4" /></video>
         <!-- Masthead-->
@@ -38,9 +40,9 @@
                     <form action="LoginService" method="post" data-sb-form-api-token="API_TOKEN">
                         <div class="row input-group-newsletter">
                             <div class="col"><label for="id" class="form-label">ID</label>
-                                <input name="Log_id" class="form-control" id="id" type="text" placeholder="Enter ID..." aria-label="Enter ID..." data-sb-validations="required,email" /></div>
+                                <input name="Log_id" class="form-control" id="id" type="text" placeholder="아이디" aria-label="Enter ID..." data-sb-validations="required,email" /></div>
                             <div class="col"><label for="password" class="form-label">Password</label>
-                                <input name="pw" type="password" class="form-control" id="password" placeholder="Enter password..." aria-label="Enter password..."></div>
+                                <input name="pw" type="password" class="form-control" id="password" placeholder="비밀번호" aria-label="Enter password..."></div>
                     		<div class="col-auto"><button class="btn btn-primary" id="signupButton" type = "button" onclick="location.href='new_signup.jsp';">Sign up</button></div>
                             <div class="col-auto"><button class="btn btn-primary" id="signinButton" type="submit">Sign in</button></div>
                         </div>
@@ -87,5 +89,46 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    	crossorigin="anonymous"></script>
+    
+		<!-- 로그인 정보 확인 Ajax -->
+		<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+		<script>
+			$("#signinButton").click(function() {
+				console.log('들어왔나?')
+				let Log_id = $('#id').val();
+				let pw = $('#password').val();
+				console.log(Log_id);
+				
+				$.ajax({4
+					url : "loginCheckService",
+					type : "post",
+					data : {
+						Log_id : Log_id,
+						pw : pw
+					},
+					dataType : 'json',
+					success : function(result) {
+					//	console.log(result);
+						if (result == 0) {
+							alert('😥로그인 정보가 올바르지 않습니다.😥')							
+						} else  {
+							console.log('로그인 성공')	
+						}						
+					},
+					error : function() {
+						console.log('😥로그인 정보가 올바르지 않습니다.😥')
+					}
+				});
+			});
+		</script>        
+        
+        
     </body>
 </html>

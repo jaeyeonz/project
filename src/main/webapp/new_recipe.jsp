@@ -42,7 +42,8 @@
 	<%
 	VO mvo = (VO) session.getAttribute("mvo");
 	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
-	List<FavoriteVO> fvo = (List<FavoriteVO>) session.getAttribute("FavoriteVO");
+	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");
+	List<FavoriteVO> svo = (List<FavoriteVO>)session.getAttribute("SimilVO");
 	int pageSize = 5;
 
 	String pageNum = request.getParameter("pageNum");
@@ -92,12 +93,16 @@
 				</div>
 			</div>
 		</div>
+		<table>
+		</table>
 	</header>
 
+	<!-- 선호식재료 기반 추천 레시피 -->
+	<h1 align="center"><%=mvo.getName() %>님 선호식재료 기반 추천 레시피</h1>
+	<br>
+	<% if(fvo != null) {
+		for(int i = 0 ; i < fvo.size() ; i++) {
 
-	<%
-	if (fvo != null) {
-		for (int i = 0; i < fvo.size(); i++) {
 	%>
 	<div class="recipeList">
 		<div class="leftImg">
@@ -106,9 +111,8 @@
 
 		<div class="recipeText">
 			<div class="rightText">
-				<h2 class="post-title" style="font-family:'ELANDB';">
-					<a
-						href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
+				<h2 class="post-title">
+					<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
 				</h2>
 				<br>
 				<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
@@ -120,12 +124,37 @@
 		<br>
 
 	</div>
-	<%
-	}
-	}
+	<% } } %>
+	<br>
+
+	<!-- 유사도 기반 추천 레시피 -->
+	<h1 align="center"><%=mvo.getName() %>님 평가한 평점기반 추천 레시피</h1>
+	<br>
+	<% if(svo != null) {
+		for(int i = 0 ; i < svo.size() ; i++) {
 	%>
-
-
+	<div class="recipeList">
+		<div class="leftImg">
+			<img id="procPic" src="recipeImg/<%=svo.get(i).getRecipe_id()%>.jpg"></a>
+		</div>
+		
+		<div class="recipeText">
+		<div class="rightText">
+			<h2 class="post-title">
+				<a href="RecipeDetail?recipeNum=<%=svo.get(i).getRecipe_id()%>&summary=<%=svo.get(i).getSummary()%>&name=<%=svo.get(i).getRecipe_name()%>"><%=svo.get(i).getRecipe_name()%></a>
+			</h2>
+			<br>
+			<h3 class="post-subtitle"><%=svo.get(i).getSummary()%><br>
+			</h3>
+			<br>
+		</div>
+		</div>
+		
+		<br>
+		
+	</div>
+	<% } } %>
+	
 
 	<%
 	// 값 조건식 ==> 연산자
@@ -207,6 +236,8 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="js/scripts2.js"></script>
+	
+	 
 </body>
 
 </html>
