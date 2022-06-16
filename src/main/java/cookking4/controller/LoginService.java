@@ -41,10 +41,10 @@ public class LoginService extends HttpServlet {
 		}else {
 			HttpSession session = request.getSession();
 			session.setAttribute("mvo", result);
-			nextpage = "new_Main.jsp";
+			nextpage = "new_Main2.jsp";
 		}
-		response.sendRedirect(nextpage);		
-		response.sendRedirect("new_Main2.jsp");		
+		response.sendRedirect(nextpage);	
+				
 	}
 
 }
