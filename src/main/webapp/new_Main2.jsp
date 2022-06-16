@@ -75,16 +75,10 @@
 					<div class = "position-relative row logo">
 					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
 					</div>
-		<div class="container position-relative px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
-					
+					<div class = "position-relative row Mainlogo">
+						<img class="Mainlogoimg" src="./images/MainLogo.png"/></a>
+					</div>
 
-
-
-				</div>
-			</div>
-		</div>
 	</header>
  <!-- 배너 1 -->
 	<div class = "banner1">
@@ -93,7 +87,7 @@
 	
 	
 	<div class = "banner2">
-	<a href = "#"><img src="./images/banner(2).jpg"></a>
+	<a href = "Refrigerator.jsp"><img src="./images/banner(2).jpg"></a>
 	</div>
 	
 

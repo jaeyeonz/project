@@ -106,9 +106,8 @@
 
 		<div class="recipeText">
 			<div class="rightText">
-				<h2 class="post-title" style="font-family:'ELANDB';">
-					<a
-						href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
+				<h2 class="post-title">
+					<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
 				</h2>
 				<br>
 				<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
