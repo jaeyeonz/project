@@ -42,12 +42,8 @@
 	<%
 	VO mvo = (VO) session.getAttribute("mvo");
 	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
-<<<<<<< HEAD
 	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");
 	List<FavoriteVO> svo = (List<FavoriteVO>)session.getAttribute("SimilVO");
-=======
-	List<FavoriteVO> fvo = (List<FavoriteVO>) session.getAttribute("FavoriteVO");
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	int pageSize = 5;
 
 	String pageNum = request.getParameter("pageNum");
@@ -101,17 +97,12 @@
 		</table>
 	</header>
 
-<<<<<<< HEAD
+	<!-- 선호식재료 기반 추천 레시피 -->
 	<h1 align="center"><%=mvo.getName() %>님 선호식재료 기반 추천 레시피</h1>
 	<br>
 	<% if(fvo != null) {
 		for(int i = 0 ; i < fvo.size() ; i++) {
-=======
 
-	<%
-	if (fvo != null) {
-		for (int i = 0; i < fvo.size(); i++) {
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	%>
 	<div class="recipeList">
 		<div class="leftImg">
@@ -133,9 +124,10 @@
 		<br>
 
 	</div>
-<<<<<<< HEAD
 	<% } } %>
 	<br>
+
+	<!-- 유사도 기반 추천 레시피 -->
 	<h1 align="center"><%=mvo.getName() %>님 평가한 평점기반 추천 레시피</h1>
 	<br>
 	<% if(svo != null) {
@@ -163,14 +155,6 @@
 	</div>
 	<% } } %>
 	
-=======
-	<%
-	}
-	}
-	%>
-
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 
 	<%
 	// 값 조건식 ==> 연산자

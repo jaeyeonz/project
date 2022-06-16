@@ -43,11 +43,8 @@ public class LoginService extends HttpServlet {
 			session.setAttribute("mvo", result);
 			nextpage = "new_Main.jsp";
 		}
-<<<<<<< HEAD
 		response.sendRedirect(nextpage);		
-=======
 		response.sendRedirect("new_Main2.jsp");		
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
 	}
 
 }
