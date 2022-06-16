@@ -70,7 +70,7 @@
 
 		<div class="position-relative recipeOut">
 						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
-									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+									type="button" class="btn btn-primary">Logout</button></a> </a>
 					</div>
 					<div class = "position-relative row logo">
 					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
