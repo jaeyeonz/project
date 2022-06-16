@@ -60,10 +60,13 @@
     </div>
     <div class="youtube__cover"></div>
     <div class="inner">
+<<<<<<< HEAD
     <div class = "position-relative row logo">
 					<a href="new_Main.jsp"><img class="logoMain" src="./images/logo.png"/></a>
 					</div>
 
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/cookking4.git
     </div>
   </section>
 
