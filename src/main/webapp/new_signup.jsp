@@ -43,9 +43,8 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <h1 class="fst-italic lh-1 mb-4">회원가입</h1>
+                    <h1 class="lh-1 mb-4" style="font-family:'SCDream6';">회원가입</h1>
             <button id = "id_check" class = "btn btn-primary">중복검사</button>
-                    
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
                     <form action="JoinService" method="post" data-sb-form-api-token="API_TOKEN" id="joinform">
