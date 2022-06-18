@@ -151,7 +151,7 @@
               </table>
             </div>
             <p class=" u-text u-text-1">롯데마트</p>
-            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+            <img class="u-image u-image-default u-image-1" src="image/<%=idFind %>.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
@@ -186,7 +186,7 @@
               </table>
             </div>
             <p class=" u-text u-text-1">홈플러스</p>
-            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+            <img class="u-image u-image-default u-image-1" src="image/<%=idFind %>.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
       </div>

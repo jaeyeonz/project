@@ -100,6 +100,7 @@
 }
 
 .u-section-1 .u-gallery-item-1 {
+
   --effect-scale: 5;
   transition-duration: 1.75s;
   box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
@@ -412,4 +413,7 @@
 .btnGroup {
 	display: flex;
 	justify-content: space-around;
+}
+.ingr {
+	height: 80px;
 }

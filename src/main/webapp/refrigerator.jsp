@@ -138,11 +138,11 @@
         '고구마', '감자',
         '풋마늘',
         '가지', '단호박', '옥수수',
-        '양상추', '깻잎',
+        '양상추', '들깻잎',
         '청경채','청경채',
         '시금치', '부추', '콩나물',
-        '우엉', '연근', '도라지',
-        '목이버섯','팽이버섯','양송이버섯', '배추','느타리버섯','표고버섯', '무'];
+        '우엉', '연근', 
+        '목이버섯','팽이버섯','양송이버섯', '느타리버섯','표고버섯', '무'];
 
     var ctg1 = ['계란',
         '닭고기',
@@ -155,8 +155,7 @@
         '새우', '꽃게',
         '전복', '굴', '모시조개',
          '명란',
-        '조기', '미역',
-        '멸치'];
+        '조기', '미역'];
     
     var ctg3 = ['쌀',
         '찹쌀', 
@@ -194,7 +193,7 @@
         for (var i = 0; i < ctg1.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item  u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg1[i]+'.jpg" alt="'+ctg1[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="image/'+ctg1[i]+'.jpg" alt="'+ctg1[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg1[i]+'">';
@@ -217,7 +216,7 @@
         for (var i = 0; i < ctg2.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg2[i]+'.jpg" alt="'+ctg2[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="image/'+ctg2[i]+'.jpg" alt="'+ctg2[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg2[i]+'">';
@@ -240,7 +239,7 @@
         for (var i = 0; i < ctg3.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item  u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg3[i]+'.jpg" alt="'+ctg3[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="image/'+ctg3[i]+'.jpg" alt="'+ctg3[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg3[i]+'">';

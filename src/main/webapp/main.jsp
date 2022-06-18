@@ -82,7 +82,6 @@
 	</header>
  <!-- 배너 1 -->
 	<div class = "banner1 goRecipe">
-	
 	</div>
 	
 	
