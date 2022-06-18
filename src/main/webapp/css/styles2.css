@@ -11414,3 +11414,7 @@ body {
 	display: flex;
 	text-align: center;
 }
+.btnGroup {
+		display: flex;
+	justify-content: space-around;
+}

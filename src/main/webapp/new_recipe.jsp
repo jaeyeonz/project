@@ -85,7 +85,8 @@
 					<form action="SearchService" method="Get">
 						<div class="search">
 							<input class="searchbar" type="text" name="keyword"
-								placeholder="재료를 입력하세요."> <input class="searchbtn"
+								placeholder="재료를 입력하세요."> 
+							<input class="searchbtn"
 								type="submit" value="검색">
 						</div>
 					</form>

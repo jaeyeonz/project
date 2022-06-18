@@ -409,3 +409,7 @@
   font-weight: 400;
   src: url(../fonts/GodoM.ttf);
 }
+.btnGroup {
+	display: flex;
+	justify-content: space-around;
+}

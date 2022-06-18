@@ -48,6 +48,7 @@
 	List<PriceVO> Emartlist = (List<PriceVO>)request.getAttribute("list1");
 	List<PriceVO> Lottelist = (List<PriceVO>)request.getAttribute("list2"); 
 	List<PriceVO> Homelist = (List<PriceVO>)request.getAttribute("list3"); 
+	String idFind = (String)request.getAttribute("idFind");
 	%>
 
 	<!-- ////////////////////// header 영역 //////////////////////////////////  -->
@@ -113,7 +114,7 @@
               </table>
             </div>
             <p class=" u-text u-text-1">이마트</p>
-            <img class="u-image u-image-default u-image-1" src="images/b2e95c81-39cd-ba4c-7bec-4f05e7644db6.jpg" alt="" data-image-width="630" data-image-height="425">
+            <img class="u-image u-image-default u-image-1" src="image/<%=idFind %>.jpg" alt="" data-image-width="630" data-image-height="425">
           </div>
         </div>
       

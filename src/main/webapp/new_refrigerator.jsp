@@ -87,7 +87,7 @@
 	<section class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-clearfix u-palette-4-light-2 u-section-1" id="carousel_e725 containerIngr">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
+          <div class="u-repeater u-repeater-1 btnGroup">
             <div class="u-container-style u-custom-item u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
                 <a href="javascript:void(0)" id = "big-ctg" class="u-active-custom-color-1 u-border-1 u-border-active-black u-border-grey-25 u-btn u-button-style u-custom-font u-custom-item u-dialog-link u-hover-custom-color-1 u-text-grey-80 u-white u-btn-1">채<span style="font-size: 1rem;"></span>소
@@ -134,38 +134,33 @@
     <script>
     var codeSel = $('#ingrList');
     var optionHtml = '';
-    var ctg0 = ['두부', '콩나물', '숙주나물',
+    var ctg0 = ['숙주',
         '고구마', '감자',
-        '양파', '마늘', '파', '생강',
-        '오이', '가지', '호박', '옥수수',
-        '상추', '깻잎', '쌈채소',
-        '고추', '피망', '파프리카',
-        '시금치', '부추', '나물',
-        '양배추', '양상추', '브로콜리',
-        '당근', '우엉', '연근', '마',
-        '버섯', '배추', '무'];
+        '풋마늘',
+        '가지', '단호박', '옥수수',
+        '양상추', '깻잎',
+        '청경채','청경채',
+        '시금치', '부추', '콩나물',
+        '우엉', '연근', '도라지',
+        '목이버섯','팽이버섯','양송이버섯', '배추','느타리버섯','표고버섯', '무'];
 
-    var ctg1 = ['계란', '알류',
-        '닭', '오리고기',
-        '양고기',
-        '돼지고기',
-        '국내산소고기'];
+    var ctg1 = ['계란',
+        '닭고기',
+        '돼기고기',
+        '쇠고기'];
 
     
-    var ctg2 = ['생선',
-        '오징어', '낙지', '주꾸미', '문어',
-        '새우', '게', '랍스터',
-        '전복', '굴', '멍게', '조개류',
-        '회', '명란', '날치알', '장',
-        '김', '미역', '기타해조류',
-        '멸치', '황태', '노가리',
-        '건오징어', '건어물', '다시팩'];
+    var ctg2 = ['갈치',
+        '오징어', '낙지', '쭈꾸미', 
+        '새우', '꽃게',
+        '전복', '굴', '모시조개',
+         '명란',
+        '조기', '미역',
+        '멸치'];
     
-    var ctg3 = ['백미',
-        '찹쌀', '현미', '흑미',
-        '혼합곡',
-        '콩', '팥', '보리', '귀리',
-        '수수', '조', '깨', '잡곡'];
+    var ctg3 = ['쌀',
+        '찹쌀', 
+        '흰콩', '보리','콩비지','흑임자','서리태콩','멥쌀가루'];
     
     var btnCtg = document.querySelectorAll('#big-ctg')
     btnCtg[0].addEventListener('click', function () {
@@ -202,8 +197,10 @@
             optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg1[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
+            optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg1[i]+'">';
             optionHtml += '<h3 class="u-custom-font u-gallery-heading u-text-body-alt-color" style="font-size: 1.25rem; font-family: GodoM;">'+ctg1[i]+'</h3>';
             optionHtml += '<p class="u-gallery-text" style="margin-top: 0px;"></p>';
+            optionHtml += '</a>';            
             optionHtml += '</div>';
             optionHtml += '</div>';
         }
@@ -223,8 +220,10 @@
             optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg2[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
+            optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg2[i]+'">';
             optionHtml += '<h3 class="u-custom-font u-gallery-heading u-text-body-alt-color" style="font-size: 1.25rem; font-family: GodoM;">'+ctg2[i]+'</h3>';
             optionHtml += '<p class="u-gallery-text" style="margin-top: 0px;"></p>';
+            optionHtml += '</a>';  
             optionHtml += '</div>';
             optionHtml += '</div>';
         }
@@ -244,8 +243,10 @@
             optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg3[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
+            optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg3[i]+'">';
             optionHtml += '<h3 class="u-custom-font u-gallery-heading u-text-body-alt-color" style="font-size: 1.25rem; font-family: GodoM;">'+ctg3[i]+'</h3>';
             optionHtml += '<p class="u-gallery-text" style="margin-top: 0px;"></p>';
+            optionHtml += '</a>';  
             optionHtml += '</div>';
             optionHtml += '</div>';
         }
