@@ -70,7 +70,7 @@
 
 		<div class="position-relative recipeOut">
 						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
-									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+									type="button" class="btn btn-primary">Logout</button></a> </a>
 					</div>
 					<div class = "position-relative row logo">
 					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
@@ -111,7 +111,7 @@
             </div>
           </div>
         </div>
-        <div class="u-align-center u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+        <div class="u-align-center u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1" style ="left: 80px;"></div>
         <div id = "ingrList" class="u-gallery u-layout-grid u-lightbox u-show-text-always u-gallery-1">
           
         </div>
@@ -119,6 +119,13 @@
         
       </div>
     </section>
+    
+    <footer>
+    	<div>
+    	
+    	</div>
+    	
+    </footer>
 
 	<!-- ///////////////////////////////content /////////////////////////-->
 

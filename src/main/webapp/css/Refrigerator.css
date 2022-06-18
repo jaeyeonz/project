@@ -90,7 +90,6 @@
 .u-section-1 .u-gallery-1 {
   grid-gap: 17px 17px;
   width: 827px;
-  margin: 87px 146px 0 auto;
   padding-bottom : 100px;
 }
 
@@ -271,6 +270,7 @@
 @media (max-width: 1199px) {
   .u-section-1 .u-line-1 {
     margin-right: 113px;
+    left: 60px;
   }
 
   .u-section-1 .u-gallery-1 {
@@ -417,3 +417,8 @@
 .ingr {
 	height: 80px;
 }
+#ingrList{
+	    margin-top: 87px;
+margin-left: 100px;
+}
+	

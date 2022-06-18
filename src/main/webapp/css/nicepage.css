@@ -25319,7 +25319,7 @@ section.u-palette-4-light-2:before,
 .u-container-layout.u-container-layout.u-palette-4-light-2:before,
 .u-table-alt-palette-4-light-2 tr:nth-child(even) {
   color: #111111;
-  background-color: #f6e7d6;
+  background-color: #fff;
 }
 .u-button-style.u-palette-4-light-2,
 .u-button-style.u-palette-4-light-2[class*="u-border-"] {
@@ -25427,7 +25427,7 @@ section.u-palette-4-base:before,
 .u-container-layout.u-container-layout.u-palette-4-base:before,
 .u-table-alt-palette-4-base tr:nth-child(even) {
   color: #111111;
-  background-color: #efd5b7;
+  background-color: #fff;
 }
 .u-button-style.u-palette-4-base,
 .u-button-style.u-palette-4-base[class*="u-border-"] {

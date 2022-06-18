@@ -57,22 +57,15 @@
 		style="background-image: url('images/recipe_bg2.jpg')">
 
 		<div class="position-relative recipeOut">
-						<%-- <a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
-									type="button" class="btn btn-primary">로그아웃</button></a> </a> --%>
+						 <a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
+									type="button" class="btn btn-primary">Logout</button></a> </a> 
 					</div>
 					<div class = "position-relative row logo">
 					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
 					</div>
-		<div class="container position-relative px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
-					
-
-					
-
-				</div>
-			</div>
-		</div>
+					<div>
+					<img class = "todaylogo" src="./images/todaylogo.png">
+					</div>
 	</header>
 	<section class="u-clearfix u-palette-4-base u-section-1" id="sec-213c">
       <div class="u-clearfix u-sheet u-sheet-1">

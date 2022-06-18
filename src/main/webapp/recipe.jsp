@@ -71,7 +71,7 @@
 
 		<div class="position-relative recipeOut">
 						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
-									type="button" class="btn btn-primary">로그아웃</button></a> </a>
+									type="button" class="btn btn-primary">Logout</button></a> </a>
 					</div>
 					<div class = "position-relative row logo">
 					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
@@ -99,7 +99,8 @@
 	</header>
 
 	<!-- 선호식재료 기반 추천 레시피 -->
-	<h1 align="center"><%=mvo.getName() %>님 선호식재료 기반 추천 레시피</h1>
+	<h1 align="center" style="margin-top: 50px;"><%=mvo.getName() %>님 선호식재료 <span style="color:red;">추천 레시피</h1></span>
+	<div id = "line"></div>
 	<br>
 	<% if(fvo != null) {
 		for(int i = 0 ; i < fvo.size() ; i++) {
@@ -129,7 +130,8 @@
 	<br>
 
 	<!-- 유사도 기반 추천 레시피 -->
-	<h1 align="center"><%=mvo.getName() %>님 평가한 평점기반 추천 레시피</h1>
+	<h1 align="center"><%=mvo.getName() %>님 평가한 평점 <span style="color : red;">추천 레시피</h1></span>
+	<div id = "line"></div>
 	<br>
 	<% if(svo != null) {
 		for(int i = 0 ; i < svo.size() ; i++) {
@@ -145,7 +147,7 @@
 				<a href="RecipeDetail?recipeNum=<%=svo.get(i).getRecipe_id()%>&summary=<%=svo.get(i).getSummary()%>&name=<%=svo.get(i).getRecipe_name()%>"><%=svo.get(i).getRecipe_name()%></a>
 			</h2>
 			<br>
-			<h3 class="post-subtitle"><%=svo.get(i).getSummary()%><br>
+			<h3 class="post-subtitle" style="font-family:'SCDream5';"><%=svo.get(i).getSummary()%><br>
 			</h3>
 			<br>
 		</div>
@@ -207,7 +209,7 @@
 		if (startPage > pageBlock) {
 		%>
 		<li class="page-item disabled"><span class="page-link"><a
-				href="new_recipe.jsp?pageNum=<%=startPage - pageBlock%>">이전</a></span></li>
+				href="recipe.jsp?pageNum=<%=startPage - pageBlock%>">이전</a></span></li>
 		<%
 		}
 
@@ -215,14 +217,14 @@
 		for (int i = startPage; i <= endPage; i++) {
 		%>
 		<li class="page-item"><a class="page-link"
-			href="new_recipe.jsp?pageNum=<%=i%>"><%=i%></a></li>
+			href="recipe.jsp?pageNum=<%=i%>"><%=i%></a></li>
 		<%
 		}
 		//다음
 		if (endPage < pageCount) {
 		%>
 		<li class="page-item"><a class="page-link"
-			href="new_recipe.jsp?pageNum=<%=startPage + pageBlock%>">다음</a></li>
+			href="recipe.jsp?pageNum=<%=startPage + pageBlock%>">다음</a></li>
 
 		<%
 		}

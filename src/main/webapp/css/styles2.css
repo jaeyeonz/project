@@ -11290,7 +11290,7 @@ header.masthead .site-heading .h1 {
 }
 
 body {
-  background-color: #f6e7d6;
+  background-color: #fff;
 }
 
 .paging{
@@ -11431,29 +11431,15 @@ body {
 }
 
 
-@font-face {
-    font-family: 'Hahmlet-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Bold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 
-.post-subtitle{
-	font-family: 'Hahmlet-Bold';
-}
-
-
-.post-title{
-	font-family: 'Hahmlet-Bold';
-}
 
 .recipe-post-title {
 	margin-bottom: 40px !important;
 }
 
 #ingr {
-	height:80px;
-	width:100px;
+height: 100px;
+    width: 120px;
 }
 
 .u-section-1 {
@@ -11463,4 +11449,14 @@ body {
 .btnGroup {
 		display: flex;
 	justify-content: space-around;
+}
+
+#line{
+	border-bottom: 3px solid;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+.todaylogo{
+	margin-left: 700px;
 }
