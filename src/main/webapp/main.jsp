@@ -86,7 +86,7 @@
 	
 	
 	<div class = "banner2">
-	<a href = "refrigerator.jsp"><img src="./images/banner(2).jpg"></a>
+	<a href = "refrigerator.jsp"><img src="./images/banner(2).png"></a>
 	</div>
 	
 

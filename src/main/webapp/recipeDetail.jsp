@@ -51,7 +51,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1><%=name%> 만들기</h1>
+                            <h1 style = "width : 1000px;"><%=name%> 만들기</h1>
                         </div>
                     </div>
                 </div>
@@ -82,9 +82,9 @@
             
             <div class="recipeText">
             <div class="rightText">
-                <h2 class="post-title"><%=name%></h2>
+                <h2 class="post-title" ><%=name%></h2>
                 <br>
-                <h3 class="post-subtitle"><%=summary%></h3>
+                <h3 class="post-subtitle" style = "font-family: 'twayair';"><%=summary%></h3>
                 <br>
             </div>
             </div>
@@ -95,15 +95,17 @@
         <div class="recipeProc">
             <div class="rightText">
             <br><br>
-                <h3 class="recipe-post-title">요리순서</h3>
+                <h3 class="recipe-post-title" style = "font-family: 'twayair';">요리순서</h3>
+                <div id="recipeline"></div>
                 <h4 class="post-subtitle">
                         <%	for (int i = 0; i < detailvo.size(); i++) {
 						                for (int j = 0; j <= i; j++) {
 					            %>
 					
             					<%	  }				%>
-					           <%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc()%>
-						<br> <%
+            					<p style = "font-family: 'twayair';">
+					           <%=detailvo.get(i).getStep_no() + ". " + detailvo.get(i).getCooking_desc()%></p>
+						<%
 	 					if (detailvo.get(i).getStep_img_url() != null) {%> 
 	 						<img	src="<%=detailvo.get(i).getStep_img_url()%>"><br> 
 	 					<% } %>

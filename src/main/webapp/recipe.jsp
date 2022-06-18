@@ -42,8 +42,8 @@
 	<%
 	VO mvo = (VO) session.getAttribute("mvo");
 	List<RecipeVO> baseList = (List<RecipeVO>) session.getAttribute("list");
-	List<FavoriteVO> fvo = (List<FavoriteVO>)session.getAttribute("FavoriteVO");
-	List<FavoriteVO> svo = (List<FavoriteVO>)session.getAttribute("SimilVO");
+	List<FavoriteVO> fvo = (List<FavoriteVO>) session.getAttribute("FavoriteVO");
+	List<FavoriteVO> svo = (List<FavoriteVO>) session.getAttribute("SimilVO");
 	int pageSize = 5;
 
 	String pageNum = request.getParameter("pageNum");
@@ -70,23 +70,23 @@
 		style="background-image: url('images/recipe_bg2.jpg')">
 
 		<div class="position-relative recipeOut">
-						<a class = "recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a href="Logout"><button
-									type="button" class="btn btn-primary">Logout</button></a> </a>
-					</div>
-					<div class = "position-relative row logo">
-					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
-					</div>
+			<a class="recipe-Out" href="#"><%=mvo.getName()%>님 환영합니다. <a
+				href="Logout"><button type="button" class="btn btn-primary">Logout</button></a>
+			</a>
+		</div>
+		<div class="position-relative row logo">
+			<a href="main.jsp"><img class="logoimg" src="./images/logo.png" /></a>
+		</div>
 		<div class="container position-relative px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
-					
+
 
 					<!-- /////////// 검색창 /////////////////// -->
 					<form action="SearchService" method="Get">
 						<div class="search">
 							<input class="searchbar" type="text" name="keyword"
-								placeholder="재료를 입력하세요."> 
-							<input class="searchbtn"
+								placeholder="재료를 입력하세요."> <input class="searchbtn"
 								type="submit" value="검색">
 						</div>
 					</form>
@@ -97,73 +97,99 @@
 		<table>
 		</table>
 	</header>
+	<div><%if(baseList == null){ %>
+		<div>
+			<!-- 선호식재료 기반 추천 레시피 -->
+			<h1 align="center" style="margin-top: 50px;"><%=mvo.getName()%>님
+				선호식재료 <span style="color: red;">추천 레시피 
+			</h1>
+			</span>
+			<div id="line"></div>
+			<br>
+			<%
+			if (fvo != null) {
+				for (int i = 0; i < fvo.size(); i++) {
+			%>
+			<div class="recipeList">
+				<div class="leftImg">
+					<img id="procPic"
+						src="recipeImg/<%=fvo.get(i).getRecipe_id()%>.jpg"></a>
+				</div>
 
-	<!-- 선호식재료 기반 추천 레시피 -->
-	<h1 align="center" style="margin-top: 50px;"><%=mvo.getName() %>님 선호식재료 <span style="color:red;">추천 레시피</h1></span>
-	<div id = "line"></div>
-	<br>
-	<% if(fvo != null) {
-		for(int i = 0 ; i < fvo.size() ; i++) {
+				<div class="recipeText">
+					<div class="rightText">
+						<h2 class="post-title">
+							<a
+								href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
+						</h2>
+						<br>
+						<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
+						</h3>
+						<br>
+					</div>
+				</div>
 
-	%>
-	<div class="recipeList">
-		<div class="leftImg">
-			<img id="procPic" src="recipeImg/<%=fvo.get(i).getRecipe_id()%>.jpg"></a>
-		</div>
-
-		<div class="recipeText">
-			<div class="rightText">
-				<h2 class="post-title">
-					<a href="RecipeDetail?recipeNum=<%=fvo.get(i).getRecipe_id()%>&summary=<%=fvo.get(i).getSummary()%>&name=<%=fvo.get(i).getRecipe_name()%>"><%=fvo.get(i).getRecipe_name()%></a>
-				</h2>
 				<br>
-				<h3 class="post-subtitle"><%=fvo.get(i).getSummary()%><br>
-				</h3>
+
+			</div>
+			<%
+			}
+			}
+			%>
+			<br>
+		</div>
+		<div>
+			<!-- 유사도 기반 추천 레시피 -->
+			<h1 align="center"><%=mvo.getName()%>님 평가한 평점 <span
+					style="color: red;">추천 레시피 
+			</h1>
+			</span>
+			<div id="line"></div>
+			<br>
+			<%
+			if (svo != null) {
+				for (int i = 0; i < svo.size(); i++) {
+			%>
+			<div class="recipeList">
+				<div class="leftImg">
+					<img id="procPic"
+						src="recipeImg/<%=svo.get(i).getRecipe_id()%>.jpg"></a>
+				</div>
+
+				<div class="recipeText">
+					<div class="rightText">
+						<h2 class="post-title">
+							<a
+								href="RecipeDetail?recipeNum=<%=svo.get(i).getRecipe_id()%>&summary=<%=svo.get(i).getSummary()%>&name=<%=svo.get(i).getRecipe_name()%>"><%=svo.get(i).getRecipe_name()%></a>
+						</h2>
+						<br>
+						<h3 class="post-subtitle" style="font-family: 'SCDream5';"><%=svo.get(i).getSummary()%><br>
+						</h3>
+						<br>
+					</div>
+				</div>
+
 				<br>
 			</div>
 		</div>
-
-		<br>
-
+		<%} %>
 	</div>
-	<% } } %>
-	<br>
-
-	<!-- 유사도 기반 추천 레시피 -->
-	<h1 align="center"><%=mvo.getName() %>님 평가한 평점 <span style="color : red;">추천 레시피</h1></span>
-	<div id = "line"></div>
-	<br>
-	<% if(svo != null) {
-		for(int i = 0 ; i < svo.size() ; i++) {
+	<%
+	}
+	}
 	%>
-	<div class="recipeList">
-		<div class="leftImg">
-			<img id="procPic" src="recipeImg/<%=svo.get(i).getRecipe_id()%>.jpg"></a>
-		</div>
-		
-		<div class="recipeText">
-		<div class="rightText">
-			<h2 class="post-title">
-				<a href="RecipeDetail?recipeNum=<%=svo.get(i).getRecipe_id()%>&summary=<%=svo.get(i).getSummary()%>&name=<%=svo.get(i).getRecipe_name()%>"><%=svo.get(i).getRecipe_name()%></a>
-			</h2>
-			<br>
-			<h3 class="post-subtitle" style="font-family:'SCDream5';"><%=svo.get(i).getSummary()%><br>
-			</h3>
-			<br>
-		</div>
-		</div>
-		
-		<br>
-		
-	</div>
-	<% } } %>
-	
+
 
 	<%
 	// 값 조건식 ==> 연산자
 	// (list.size()-1 > endRow ? endRow : list.size()-1)
-	if (baseList != null) {
-		for (int i = startRow; i <= (baseList.size() - 1 > endRow ? endRow : baseList.size() - 1); i++) {
+	if (baseList != null) {%>
+	<br>
+	<h1 align="center"><span
+					style="color: red;">검색</span>한 레시피
+			</h1>
+			<div id="line"></div>
+		<% for (int i = startRow; i <= (baseList.size() - 1 > endRow ? endRow : baseList.size() - 1); i++) {
 	%>
 
 	<!-- ///////////////////////////////content /////////////////////////-->
@@ -239,8 +265,8 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="js/scripts2.js"></script>
-	
-	 
+
+
 </body>
 
 </html>
