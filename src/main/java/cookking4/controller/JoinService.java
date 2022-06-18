@@ -46,7 +46,7 @@ public class JoinService extends HttpServlet {
 		if(cnt > 0) {
 			request.setAttribute("mvo",  mvo);
 			System.out.println("joinservice : " + mvo.getName());
-			RequestDispatcher rd = request.getRequestDispatcher("new_index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}		
 	}

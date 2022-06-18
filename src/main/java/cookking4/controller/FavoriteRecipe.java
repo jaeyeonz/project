@@ -48,7 +48,6 @@ public class FavoriteRecipe extends HttpServlet {
 
 		FavoriteVO svo = new FavoriteVO();
 		RecipeIdVO recipe_ids = new RecipeIdVO(recipe_id1, recipe_id2, recipe_id3, recipe_id4, recipe_id5);
-//		int[] recipe_ids = {recipe_id1,recipe_id2,recipe_id3,recipe_id4,recipe_id5};
 		
 		System.out.println(name);
 		System.out.println(prfr_Ingr1);
@@ -72,7 +71,7 @@ public class FavoriteRecipe extends HttpServlet {
 			session.setAttribute("FavoriteVO", memberfav);
 			session.setAttribute("SimilVO", similfav);
 
-			response.sendRedirect("new_recipe.jsp");
+			response.sendRedirect("recipe.jsp");
 		}
 		
 		

@@ -37,7 +37,7 @@ public class RecipeDetail extends HttpServlet {
 			request.setAttribute("name", name);
 			request.setAttribute("summary", summary);
 			request.setAttribute("recipeNum", recipeNum);
-			RequestDispatcher rd = request.getRequestDispatcher("new_recipeDetail.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("recipeDetail.jsp");
 			rd.forward(request, response);
 		}
 	}

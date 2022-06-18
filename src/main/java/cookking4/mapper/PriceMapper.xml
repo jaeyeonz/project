@@ -22,8 +22,4 @@
 		mart_num = 3 and ROWNUM&lt;=5 
 	</select>
 	
-	<select id="idFind" resultType="IngrVO" parameterType="String">
-		select * from ingr_info 
-		where ingr_info_irdnt_nm = #{ingr_info_irdnt_nm}
-	</select>
 </mapper>

@@ -73,7 +73,7 @@
 									type="button" class="btn btn-primary">Logout</button></a> </a>
 					</div>
 					<div class = "position-relative row logo">
-					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
 					</div>
 					<div class = "position-relative row Mainlogo">
 						<img class="Mainlogoimg" src="./images/MainLogo.png"/></a>
@@ -87,7 +87,7 @@
 	
 	
 	<div class = "banner2">
-	<a href = "new_refrigerator.jsp"><img src="./images/banner(2).jpg"></a>
+	<a href = "refrigerator.jsp"><img src="./images/banner(2).jpg"></a>
 	</div>
 	
 

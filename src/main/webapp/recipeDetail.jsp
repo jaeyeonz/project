@@ -45,7 +45,7 @@
 									type="button" class="btn btn-primary">로그아웃</button></a> </a>
 					</div>
 					<div class = "position-relative row logo">
-					<a href="new_Main2.jsp"><img class="logoimg" src="./images/logo.png"/></a>
+					<a href="main.jsp"><img class="logoimg" src="./images/logo.png"/></a>
 					</div>
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">

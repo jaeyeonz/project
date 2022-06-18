@@ -37,11 +37,11 @@ public class LoginService extends HttpServlet {
 		String nextpage = null;
 		if(result == null) {
 			System.out.println("로그인 실패");			
-			nextpage = "new_index.jsp";			
+			nextpage = "index.jsp";			
 		}else {
 			HttpSession session = request.getSession();
 			session.setAttribute("mvo", result);
-			nextpage = "new_Main2.jsp";
+			nextpage = "main.jsp";
 		}
 		response.sendRedirect(nextpage);	
 				

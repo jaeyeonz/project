@@ -36,7 +36,7 @@ public class SearchService extends HttpServlet {
 		if(list != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("list", list);
-			RequestDispatcher rd = request.getRequestDispatcher("new_recipe.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("recipe.jsp");
 			rd.forward(request, response);
 		}		
 	

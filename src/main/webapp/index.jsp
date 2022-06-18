@@ -43,7 +43,7 @@
                                 <input name="Log_id" class="form-control" id="id" type="text" placeholder="아이디" aria-label="Enter ID..." data-sb-validations="required,email" /></div>
                             <div class="col"><label for="password" class="form-label">Password</label>
                                 <input name="pw" type="password" class="form-control" id="password" placeholder="비밀번호" aria-label="Enter password..."></div>
-                    		<div class="col-auto"><button class="btn btn-primary" id="signupButton" type = "button" onclick="location.href='new_signup.jsp';">Sign up</button></div>
+                    		<div class="col-auto"><button class="btn btn-primary" id="signupButton" type = "button" onclick="location.href='signup.jsp';">Sign up</button></div>
                             <div class="col-auto"><button class="btn btn-primary" id="signinButton" type="submit">Sign in</button></div>
                         </div>
                         <!-- <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>

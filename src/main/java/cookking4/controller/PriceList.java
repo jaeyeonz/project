@@ -47,7 +47,7 @@ public class PriceList extends HttpServlet {
 				request.setAttribute("list1", list1);
 				request.setAttribute("list2", list2);
 				request.setAttribute("list3", list3);
-				RequestDispatcher rd = request.getRequestDispatcher("new_priceSearch.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("priceSearch.jsp");
 				rd.forward(request, response);
 			
 		}
