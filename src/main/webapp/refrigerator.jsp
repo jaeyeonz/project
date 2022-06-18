@@ -171,7 +171,7 @@
         for (var i = 0; i < ctg0.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item  u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg0[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="image/'+ctg0[i]+'.jpg" alt="'+ctg0[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg0[i]+'">';
@@ -194,7 +194,7 @@
         for (var i = 0; i < ctg1.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item  u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg1[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg1[i]+'.jpg" alt="'+ctg1[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg1[i]+'">';
@@ -217,7 +217,7 @@
         for (var i = 0; i < ctg2.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg2[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg2[i]+'.jpg" alt="'+ctg2[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg2[i]+'">';
@@ -240,7 +240,7 @@
         for (var i = 0; i < ctg3.length; i++) {
             optionHtml += '<div id = "ingr" class="u-border-3 u-border-grey-75 u-effect-hover-zoom u-gallery-item  u-shape-round u-gallery-item-'+(i+1)+'">';
             optionHtml += '<div class="u-back-slide u-back-slide-1">';
-            optionHtml += '<img class="u-back-image u-expanded" src="images/default-image.jpg" alt="'+ctg3[i]+'">';
+            optionHtml += '<img class="u-back-image u-expanded" src="images/'+ctg3[i]+'.jpg" alt="'+ctg3[i]+'">';
             optionHtml += '</div>';
             optionHtml += '<div class="u-over-slide u-valign-bottom u-over-slide-'+(i+1)+'">';
             optionHtml += '<a href="PriceList?ingr_info_irdnt_nm='+ctg3[i]+'">';
