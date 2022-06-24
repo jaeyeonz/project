@@ -115,7 +115,7 @@ public class RecipeDAO {
 
 	// mart_price sql구문 실행
 
-	// 선호식재료 리트스
+	// 선호식재료 리스트
 	public List<FavoriteVO> favoriteSelect(FavoriteVO fvo) {
 		try {
 			session = sqlSessionFactory.openSession(true);
