@@ -21,7 +21,6 @@ public class RecipeList extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		System.out.println("들어왔어?");
 		RecipeDAO dao = new RecipeDAO();
 		
 		List<RecipeVO> list = dao.recipeList();

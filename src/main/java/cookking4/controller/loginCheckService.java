@@ -26,8 +26,6 @@ public class loginCheckService extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		System.out.println("logincheck : " + Log_id + " " + pw);
-		
 		VO mvo = new VO();
 		mvo.setLog_id(Log_id);
 		mvo.setPw(pw);

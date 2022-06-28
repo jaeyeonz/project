@@ -34,6 +34,7 @@ public class FavoriteRecipe extends HttpServlet {
 		String prfr_Ingr1 = request.getParameter("prfr_Ingr1");
 		String prfr_Ingr2 = request.getParameter("prfr_Ingr2");
 		String prfr_Ingr3 = request.getParameter("prfr_Ingr3");
+		
 		int recipe_id1 = Integer.parseInt(request.getParameter("recipe_id1")); 
 		int recipe_id2 = Integer.parseInt(request.getParameter("recipe_id2")); 
 		int recipe_id3 = Integer.parseInt(request.getParameter("recipe_id3")); 
@@ -49,24 +50,14 @@ public class FavoriteRecipe extends HttpServlet {
 		FavoriteVO svo = new FavoriteVO();
 		RecipeIdVO recipe_ids = new RecipeIdVO(recipe_id1, recipe_id2, recipe_id3, recipe_id4, recipe_id5);
 		
-		System.out.println(name);
-		System.out.println(prfr_Ingr1);
-		System.out.println(prfr_Ingr2);
-		System.out.println(prfr_Ingr3);
-		
 		RecipeDAO dao = new RecipeDAO();
-		
+
+		// 선호식재료
 		List<FavoriteVO> memberfav = dao.favoriteSelect(fvo);
+		// 유사도
 		List<FavoriteVO> similfav = dao.similist(recipe_ids);
-		System.out.println("유사도 기반"+similfav);
 		
 		if(memberfav != null ) {
-			System.out.println("FavoriteList....");
-			System.out.println(memberfav.size());
-			System.out.println(memberfav.get(0).getRecipe_name());
-			System.out.println(memberfav.get(0).getSummary());
-			System.out.println(memberfav.get(0).getA_point());			
-
 			HttpSession session = request.getSession();
 			session.setAttribute("FavoriteVO", memberfav);
 			session.setAttribute("SimilVO", similfav);

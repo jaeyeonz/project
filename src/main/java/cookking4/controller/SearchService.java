@@ -23,8 +23,6 @@ public class SearchService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String keyword = request.getParameter("keyword");
-		System.out.println("잘 넘어가니?");
-		System.out.println(keyword);
 		RecipeDAO dao = new RecipeDAO();
 		List<RecipeVO> list = null;
 		if(keyword == null) {

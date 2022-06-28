@@ -14,19 +14,11 @@ public class PriceDAO {
 	public List<PriceVO> EmartList(String ingr_info_irdnt_nm) {
 
 		// 1. SqlSession 빌려오기
-		// openSession(auto commit);
 		SqlSession session = sqlSessionFactory.openSession(true);
 
 		// 2. sql문 실행
-		// select : 1) selectOne : select문의 결과가 하나 -> VO
-		// 2) selectList : select문의 결과가 다수 -> List<VO>
-		// insert delete update : 똑같은 이름의 메소드 사용
-		// selectList("id", parameter)
-		// 채워줄 바인드 있으면 id, 채울값
-		// 없으면 id만
 		List<PriceVO> list1 = session.selectList("EmartSearch",ingr_info_irdnt_nm);
 		
-
 		// 3. 빌려온 session 반환
 		session.close();
 
@@ -34,21 +26,14 @@ public class PriceDAO {
 		return list1;
 
 	}
+	
 	public List<PriceVO> LotteList(String ingr_info_irdnt_nm) {
 		
 		// 1. SqlSession 빌려오기
-		// openSession(auto commit);
 		SqlSession session = sqlSessionFactory.openSession(true);
 		
 		// 2. sql문 실행
-		// select : 1) selectOne : select문의 결과가 하나 -> VO
-		// 2) selectList : select문의 결과가 다수 -> List<VO>
-		// insert delete update : 똑같은 이름의 메소드 사용
-		// selectList("id", parameter)
-		// 채워줄 바인드 있으면 id, 채울값
-		// 없으면 id만
 		List<PriceVO> list = session.selectList("LotteSearch",ingr_info_irdnt_nm);
-		
 		
 		// 3. 빌려온 session 반환
 		session.close();
@@ -57,21 +42,14 @@ public class PriceDAO {
 		return list;
 		
 	}
+
 	public List<PriceVO> HomeList(String ingr_info_irdnt_nm) {
 		
 		// 1. SqlSession 빌려오기
-		// openSession(auto commit);
 		SqlSession session = sqlSessionFactory.openSession(true);
 		
 		// 2. sql문 실행
-		// select : 1) selectOne : select문의 결과가 하나 -> VO
-		// 2) selectList : select문의 결과가 다수 -> List<VO>
-		// insert delete update : 똑같은 이름의 메소드 사용
-		// selectList("id", parameter)
-		// 채워줄 바인드 있으면 id, 채울값
-		// 없으면 id만
 		List<PriceVO> list = session.selectList("HomeSearch",ingr_info_irdnt_nm);
-		
 		
 		// 3. 빌려온 session 반환
 		session.close();

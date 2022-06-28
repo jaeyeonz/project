@@ -25,7 +25,6 @@ public class LoginService extends HttpServlet {
 		
 		String Log_id = request.getParameter("Log_id");
 		String pw = request.getParameter("pw");
-		System.out.println(Log_id + " : " + pw);
 	
 		VO mvo = new VO();
 		mvo.setLog_id(Log_id);

@@ -26,8 +26,6 @@ public class PriceList extends HttpServlet {
 
 		String ingr_info_irdnt_nm = request.getParameter("ingr_info_irdnt_nm");
 
-		System.out.println("들어왔어?");
-		System.out.println(ingr_info_irdnt_nm);
 		PriceDAO dao = new PriceDAO();
 
 		
@@ -35,13 +33,6 @@ public class PriceList extends HttpServlet {
 		  List<PriceVO> list2 = dao.LotteList(ingr_info_irdnt_nm); 
 		  List<PriceVO> list3 = dao.HomeList(ingr_info_irdnt_nm);
 		 
-		  if(list1.size()!=0) {
-		  System.out.println("emart"+list1.get(0).getPrice_100());} if(list2.size()!=0)
-		  { System.out.println("lotte"+list2.get(0).getPrice_100());}
-		  if(list3.size()!=0) {
-		  System.out.println("home"+list3.get(0).getPrice_100());}
-		 
-		
 		if (list1 != null && list2 != null && list3 != null) {
 				request.setAttribute("idFind", ingr_info_irdnt_nm);
 				request.setAttribute("list1", list1);

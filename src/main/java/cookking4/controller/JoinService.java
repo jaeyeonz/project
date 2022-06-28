@@ -28,8 +28,6 @@ public class JoinService extends HttpServlet {
 		String prfr_Ingr2 = request.getParameter("prfr_Ingr2");
 		String prfr_Ingr3 = request.getParameter("prfr_Ingr3");
 		
-		System.out.println("회원가입???");
-		
 		VO mvo = new VO();
 		
 		mvo.setLog_id(Log_id);
@@ -45,7 +43,6 @@ public class JoinService extends HttpServlet {
 		
 		if(cnt > 0) {
 			request.setAttribute("mvo",  mvo);
-			System.out.println("joinservice : " + mvo.getName());
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}		

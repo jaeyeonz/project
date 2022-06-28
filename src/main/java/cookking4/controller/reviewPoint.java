@@ -27,8 +27,6 @@ public class reviewPoint extends HttpServlet {
 		String recipe_name = request.getParameter("name");
 		String summary = request.getParameter("summary");	 		
 		
-		System.out.println(recipe_id + " : " + a_point + " : " + recipe_name + " : " + summary );
-		
 		RecipeVO pointVO = new RecipeVO(); 
 		pointVO.setRecipe_id(recipe_id); 
 		pointVO.setA_point(a_point);
@@ -39,7 +37,6 @@ public class reviewPoint extends HttpServlet {
 		int pointResult = dao.reviewPoint(pointVO);				
 				
 		if(pointResult > 0 ) {
-			System.out.println(pointResult);
 			request.setAttribute("name", recipe_name);
 			request.setAttribute("summary", summary);
 			request.setAttribute("recipeNum", recipe_id);	
